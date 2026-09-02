@@ -11,8 +11,7 @@ import sys
 import tkinter as tk
 from tkinter import ttk, font as tkfont
 
-from engine import Engine, format_result, to_text
-from glossary import TERMS
+from engine import Engine, format_result, TERMS
 
 MAC = sys.platform == "darwin"
 MOD = "Command" if MAC else "Control"

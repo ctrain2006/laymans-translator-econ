@@ -796,7 +796,7 @@ TERMS = [
     T("overhead", "ongoing costs of running a business",
       "Costs that must be paid regardless of how much is sold.",
       "Rent, insurance, and electricity for a store.",
-      ["fixed costs", "fixed cost"]),
+      ["overheads"]),
     T("variable costs", "costs that rise as you make more",
       "Expenses that go up with each extra unit produced.",
       "Flour and eggs for each extra cake.",

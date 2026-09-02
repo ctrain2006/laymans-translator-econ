@@ -13,7 +13,11 @@ Pure Python, no dependencies, works offline.
 import re
 from dataclasses import dataclass, field
 
-from glossary import TERMS, SIMPLIFICATIONS, Term
+from glossary import TERMS as _BASE_TERMS, SIMPLIFICATIONS as _BASE_SIMPLIFICATIONS, Term
+from glossary_textbook import TEXTBOOK_TERMS, TEXTBOOK_SIMPLIFICATIONS
+
+TERMS = _BASE_TERMS + TEXTBOOK_TERMS
+SIMPLIFICATIONS = {**_BASE_SIMPLIFICATIONS, **TEXTBOOK_SIMPLIFICATIONS}
 
 
 # ---------------------------------------------------------------- helpers
@@ -36,6 +40,21 @@ def _match_case(replacement: str, matched: str, at_start: bool) -> str:
     if at_start and matched[:1].isupper():
         return replacement[:1].upper() + replacement[1:]
     return replacement
+
+
+_DETERMINERS = {"the", "a", "an", "this", "that", "these", "those", "its", "their", "our",
+                "your", "his", "her", "my", "each", "every", "any", "some", "no", "such"}
+
+
+def _preceded_by_determiner(before: str) -> bool:
+    """True if the text just before a match already carries an article, e.g. 'the available'."""
+    words = re.findall(r"[A-Za-z']+", before[-40:])
+    if not words:
+        return False
+    if words[-1].lower() in _DETERMINERS:
+        return True
+    # determiner + one adjective ("the available", "its scarce"); skip plural nouns ("the years")
+    return len(words) >= 2 and words[-2].lower() in _DETERMINERS and not words[-1].endswith("s")
 
 
 def _no_article(phrase: str) -> str:
@@ -674,6 +693,18 @@ EXTRA_FORWARD = {
     "tight labour market": ("job market where workers are scarce", "labor"),
     "balance sheet": ("list of what it owns and owes", "asset"),
     "fed funds": ("the Fed's key interest rate", "federal funds rate"),
+    "efficient": ("waste-free", "efficiency"),
+    "efficiently": ("without waste", "efficiency"),
+    "inefficient": ("wasteful", "inefficiency"),
+    "inefficiently": ("wastefully", "inefficiency"),
+    "labor input": ("work put in", "labor"),
+    "labour input": ("work put in", "labor"),
+    "unit of labor input": ("hour of work", "labor"),
+    "unit of labour input": ("hour of work", "labor"),
+    "unit of labor": ("hour of work", "labor"),
+    "unit of labour": ("hour of work", "labor"),
+    "the opportunity cost of": ("what you give up to get", "opportunity cost"),
+    "opportunity cost of": ("what you give up to get", "opportunity cost"),
     "highly inelastic": ("barely price-sensitive", "inelastic"),
     "relatively inelastic": ("not very price-sensitive", "inelastic"),
     "highly elastic": ("very price-sensitive", "elastic"),
@@ -818,6 +849,8 @@ class Engine:
                     rep = _pluralize(rep)
             before = text[:m.start()].rstrip()
             at_start = not before or before[-1] in ".!?:;\n\u2022-"
+            if not at_start and _preceded_by_determiner(before):
+                rep = re.sub(r"^(?:the|a|an) ", "", rep, flags=re.I)
             out = _match_case(rep, m.group(0), at_start)
             found.append(Found(m.group(0), out, term, m.start(), m.end()))
             return out
@@ -855,6 +888,8 @@ class Engine:
     def _tidy(s):
         s = re.sub(r"[ \t]{2,}", " ", s)
         s = re.sub(r"\s+([,.;:!?])", r"\1", s)
+        # "the curve (the curve)" -> "the curve"  (an acronym expanded to the same phrase)
+        s = re.sub(r"\b(.{3,80}?) \((?:the )?\1\)", r"\1", s, flags=re.I)
         # "the the", "a the", "an a" -> keep the first article
         s = re.sub(r"\b(the|a|an) (the|a|an) ", lambda m: m.group(1) + " ", s, flags=re.I)
         # "a interest rate" -> "an interest rate", "an shrinking" -> "a shrinking"

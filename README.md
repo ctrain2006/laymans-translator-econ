@@ -39,8 +39,23 @@ Needs only Python 3.10+ with Tkinter (included with the python.org installer). N
 |---|---|
 | `app.py` | the Tkinter window |
 | `engine.py` | matching, replacement, plural/article/capital handling, reading stats |
-| `glossary.py` | ~285 terms, each with a drop-in plain phrase, a meaning, an example, aliases |
+| `glossary.py` | ~285 general economics terms, each with a drop-in plain phrase, a meaning, an example, aliases |
+| `glossary_textbook.py` | ~130 key concepts from Mankiw's *Principles of Economics* (10th ed.) and the chapter 1–2 slides, same format |
 | `test_engine.py` | regression tests: `python3 test_engine.py` |
+
+## Textbook coverage
+
+Every key concept from Mankiw's *Principles of Microeconomics* / *Brief Principles of Macroeconomics*
+(10th edition) and the chapter 1 & 2 slide deck is covered, so a sentence pasted from the slides or the
+book comes back simplified with each concept explained. Example:
+
+> Points inside the PPF are inefficient; the opportunity cost of a car is highest when the economy is producing many cars.
+
+becomes
+
+> Points inside the most-you-can-make curve are wasteful; what you give up to get a car is highest when the economy is producing many cars.
+
+with "production possibilities frontier", "inefficiency" and "opportunity cost" each defined underneath.
 
 ## Adding a term
 

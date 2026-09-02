@@ -1,7 +1,6 @@
 """Quick regression tests: python3 test_engine.py"""
 import unittest
-from engine import Engine
-from glossary import TERMS
+from engine import Engine, TERMS
 
 
 class EngineTests(unittest.TestCase):
@@ -76,6 +75,19 @@ class EngineTests(unittest.TestCase):
         for t in TERMS:
             self.assertTrue(t.plain and t.meaning and t.example, t.term)
             self.assertNotIn("as", t.aliases)
+
+    def test_textbook_terms(self):
+        out = self.plain("Rational people think at the margin. Points inside the PPF are inefficient.")
+        self.assertIn("People who weigh costs and benefits", out)
+        self.assertIn("most-you-can-make curve", out)
+        self.assertIn("wasteful", out)
+        self.assertEqual(self.plain("The production possibilities frontier (PPF) shifts outward."),
+                         "The most-you-can-make curve shifts outward.")
+        self.assertEqual(self.plain("with the available factors of production"),
+                         "with the available basic ingredients for making things")
+        r = self.e.to_plain("Positive statements are descriptive.")
+        self.assertEqual(r.translated, "Claims about how things are are fact-based.")
+        self.assertEqual([t.term for t in r.terms], ["positive statement"])
 
     def test_empty(self):
         self.assertEqual(self.plain("   "), "")
