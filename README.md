@@ -7,11 +7,24 @@ One input box, one direction toggle, one output box.
 
 Any of these:
 
-- Double-click **Layman's Translator.app** in this folder. It opens with no Terminal window, and appears in Spotlight and the Dock.
-- Double-click **Layman's Translator.command**.
+- Double-click **Layman's Translator** in your `~/Applications` folder, or find
+  it in Spotlight. No Terminal window.
+- Double-click **Layman's Translator.command** in this folder.
 - Run `python3 app.py`.
 
-If the `.app` is missing, rebuild it with `bash scripts/make_mac_app.sh`.
+Build or rebuild the app with:
+
+```bash
+bash scripts/make_mac_app.sh          # installs to ~/Applications
+bash scripts/make_mac_app.sh --here   # builds next to the source instead
+```
+
+The bundle carries its own copy of the Python files, so **re-run that script
+after changing the source**. It has to work this way: macOS forbids an app
+bundle from reading files in `~/Desktop`, `~/Documents` and `~/Downloads`, so a
+bundle pointing back at source on the Desktop fails to start with "Operation not
+permitted". Startup errors are logged to
+`~/Library/Logs/laymans-translator.log`.
 
 Translation needs only Python 3.10+ with Tkinter, included with the python.org
 installer. No internet and no packages. Speech mode is the one online part.
