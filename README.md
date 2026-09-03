@@ -3,12 +3,18 @@
 A small offline desktop app that turns economics jargon into plain English, and back.
 One input box, one direction toggle, one output box.
 
-```
-python3 app.py
-```
-or double-click **Layman's Translator.command** in Finder.
+## Opening it
 
-Needs only Python 3.10+ with Tkinter (included with the python.org installer). No internet, no packages.
+Any of these:
+
+- Double-click **Layman's Translator.app** in this folder. It opens with no Terminal window, and appears in Spotlight and the Dock.
+- Double-click **Layman's Translator.command**.
+- Run `python3 app.py`.
+
+If the `.app` is missing, rebuild it with `bash scripts/make_mac_app.sh`.
+
+Translation needs only Python 3.10+ with Tkinter, included with the python.org
+installer. No internet and no packages. Speech mode is the one online part.
 
 ## What it does
 
@@ -22,11 +28,42 @@ Needs only Python 3.10+ with Tkinter (included with the python.org installer). N
 **PLAIN → ECON**. Describe an idea the way you'd say it to a friend
 ("prices keep going up", "the bank took their house") and get the proper term, with its definition.
 
+## Speech mode
+
+Talk to the app instead of typing. Click **🎙 Speech mode** (or press ⌘L) and it
+listens, works out what you said, translates it, and reads the plain-English
+version back with a couple of the terms behind it. It keeps listening after each
+answer, so you can just keep asking.
+
+Speech mode is the only part that goes online: your recording is sent to
+OpenAI's transcription API, so it needs an internet connection and an API key.
+The reply is spoken locally by the built-in macOS voice, so there is no wait for
+audio to download.
+
+**First run.** It will ask for an OpenAI API key and store it in
+`~/.laymans-translator/config.json` with owner-only permissions. It also reads
+`OPENAI_API_KEY` from the environment, which takes precedence. Recording needs
+the `sounddevice` package:
+
+```bash
+python3 -m pip install --user sounddevice numpy
+```
+
+macOS will also ask for microphone permission the first time. If the app reports
+that the microphone is returning silence, grant it in System Settings under
+Privacy & Security → Microphone.
+
+**While it is on:** the bar under the output box shows what it is doing, from
+listening to speaking. **Speak output** re-reads the current translation without
+listening first. **Stop** or Esc cuts the voice off mid-sentence. **Key…** changes
+the stored API key.
+
 ## Controls
 
 | Control | Does |
 |---|---|
 | `ECON → PLAIN` button | flips direction (also `⌘T` / `Ctrl+T`) |
+| 🎙 Speech mode | listen, translate, and speak the answer (also `⌘L`); Esc stops the voice |
 | Translate | runs the translation (also `⌘↩` / `Ctrl+Enter`) |
 | Live | re-translates as you type (on by default) |
 | Swap | moves the output sentence into the input and flips direction |
@@ -54,7 +91,9 @@ Typing works with no API key. Speech mode needs an OpenAI key.
 | `engine.py` | matching, replacement, plural/article/capital handling, reading stats |
 | `glossary.py` | ~285 general economics terms, each with a drop-in plain phrase, a meaning, an example, aliases |
 | `glossary_textbook.py` | ~130 key concepts from Mankiw's *Principles of Economics* (10th ed.) and the chapter 1–2 slides, same format |
+| `speech.py` | microphone recording, online transcription, spoken replies |
 | `test_engine.py` | regression tests: `python3 test_engine.py` |
+| `scripts/make_mac_app.sh` | builds the double-clickable `.app` |
 | `scripts/export_glossary.py` | exports the glossary to `realtime/lib/glossary.json` |
 | `realtime/` | the real-time voice tutor web app (Next.js) |
 

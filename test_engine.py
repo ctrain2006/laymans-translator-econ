@@ -1,5 +1,10 @@
 """Quick regression tests: python3 test_engine.py"""
+import os
+import tempfile
 import unittest
+from unittest import mock
+
+import speech
 from engine import Engine, TERMS
 
 
@@ -91,6 +96,65 @@ class EngineTests(unittest.TestCase):
 
     def test_empty(self):
         self.assertEqual(self.plain("   "), "")
+
+
+class SpeechHelperTests(unittest.TestCase):
+    """Speech helpers that need no microphone and no network."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.e = Engine()
+
+    def test_spoken_summary_reads_naturally(self):
+        r = self.e.to_plain("Inflation rose while unemployment fell.")
+        said = speech.spoken_summary(r, "plain")
+        self.assertTrue(said.startswith("In plain English: "))
+        self.assertIn("rising prices", said)
+        self.assertIn("inflation means rising prices", said)
+        self.assertNotIn("..", said)
+
+    def test_spoken_summary_handles_keep_terms(self):
+        # A "keep" term stays in the sentence but is still explained aloud.
+        r = self.e.to_plain("Demand rose.")
+        said = speech.spoken_summary(r, "plain")
+        self.assertIn("In plain English: Demand rose.", said)
+        self.assertIn("demand means how much people want to buy", said.lower())
+
+    def test_spoken_summary_avoids_saying_a_word_means_itself(self):
+        # "economics" is its own plain phrase, so it must not say
+        # "economics means economics".
+        r = self.e.to_plain("Economics is about scarcity.")
+        said = speech.spoken_summary(r, "plain")
+        self.assertNotIn("economics means economics", said.lower())
+        self.assertIn("economics. the study of", said.lower())
+
+    def test_spoken_summary_empty(self):
+        self.assertEqual(speech.spoken_summary(None, "plain"), "")
+        self.assertEqual(speech.spoken_summary(self.e.to_plain(""), "plain"), "")
+
+    def test_fatal_flag(self):
+        self.assertFalse(speech.SpeechError("try again").fatal)
+        self.assertTrue(speech.SpeechError("no mic", fatal=True).fatal)
+
+    def test_config_roundtrip(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = os.path.join(d, "config.json")
+            with mock.patch.object(speech, "CONFIG_PATH", path), \
+                 mock.patch.object(speech, "CONFIG_DIR", d), \
+                 mock.patch.dict(os.environ, {}, clear=True):
+                self.assertIsNone(speech.get_api_key())
+                speech.save_api_key("  sk-abc123  ")
+                self.assertEqual(speech.get_api_key(), "sk-abc123")
+                self.assertEqual(oct(os.stat(path).st_mode)[-3:], "600")
+
+    def test_env_key_wins(self):
+        with mock.patch.dict(os.environ, {"OPENAI_API_KEY": "sk-from-env"}):
+            self.assertEqual(speech.get_api_key(), "sk-from-env")
+
+    def test_wav_header(self):
+        wav = speech._to_wav(b"\x00\x01" * 800)
+        self.assertTrue(wav.startswith(b"RIFF"))
+        self.assertIn(b"WAVE", wav[:16])
 
 
 if __name__ == "__main__":

@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
 Layman's Translator - a small desktop window that turns economics jargon into
-plain English (and back). Input box, direction toggle, output box.
+plain English (and back). Input box, direction toggle, output box, and an
+optional speech mode you can talk to.
 
 Run:  python3 app.py
 Keys: Cmd/Ctrl+Return = translate   Cmd/Ctrl+T = flip direction
+      Cmd/Ctrl+L = speech mode      Esc = stop talking
 """
 
+import queue
 import sys
+import threading
 import tkinter as tk
-from tkinter import ttk, font as tkfont
+from tkinter import ttk, font as tkfont, simpledialog, messagebox
 
+import speech
 from engine import Engine, format_result, TERMS
 
 MAC = sys.platform == "darwin"
@@ -45,6 +50,16 @@ class App(tk.Tk):
         self.live = tk.BooleanVar(value=True)
         self._pending = None
         self._placeholder_on = False
+
+        # Speech mode. All audio work happens on a worker thread; it talks back
+        # to the UI through this queue, which the Tk main loop drains.
+        self.speech_on = False
+        self._speech_thread = None
+        self._recorder = None
+        self._speaker = speech.Speaker()
+        self._ui_q: queue.Queue = queue.Queue()
+        self._speech_stop = threading.Event()
+        self.after(80, self._drain_ui_queue)
 
         self._fonts()
         self._build()
@@ -98,8 +113,22 @@ class App(tk.Tk):
         ttk.Checkbutton(bar, text="Live", variable=self.live, command=self._live_changed).grid(
             row=0, column=1, padx=(10, 0))
         ttk.Button(bar, text="Swap ↕", command=self.swap, width=7).grid(row=0, column=2, padx=(10, 0))
+        self.btn_speech = ttk.Button(bar, text="🎙 Speech mode", command=self.toggle_speech, width=15)
+        self.btn_speech.grid(row=0, column=3, padx=(10, 0), sticky="w")
         ttk.Button(bar, text="Copy", command=self.copy, width=6).grid(row=0, column=4, padx=(0, 6))
         ttk.Button(bar, text="Clear", command=self.clear, width=6).grid(row=0, column=5)
+
+        # -- speech bar: only visible while speech mode is on
+        self.speech_bar = ttk.Frame(self)
+        self.speech_bar.columnconfigure(2, weight=1)
+        self.lbl_mic = ttk.Label(self.speech_bar, text="", font=self.f_bold, foreground="#1f5fa8")
+        self.lbl_mic.grid(row=0, column=0, sticky="w")
+        ttk.Button(self.speech_bar, text="Speak output", command=self.speak_output, width=13).grid(
+            row=0, column=3, padx=(8, 0))
+        ttk.Button(self.speech_bar, text="Stop", command=self.stop_speaking, width=6).grid(
+            row=0, column=4, padx=(6, 0))
+        ttk.Button(self.speech_bar, text="Key…", command=self.set_api_key, width=6).grid(
+            row=0, column=5, padx=(6, 0))
 
         # -- output
         self.lbl_out = ttk.Label(self, text=LABELS["plain"][2], font=self.f_head, foreground="#555")
@@ -131,12 +160,14 @@ class App(tk.Tk):
 
         # -- status
         self.status = ttk.Label(self, text="", foreground="#777", font=self.f_dim, anchor="w")
-        self.status.grid(row=6, column=0, sticky="ew", pady=(6, 10), **pad)
+        self.status.grid(row=8, column=0, sticky="ew", pady=(6, 10), **pad)
 
     def _bind_keys(self):
         for seq in (f"<{MOD}-Return>", f"<{MOD}-KP_Enter>"):
             self.bind_all(seq, lambda e: (self.translate(), "break")[1])
         self.bind_all(f"<{MOD}-t>", lambda e: (self.toggle(), "break")[1])
+        self.bind_all(f"<{MOD}-l>", lambda e: (self.toggle_speech(), "break")[1])
+        self.bind_all("<Escape>", lambda e: (self.stop_speaking(), "break")[1])
         self.txt_in.bind("<KeyRelease>", self._on_key)
         self.txt_in.bind("<FocusIn>", self._clear_placeholder)
         self.txt_in.bind("<FocusOut>", lambda e: self._set_placeholder())
@@ -215,7 +246,7 @@ class App(tk.Tk):
         if not text.strip():
             self._render([])
             self._status("Nothing to translate yet.")
-            return
+            return None
         if self.direction == "plain":
             r = self.engine.to_plain(text)
         else:
@@ -228,6 +259,175 @@ class App(tk.Tk):
         if self.direction == "plain" and r.hard_before:
             extra = f"   ·   hard words {r.hard_before} → {r.hard_after}"
         self._status(f"{n} {what}{extra}")
+        return r
+
+    # ------------------------------------------------------------ speech
+    def toggle_speech(self):
+        """Turn the listen-translate-speak loop on or off."""
+        if self.speech_on:
+            self._end_speech("Speech mode off.")
+            return
+
+        ok, why = speech.audio_available()
+        if not ok:
+            messagebox.showerror("Speech mode", why)
+            return
+        if not speech.get_api_key():
+            if not self.set_api_key(first_run=True):
+                return
+
+        self.speech_on = True
+        self._speech_stop.clear()
+        self.btn_speech.configure(text="🎙 Speech: ON")
+        self.speech_bar.grid(row=6, column=0, sticky="ew", padx=12, pady=(8, 0))
+        self._speech_thread = threading.Thread(target=self._speech_loop, daemon=True)
+        self._speech_thread.start()
+
+    def _end_speech(self, message):
+        self.speech_on = False
+        self._speech_stop.set()
+        if self._recorder:
+            self._recorder.cancel()
+        self._speaker.stop()
+        self.btn_speech.configure(text="🎙 Speech mode")
+        self.speech_bar.grid_remove()
+        self.lbl_mic.configure(text="")
+        self._status(message)
+
+    def _speech_loop(self):
+        """
+        Worker thread: listen, transcribe, hand the text to the UI, wait for the
+        spoken reply to finish, then listen again. Never touches Tk directly.
+        """
+        post = self._ui_q.put
+        first = True
+        while not self._speech_stop.is_set():
+            try:
+                key = speech.get_api_key()
+                if not key:
+                    post(("error", "No API key set. Use the Key… button."))
+                    break
+
+                if first:
+                    post(("mic", "Speech mode on. Say an economics term or sentence."))
+                    first = False
+
+                self._recorder = speech.Recorder(
+                    on_state=lambda st: post(("mic", {
+                        "calibrating": "Getting a feel for the room…",
+                        "waiting": "Listening… go ahead.",
+                        "recording": "Hearing you…",
+                    }.get(st, st)))
+                )
+                wav = self._recorder.record()
+                if self._speech_stop.is_set():
+                    break
+
+                post(("mic", "Working out what you said…"))
+                text = speech.transcribe(wav, key)
+                if self._speech_stop.is_set():
+                    break
+                if not text:
+                    post(("mic", "I didn't catch that. Try again."))
+                    continue
+
+                # Hand the transcript to the UI, which translates and tells us
+                # what to read back.
+                done = threading.Event()
+                box: dict = {}
+                post(("heard", (text, box, done)))
+                done.wait(timeout=10)
+                if self._speech_stop.is_set():
+                    break
+
+                reply = box.get("say", "")
+                if reply:
+                    post(("mic", "Speaking… (Esc to stop)"))
+                    self._speaker.say(reply)
+
+            except speech.SpeechError as err:
+                if str(err) == "cancelled" or self._speech_stop.is_set():
+                    break
+                if getattr(err, "fatal", False):
+                    post(("error", str(err)))
+                    break
+                # Recoverable: say so briefly and listen again.
+                post(("mic", str(err)))
+            except Exception as err:                      # never kill the thread silently
+                post(("error", f"Speech mode stopped: {err}"))
+                break
+
+        post(("ended", None))
+
+    def _drain_ui_queue(self):
+        """Runs on the Tk thread; applies whatever the worker posted."""
+        try:
+            while True:
+                kind, payload = self._ui_q.get_nowait()
+
+                if kind == "mic":
+                    self.lbl_mic.configure(text=payload)
+
+                elif kind == "heard":
+                    text, box, done = payload
+                    self._clear_placeholder()
+                    self.txt_in.delete("1.0", "end")
+                    self.txt_in.insert("1.0", text)
+                    result = self.translate()
+                    box["say"] = speech.spoken_summary(result, self.direction)
+                    done.set()
+
+                elif kind == "error":
+                    self._end_speech("Speech mode off.")
+                    messagebox.showerror("Speech mode", payload)
+
+                elif kind == "ended":
+                    if self.speech_on:
+                        self._end_speech("Speech mode off.")
+        except queue.Empty:
+            pass
+        finally:
+            self.after(80, self._drain_ui_queue)
+
+    def speak_output(self):
+        """Read the current translation aloud, without listening first."""
+        text = self._input()
+        if not text.strip():
+            self._status("Nothing to read out yet.")
+            return
+        result = (self.engine.to_plain(text) if self.direction == "plain"
+                  else self.engine.to_econ(text))
+        line = speech.spoken_summary(result, self.direction)
+        if not line:
+            return
+        self.lbl_mic.configure(text="Speaking… (Esc to stop)")
+        threading.Thread(target=self._speaker.say, args=(line,), daemon=True).start()
+
+    def stop_speaking(self):
+        self._speaker.stop()
+        if self.speech_on:
+            self.lbl_mic.configure(text="Listening… go ahead.")
+
+    def set_api_key(self, first_run=False):
+        """Ask for an OpenAI key and store it in ~/.laymans-translator/config.json."""
+        prompt = ("Speech mode sends your recording to OpenAI to turn it into text,\n"
+                  "so it needs an API key and an internet connection.\n\n"
+                  "Paste your OpenAI API key:")
+        key = simpledialog.askstring("OpenAI API key", prompt, parent=self, show="•")
+        if not key or not key.strip():
+            if first_run:
+                self._status("Speech mode needs an API key.")
+            return False
+        speech.save_api_key(key)
+        self._status("API key saved to ~/.laymans-translator/config.json")
+        return True
+
+    def destroy(self):
+        self._speech_stop.set()
+        if self._recorder:
+            self._recorder.cancel()
+        self._speaker.stop()
+        super().destroy()
 
     # --------------------------------------------------------- internals
     def _on_key(self, event):
