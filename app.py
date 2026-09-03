@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """
-Layman's Translator - a small desktop window that turns economics jargon into
-plain English (and back). Input box, direction toggle, output box, and an
-optional speech mode you can talk to.
+Layman's Translator - a small desktop window over one economics glossary, with
+two separate operations built on it.
+
+  1. The translator. Text in, plain English out (or the other way round).
+     Input box, direction toggle, output box, "Read aloud".
+
+  2. The spoken tutor. Cmd/Ctrl+L. Ask about a term out loud and it explains
+     the term out loud, in its own panel.
+
+They share the glossary and nothing else. The tutor does not write into the
+translator's boxes and does not read the direction toggle, which is what keeps
+it from answering a spoken sentence by reciting that same sentence back. See
+voice.py for the reasoning.
 
 Run:  python3 app.py
 Keys: Cmd/Ctrl+Return = translate   Cmd/Ctrl+T = flip direction
@@ -16,6 +26,7 @@ import tkinter as tk
 from tkinter import ttk, font as tkfont, simpledialog, messagebox
 
 import speech
+import voice
 from engine import Engine, format_result, TERMS
 
 MAC = sys.platform == "darwin"
@@ -43,7 +54,7 @@ class App(tk.Tk):
         super().__init__()
         self.title("Layman's Translator")
         self.geometry("740x640")
-        self.minsize(540, 460)
+        self.minsize(620, 460)
 
         self.engine = Engine()
         self.direction = "plain"            # "plain": Econ -> Plain, "econ": Plain -> Econ
@@ -51,14 +62,21 @@ class App(tk.Tk):
         self._pending = None
         self._placeholder_on = False
 
-        # Speech mode. All audio work happens on a worker thread; it talks back
-        # to the UI through this queue, which the Tk main loop drains.
+        # Speech is the app's other operation, not a microphone bolted onto the
+        # translator: it owns its own panel, its own thread and its own answers,
+        # and shares only the glossary. All of its audio work happens off the Tk
+        # thread and reports back through this queue, which the main loop drains.
         self.speech_on = False
-        self._speech_thread = None
-        self._recorder = None
-        self._speaker = speech.Speaker()
         self._ui_q: queue.Queue = queue.Queue()
-        self._speech_stop = threading.Event()
+        self._speaker = speech.Speaker()          # one voice, both operations
+        self._voice = voice.VoiceSession(
+            self.engine,
+            speaker=self._speaker,
+            on_state=lambda text: self._ui_q.put(("mic", text)),
+            on_reply=lambda reply: self._ui_q.put(("reply", reply)),
+            on_error=lambda msg, fatal: self._ui_q.put(("error", msg)),
+            on_end=lambda: self._ui_q.put(("ended", None)),
+        )
         self.after(80, self._drain_ui_queue)
 
         self._fonts()
@@ -108,27 +126,59 @@ class App(tk.Tk):
         # -- control bar
         bar = ttk.Frame(self)
         bar.grid(row=3, column=0, sticky="ew", pady=8, **pad)
-        bar.columnconfigure(3, weight=1)
+        bar.columnconfigure(4, weight=1)
         ttk.Button(bar, text=f"Translate  {MOD_LABEL}↩", command=self.translate).grid(row=0, column=0)
         ttk.Checkbutton(bar, text="Live", variable=self.live, command=self._live_changed).grid(
             row=0, column=1, padx=(10, 0))
         ttk.Button(bar, text="Swap ↕", command=self.swap, width=7).grid(row=0, column=2, padx=(10, 0))
+        ttk.Button(bar, text="🔊 Read aloud", command=self.read_aloud, width=13).grid(
+            row=0, column=3, padx=(10, 0))
         self.btn_speech = ttk.Button(bar, text="🎙 Speech mode", command=self.toggle_speech, width=15)
-        self.btn_speech.grid(row=0, column=3, padx=(10, 0), sticky="w")
-        ttk.Button(bar, text="Copy", command=self.copy, width=6).grid(row=0, column=4, padx=(0, 6))
-        ttk.Button(bar, text="Clear", command=self.clear, width=6).grid(row=0, column=5)
+        self.btn_speech.grid(row=0, column=4, padx=(10, 0), sticky="w")
+        ttk.Button(bar, text="Copy", command=self.copy, width=6).grid(row=0, column=5, padx=(0, 6))
+        ttk.Button(bar, text="Clear", command=self.clear, width=6).grid(row=0, column=6)
 
-        # -- speech bar: only visible while speech mode is on
-        self.speech_bar = ttk.Frame(self)
-        self.speech_bar.columnconfigure(2, weight=1)
-        self.lbl_mic = ttk.Label(self.speech_bar, text="", font=self.f_bold, foreground="#1f5fa8")
+        # -- speech panel: the other operation, hidden until it is switched on.
+        # It carries its own transcript, so nothing you say ever lands in the
+        # translator's boxes. What you said is shown here in grey because it is
+        # context for the answer, not the answer.
+        self.speech_panel = ttk.Frame(self)
+        self.speech_panel.columnconfigure(0, weight=1)
+        self.speech_panel.rowconfigure(1, weight=1)
+
+        talk_head = ttk.Frame(self.speech_panel)
+        talk_head.grid(row=0, column=0, sticky="ew")
+        talk_head.columnconfigure(1, weight=1)
+        self.lbl_mic = ttk.Label(talk_head, text="", font=self.f_bold, foreground="#1f5fa8")
         self.lbl_mic.grid(row=0, column=0, sticky="w")
-        ttk.Button(self.speech_bar, text="Speak output", command=self.speak_output, width=13).grid(
-            row=0, column=3, padx=(8, 0))
-        ttk.Button(self.speech_bar, text="Stop", command=self.stop_speaking, width=6).grid(
+        ttk.Button(talk_head, text="Stop", command=self.stop_speaking, width=6).grid(
+            row=0, column=2, padx=(6, 0))
+        ttk.Button(talk_head, text="Clear", command=self.clear_talk, width=6).grid(
+            row=0, column=3, padx=(6, 0))
+        ttk.Button(talk_head, text="Key…", command=self.set_api_key, width=6).grid(
             row=0, column=4, padx=(6, 0))
-        ttk.Button(self.speech_bar, text="Key…", command=self.set_api_key, width=6).grid(
-            row=0, column=5, padx=(6, 0))
+
+        talk_frame = ttk.Frame(self.speech_panel)
+        talk_frame.grid(row=1, column=0, sticky="nsew", pady=(4, 0))
+        talk_frame.columnconfigure(0, weight=1)
+        talk_frame.rowconfigure(0, weight=1)
+        self.txt_talk = tk.Text(talk_frame, height=7, wrap="word", font=self.f_body,
+                                padx=10, pady=8, relief="flat", highlightthickness=1,
+                                highlightbackground="#c8c8c8", background="#f4f7fb",
+                                cursor="arrow", spacing1=1, spacing3=1)
+        self.txt_talk.grid(row=0, column=0, sticky="nsew")
+        sb_talk = ttk.Scrollbar(talk_frame, command=self.txt_talk.yview)
+        sb_talk.grid(row=0, column=1, sticky="ns")
+        self.txt_talk.configure(yscrollcommand=sb_talk.set)
+        for tag, opts in {
+            "you_lbl":   dict(font=self.f_head, foreground="#999"),
+            "you":       dict(font=self.f_dim_i, foreground="#666"),
+            "tutor_lbl": dict(font=self.f_head, foreground="#1f5fa8"),
+            "tutor":     dict(font=self.f_body, spacing3=6),
+            "sys":       dict(font=self.f_dim, foreground="#888"),
+        }.items():
+            self.txt_talk.tag_configure(tag, **opts)
+        self.txt_talk.configure(state="disabled")
 
         # -- output
         self.lbl_out = ttk.Label(self, text=LABELS["plain"][2], font=self.f_head, foreground="#555")
@@ -262,8 +312,12 @@ class App(tk.Tk):
         return r
 
     # ------------------------------------------------------------ speech
+    # The second operation. It shares the glossary with the translator and
+    # nothing else: no shared boxes, no shared direction toggle, and no path by
+    # which a spoken sentence ends up being read back to you.
+
     def toggle_speech(self):
-        """Turn the listen-translate-speak loop on or off."""
+        """Enter or leave the spoken conversation."""
         if self.speech_on:
             self._end_speech("Speech mode off.")
             return
@@ -272,95 +326,44 @@ class App(tk.Tk):
         if not ok:
             messagebox.showerror("Speech mode", why)
             return
-        if not speech.get_api_key():
-            if not self.set_api_key(first_run=True):
-                return
+        if not speech.get_api_key() and not self.set_api_key(first_run=True):
+            return
 
         self.speech_on = True
-        self._speech_stop.clear()
         self.btn_speech.configure(text="🎙 Speech: ON")
-        self.speech_bar.grid(row=6, column=0, sticky="ew", padx=12, pady=(8, 0))
-        self._speech_thread = threading.Thread(target=self._speech_loop, daemon=True)
-        self._speech_thread.start()
+        self.speech_panel.grid(row=6, column=0, sticky="nsew", padx=12, pady=(10, 0))
+        self.rowconfigure(6, weight=3)
+        self._talk("Ask about a term out loud — “what does opportunity cost mean?”", "sys")
+        self._voice.start()
 
     def _end_speech(self, message):
         self.speech_on = False
-        self._speech_stop.set()
-        if self._recorder:
-            self._recorder.cancel()
-        self._speaker.stop()
+        self._voice.stop()
         self.btn_speech.configure(text="🎙 Speech mode")
-        self.speech_bar.grid_remove()
+        self.speech_panel.grid_remove()
+        self.rowconfigure(6, weight=0)
         self.lbl_mic.configure(text="")
         self._status(message)
 
-    def _speech_loop(self):
-        """
-        Worker thread: listen, transcribe, hand the text to the UI, wait for the
-        spoken reply to finish, then listen again. Never touches Tk directly.
-        """
-        post = self._ui_q.put
-        first = True
-        while not self._speech_stop.is_set():
-            try:
-                key = speech.get_api_key()
-                if not key:
-                    post(("error", "No API key set. Use the Key… button."))
-                    break
+    def _talk(self, text, who):
+        """Add one line to the conversation. Display only - nothing here is spoken."""
+        prefix = {"you": "YOU  ", "tutor": "TUTOR  ", "sys": ""}[who]
+        self.txt_talk.configure(state="normal")
+        if self.txt_talk.get("1.0", "end-1c").strip():
+            self.txt_talk.insert("end", "\n")
+        if prefix:
+            self.txt_talk.insert("end", prefix, who + "_lbl")
+        self.txt_talk.insert("end", text + "\n", who)
+        self.txt_talk.see("end")
+        self.txt_talk.configure(state="disabled")
 
-                if first:
-                    post(("mic", "Speech mode on. Say an economics term or sentence."))
-                    first = False
-
-                self._recorder = speech.Recorder(
-                    on_state=lambda st: post(("mic", {
-                        "calibrating": "Getting a feel for the room…",
-                        "waiting": "Listening… go ahead.",
-                        "recording": "Hearing you…",
-                    }.get(st, st)))
-                )
-                wav = self._recorder.record()
-                if self._speech_stop.is_set():
-                    break
-
-                post(("mic", "Working out what you said…"))
-                text = speech.transcribe(wav, key)
-                if self._speech_stop.is_set():
-                    break
-                if not text:
-                    post(("mic", "I didn't catch that. Try again."))
-                    continue
-
-                # Hand the transcript to the UI, which translates and tells us
-                # what to read back.
-                done = threading.Event()
-                box: dict = {}
-                post(("heard", (text, box, done)))
-                done.wait(timeout=10)
-                if self._speech_stop.is_set():
-                    break
-
-                reply = box.get("say", "")
-                if reply:
-                    post(("mic", "Speaking… (Esc to stop)"))
-                    self._speaker.say(reply)
-
-            except speech.SpeechError as err:
-                if str(err) == "cancelled" or self._speech_stop.is_set():
-                    break
-                if getattr(err, "fatal", False):
-                    post(("error", str(err)))
-                    break
-                # Recoverable: say so briefly and listen again.
-                post(("mic", str(err)))
-            except Exception as err:                      # never kill the thread silently
-                post(("error", f"Speech mode stopped: {err}"))
-                break
-
-        post(("ended", None))
+    def clear_talk(self):
+        self.txt_talk.configure(state="normal")
+        self.txt_talk.delete("1.0", "end")
+        self.txt_talk.configure(state="disabled")
 
     def _drain_ui_queue(self):
-        """Runs on the Tk thread; applies whatever the worker posted."""
+        """Runs on the Tk thread; applies whatever the voice session posted."""
         try:
             while True:
                 kind, payload = self._ui_q.get_nowait()
@@ -368,14 +371,13 @@ class App(tk.Tk):
                 if kind == "mic":
                     self.lbl_mic.configure(text=payload)
 
-                elif kind == "heard":
-                    text, box, done = payload
-                    self._clear_placeholder()
-                    self.txt_in.delete("1.0", "end")
-                    self.txt_in.insert("1.0", text)
-                    result = self.translate()
-                    box["say"] = speech.spoken_answer(result, self.direction, asked=text)
-                    done.set()
+                elif kind == "reply":
+                    # Show what was heard, speak only the answer. The translator's
+                    # input and output are deliberately left untouched.
+                    if payload.heard:
+                        self._talk(payload.heard, "you")
+                    if payload.speech:
+                        self._talk(payload.speech, "tutor")
 
                 elif kind == "error":
                     self._end_speech("Speech mode off.")
@@ -389,19 +391,26 @@ class App(tk.Tk):
         finally:
             self.after(80, self._drain_ui_queue)
 
-    def speak_output(self):
-        """Read the current translation aloud, without listening first."""
+    # -------------------------------------------------- translator's voice
+    def read_aloud(self):
+        """
+        Read the translation out loud.
+
+        This one belongs to the translator: it is the output box spoken instead
+        of shown, so reading your own words back is exactly the point. The
+        spoken conversation above never does this.
+        """
         text = self._input()
         if not text.strip():
             self._status("Nothing to read out yet.")
             return
         result = (self.engine.to_plain(text) if self.direction == "plain"
                   else self.engine.to_econ(text))
-        line = speech.spoken_answer(result, self.direction, asked=text)
-        if not line:
+        if not result.translated.strip():
             return
-        self.lbl_mic.configure(text="Speaking… (Esc to stop)")
-        threading.Thread(target=self._speaker.say, args=(line,), daemon=True).start()
+        self._status("Reading the translation aloud… (Esc to stop)")
+        threading.Thread(target=self._speaker.say, args=(result.translated,),
+                         daemon=True).start()
 
     def stop_speaking(self):
         self._speaker.stop()
@@ -423,9 +432,7 @@ class App(tk.Tk):
         return True
 
     def destroy(self):
-        self._speech_stop.set()
-        if self._recorder:
-            self._recorder.cancel()
+        self._voice.stop()
         self._speaker.stop()
         super().destroy()
 

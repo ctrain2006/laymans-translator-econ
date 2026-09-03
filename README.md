@@ -43,16 +43,37 @@ installer. No internet and no packages. Speech mode is the one online part.
 
 ## Speech mode
 
-Talk to the app instead of typing. Click **🎙 Speech mode** (or press ⌘L) and it
-listens, works out what you said, and answers out loud. It keeps listening after
-each answer, so you can just keep asking.
+Speech mode is a **separate operation**, not a microphone attached to the
+translator. The translator rewrites text you hand it. Speech mode holds a
+conversation: you ask about a term out loud, it explains the term out loud.
 
-It responds to how you speak:
+The difference matters. Read a sentence from a slide to the translator and you
+get that same sentence with the words swapped, which is exactly what a
+translator is for. Say it out loud and getting it recited back at you is
+useless — so instead you get the terms in it explained:
+
+> **You:** "The Federal Reserve raised rates to curb inflation."
+> **Tutor:** "Federal reserve means the Fed. America's central bank. It sets the
+> key interest rate… Inflation means rising prices…"
+
+Click **🎙 Speech mode** (or press ⌘L) and a conversation panel opens below the
+translator. It keeps listening after each answer, so you can just keep asking.
 
 - **Ask a question** ("what does quantitative easing mean?") and you get the
-  definition and an everyday example, not a clumsy word-swap of your question.
-- **Read out a sentence** from a slide or article and you get the plain-English
-  translation, then the terms behind it.
+  definition and an everyday example.
+- **Ask it the other way round** ("what's the word for when prices keep going
+  up?") and you get the term.
+- **Ask for a rewrite explicitly** ("put that in plain English: …") and it does
+  read your words back, rewritten — because that time you asked for it.
+
+The conversation panel is the tutor's own. Nothing you say is written into the
+translator's boxes, and the `ECON → PLAIN` toggle has no effect on a spoken
+answer. To hear the *translator's* output instead, use **🔊 Read aloud**.
+
+It picks a microphone that is actually delivering sound. Bluetooth headphones
+connected for playback only (AirPods playing audio) are the system's default
+input while returning nothing but silence, so it probes and falls back to one
+that hears you.
 
 Speech mode is the only part that goes online: your recording is sent to
 OpenAI's transcription API, so it needs an internet connection and an API key.
@@ -86,7 +107,8 @@ the stored API key.
 | Control | Does |
 |---|---|
 | `ECON → PLAIN` button | flips direction (also `⌘T` / `Ctrl+T`) |
-| 🎙 Speech mode | listen, translate, and speak the answer (also `⌘L`); Esc stops the voice |
+| 🔊 Read aloud | speaks the translator's output |
+| 🎙 Speech mode | opens the spoken tutor (also `⌘L`); Esc stops the voice |
 | Translate | runs the translation (also `⌘↩` / `Ctrl+Enter`) |
 | Live | re-translates as you type (on by default) |
 | Swap | moves the output sentence into the input and flips direction |
@@ -114,7 +136,8 @@ Typing works with no API key. Speech mode needs an OpenAI key.
 | `engine.py` | matching, replacement, plural/article/capital handling, reading stats |
 | `glossary.py` | ~285 general economics terms, each with a drop-in plain phrase, a meaning, an example, aliases |
 | `glossary_textbook.py` | ~130 key concepts from Mankiw's *Principles of Economics* (10th ed.) and the chapter 1–2 slides, same format |
-| `speech.py` | microphone recording, online transcription, spoken replies |
+| `speech.py` | audio device layer: picking a microphone, recording, transcription, the voice |
+| `voice.py` | the spoken tutor: what to say back, and the listen→answer→speak loop |
 | `test_engine.py` | regression tests: `python3 test_engine.py` |
 | `scripts/make_mac_app.sh` | builds the double-clickable `.app` |
 | `scripts/export_glossary.py` | exports the glossary to `realtime/lib/glossary.json` |

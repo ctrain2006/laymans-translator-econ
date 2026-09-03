@@ -18,7 +18,6 @@ from __future__ import annotations
 import io
 import json
 import os
-import re
 import ssl
 import shutil
 import subprocess
@@ -119,6 +118,83 @@ def audio_available() -> tuple[bool, str]:
     return True, ""
 
 
+# --------------------------------------------------------- input devices
+
+def input_devices() -> list:
+    """Every device that can capture, as (index, name)."""
+    import sounddevice as sd
+    return [(i, d["name"]) for i, d in enumerate(sd.query_devices())
+            if d["max_input_channels"] > 0]
+
+
+def _peak(device, seconds=0.25) -> int:
+    """Loudest sample a device gives us in a short listen. -1 if it won't open."""
+    import sounddevice as sd
+    try:
+        stream = sd.InputStream(device=device, samplerate=SAMPLE_RATE, channels=1,
+                                dtype="int16", blocksize=int(SAMPLE_RATE * 0.05))
+        with stream:
+            buf, _ = stream.read(int(SAMPLE_RATE * seconds))
+        return int(abs(buf).max())
+    except Exception:
+        return -1
+
+
+def _all_silent_message(tried: list) -> str:
+    names = ", ".join(name for name, _ in tried) or "none"
+    if all(peak < 0 for _, peak in tried):
+        return (f"No microphone would open (tried: {names}). Another app may be "
+                "holding the microphone; quit it and try again.")
+    return (
+        f"Every microphone returned pure silence (tried: {names}).\n\n"
+        "Two things cause that, and neither one looks like an error:\n\n"
+        "  \u2022 Bluetooth headphones connected for playback only. AirPods expose a\n"
+        "    microphone only in hands-free mode, so while they are playing audio\n"
+        "    their input is a stream of zeros. Switch the input to the built-in\n"
+        "    microphone under System Settings > Sound > Input.\n\n"
+        "  \u2022 Microphone permission. macOS gives a blocked app silence rather than\n"
+        "    refusing it. Enable this app under System Settings > Privacy &\n"
+        "    Security > Microphone \u2014 launched from the .app it asks as \u201cPython\u201d,\n"
+        "    launched from Terminal it asks as \u201cTerminal\u201d."
+    )
+
+
+def pick_input_device():
+    """
+    Choose a microphone that is actually delivering sound, and say which.
+
+    The system default is not good enough on its own: a Bluetooth headset in
+    playback mode is the default input and records perfect silence, so the
+    recording succeeds and the transcription comes back empty. Probe first,
+    prefer the default when it works, and fall back to whatever does.
+
+    Returns (device_index, name). Raises a fatal SpeechError if nothing hears.
+    """
+    import sounddevice as sd
+
+    devices = input_devices()
+    if not devices:
+        raise SpeechError("No microphone is connected.", fatal=True)
+
+    by_index = dict(devices)
+    try:
+        default = sd.default.device[0]
+    except Exception:
+        default = None
+
+    order = ([(default, by_index[default])] if default in by_index else [])
+    order += [(i, n) for i, n in devices if i != default]
+
+    tried = []
+    for index, name in order:
+        peak = _peak(index)
+        if peak > 0:
+            return index, name
+        tried.append((name, peak))
+
+    raise SpeechError(_all_silent_message(tried), fatal=True)
+
+
 # -------------------------------------------------------------- recording
 
 class Recorder:
@@ -128,13 +204,24 @@ class Recorder:
     it works in a quiet room and a noisy cafe.
     """
 
-    def __init__(self, on_state=None):
+    def __init__(self, on_state=None, device=None):
         # on_state(str) is called with "calibrating" / "waiting" / "recording".
+        # device=None follows the system default; pick_input_device() gives you
+        # one that is known to be delivering sound.
         self.on_state = on_state or (lambda _s: None)
+        self.device = device
         self._cancel = threading.Event()
 
     def cancel(self) -> None:
         self._cancel.set()
+
+    def _name(self) -> str:
+        try:
+            import sounddevice as sd
+            return sd.query_devices(self.device if self.device is not None else
+                                    sd.default.device[0])["name"]
+        except Exception:
+            return "the default microphone"
 
     def record(self, max_seconds=30.0, silence_seconds=1.3, wait_seconds=12.0) -> bytes:
         """Record until silence and return 16-bit mono WAV bytes."""
@@ -151,8 +238,8 @@ class Recorder:
             return float((a * a).mean() ** 0.5)
 
         try:
-            stream = sd.InputStream(samplerate=SAMPLE_RATE, channels=1,
-                                    dtype="int16", blocksize=block)
+            stream = sd.InputStream(device=self.device, samplerate=SAMPLE_RATE,
+                                    channels=1, dtype="int16", blocksize=block)
         except Exception as err:                  # no device, in use, etc.
             raise SpeechError(f"Could not open the microphone: {err}", fatal=True) from err
 
@@ -173,12 +260,7 @@ class Recorder:
             stop_level = max(floor * 2.0, 150.0)
 
             if not heard_anything and max(ambient) == 0:
-                raise SpeechError(
-                    "The microphone returned silence. macOS may be blocking it: open\n"
-                    "System Settings > Privacy & Security > Microphone and enable it\n"
-                    "for Terminal (or whichever app launched this), then try again.",
-                    fatal=True,
-                )
+                raise SpeechError(_all_silent_message([(self._name(), 0)]), fatal=True)
 
             # 2) Wait for speech to start.
             self.on_state("waiting")
@@ -380,76 +462,6 @@ class Speaker:
                 pass
 
 
-# ------------------------------------------------------- spoken summaries
-
-QUESTION_START = re.compile(
-    r"^\s*(?:what|what's|whats|who|who's|how|why|when|where|which|explain|define|"
-    r"describe|tell me|can you|could you|i don't (?:get|understand)|"
-    r"help me understand|meaning of|definition of)\b",
-    re.I,
-)
-
-
-def looks_like_question(text: str) -> bool:
-    """Did the person ask about a term, rather than hand over text to translate?"""
-    t = (text or "").strip()
-    if not t:
-        return False
-    return bool(QUESTION_START.match(t)) or t.endswith("?")
-
-
-def _end_sentence(text: str) -> str:
-    """Add a full stop unless the sentence already ends in punctuation."""
-    text = (text or "").strip()
-    if not text:
-        return ""
-    return text if text[-1] in ".?!:;" else text + "."
-
-
-def spoken_answer(result, direction: str, asked: str = "", max_terms=2) -> str:
-    """
-    What the app reads aloud. Written for the ear, not the eye.
-
-    A question ("what does opportunity cost mean?") gets a definition, since
-    substituting the words into the question would just make it clumsy. Anything
-    else gets the translated sentence, then a couple of the terms behind it.
-    """
-    if not result or not result.translated:
-        return ""
-
-    terms = result.terms[:max_terms]
-
-    if looks_like_question(asked):
-        if not terms:
-            return ("I couldn't find that one in the glossary. "
-                    + _end_sentence(result.translated))
-        parts = []
-        for term in terms:
-            if term.plain.lower() == term.term.lower():
-                parts.append(_end_sentence(term.term))
-            else:
-                parts.append(_end_sentence(f"{term.term} means {term.plain}"))
-            parts.append(_end_sentence(term.meaning))
-            parts.append(_end_sentence(f"For example, {term.example[0].lower() + term.example[1:]}"))
-        out = " ".join(parts)
-        return out[0].upper() + out[1:] if out else out
-
-    lead = "In plain English: " if direction == "plain" else "In economics terms: "
-    parts = [lead + _end_sentence(result.translated)]
-    for term in terms:
-        if term.plain.lower() == term.term.lower():
-            parts.append(_end_sentence(term.term))
-        else:
-            parts.append(_end_sentence(f"{term.term} means {term.plain}"))
-        parts.append(_end_sentence(term.meaning))
-    return " ".join(parts)
-
-
-# Kept so older callers (and the tests) keep working.
-def spoken_summary(result, direction: str, max_terms=2) -> str:
-    return spoken_answer(result, direction, asked="", max_terms=max_terms)
-
-
 if __name__ == "__main__":
     # Manual check:  python3 speech.py
     ok, why = audio_available()
@@ -457,7 +469,9 @@ if __name__ == "__main__":
         sys.exit(why)
     key = get_api_key()
     print("api key:", "found" if key else "MISSING")
-    r = Recorder(on_state=lambda s: print(" ", s, flush=True))
+    device, name = pick_input_device()
+    print("microphone:", name)
+    r = Recorder(on_state=lambda s: print(" ", s, flush=True), device=device)
     print("Say something…")
     wav = r.record()
     print(f"captured {len(wav) / 1024:.0f} KB")

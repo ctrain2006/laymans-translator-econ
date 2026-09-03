@@ -5,6 +5,7 @@ import unittest
 from unittest import mock
 
 import speech
+import voice
 from engine import Engine, TERMS
 
 
@@ -105,65 +106,113 @@ class SpeechHelperTests(unittest.TestCase):
     def setUpClass(cls):
         cls.e = Engine()
 
-    def test_spoken_summary_reads_naturally(self):
-        r = self.e.to_plain("Inflation rose while unemployment fell.")
-        said = speech.spoken_summary(r, "plain")
-        self.assertTrue(said.startswith("In plain English: "))
-        self.assertIn("rising prices", said)
-        self.assertIn("inflation means rising prices", said)
-        self.assertNotIn("..", said)
+    def setUp(self):
+        self.tutor = voice.VoiceTutor(self.e)
 
-    def test_spoken_summary_handles_keep_terms(self):
-        # A "keep" term stays in the sentence but is still explained aloud.
-        r = self.e.to_plain("Demand rose.")
-        said = speech.spoken_summary(r, "plain")
-        self.assertIn("In plain English: Demand rose.", said)
-        self.assertIn("demand means how much people want to buy", said.lower())
+    # -- the separation: speech answers, it does not echo -----------------
 
-    def test_spoken_summary_avoids_saying_a_word_means_itself(self):
-        # "economics" is its own plain phrase, so it must not say
-        # "economics means economics".
-        r = self.e.to_plain("Economics is about scarcity.")
-        said = speech.spoken_summary(r, "plain")
-        self.assertNotIn("economics means economics", said.lower())
-        self.assertIn("economics. the study of", said.lower())
+    def test_statement_is_explained_not_read_back(self):
+        """
+        The whole point of the split. Saying a sentence out loud gets you the
+        terms in it explained - not that same sentence with the words swapped,
+        which is the translator's job and is useless as a spoken answer.
+        """
+        said = "The Federal Reserve raised rates to curb inflation."
+        reply = self.tutor.reply_to(said)
+        self.assertEqual(reply.kind, "definition")
 
-    def test_spoken_summary_empty(self):
-        self.assertEqual(speech.spoken_summary(None, "plain"), "")
-        self.assertEqual(speech.spoken_summary(self.e.to_plain(""), "plain"), "")
+        # Neither their sentence nor the translator's rewrite of it is spoken.
+        # (Individual words may still recur - a glossary example is allowed to
+        # mention rates - so the test is about the sentence, not the vocabulary.)
+        rewritten = self.e.to_plain(said).translated.rstrip(".").lower()
+        self.assertNotIn(said.rstrip(".").lower(), reply.speech.lower())
+        self.assertNotIn(rewritten, reply.speech.lower())
+        self.assertNotIn("In plain English", reply.speech)
+
+        # What they get instead is an explanation.
+        self.assertIn("central bank", reply.speech.lower())
+
+    def test_heard_is_kept_for_display_but_never_spoken(self):
+        said = "Inflation rose while unemployment fell."
+        reply = self.tutor.reply_to(said)
+        self.assertEqual(reply.heard, said)          # shown on screen
+        self.assertNotIn(said, reply.speech)         # never read aloud
+
+    def test_speech_ignores_the_translator_direction(self):
+        """Speech is its own operation: the toggle has no say in what it says."""
+        a = voice.VoiceTutor(self.e).reply_to("what is inflation?")
+        b = voice.VoiceTutor(self.e).reply_to("what is inflation?")
+        self.assertEqual(a.speech, b.speech)
+        self.assertNotIn("In plain English", a.speech)
+
+    # -- answering --------------------------------------------------------
 
     def test_question_gets_a_definition_not_a_substitution(self):
-        asked = "What does opportunity cost mean?"
-        r = self.e.to_plain(asked)
-        said = speech.spoken_answer(r, "plain", asked=asked)
-        self.assertTrue(said.startswith("Opportunity cost means"))
-        self.assertIn("For example,", said)
-        # It must NOT read the clumsy substituted question back.
-        self.assertNotIn("What does what you give up", said)
+        reply = self.tutor.reply_to("What does opportunity cost mean?")
+        self.assertTrue(reply.speech.startswith("Opportunity cost means"))
+        self.assertIn("For example,", reply.speech)
+        self.assertNotIn("What does what you give up", reply.speech)
 
-    def test_statement_gets_the_translation(self):
-        asked = "The Fed raised rates to curb inflation."
-        said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
-        self.assertTrue(said.startswith("In plain English: "))
-        self.assertIn("rising prices", said)
+    def test_plain_words_find_the_jargon(self):
+        # Asked the other way round: everyday words, jargon answer.
+        reply = self.tutor.reply_to("what's the word for when prices keep going up?")
+        self.assertEqual(reply.kind, "definition")
+        self.assertTrue(reply.terms)
 
-    def test_unknown_question_says_so(self):
-        asked = "What is a widget dingus?"
-        said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
-        self.assertIn("couldn't find that one", said)
+    def test_unknown_says_so_without_echoing(self):
+        reply = self.tutor.reply_to("What is a widget dingus?")
+        self.assertEqual(reply.kind, "unknown")
+        self.assertIn("don't have that one", reply.speech)
+        self.assertNotIn("widget dingus", reply.speech)
+
+    def test_avoids_saying_a_word_means_itself(self):
+        reply = self.tutor.reply_to("What is economics?")
+        self.assertNotIn("economics means economics", reply.speech.lower())
+        self.assertIn("economics. the study of", reply.speech.lower())
+
+    def test_empty_input(self):
+        reply = self.tutor.reply_to("")
+        self.assertEqual(reply.kind, "empty")
+        self.assertEqual(reply.speech, "")
+
+    # -- the one time reading it back is the request ----------------------
+
+    def test_explicit_rephrase_request_is_honoured(self):
+        reply = self.tutor.reply_to(
+            "Put that in plain English: the Fed raised rates to curb inflation")
+        self.assertEqual(reply.kind, "rephrase")
+        self.assertTrue(reply.speech.startswith("In plain English: "))
+        self.assertIn("rising prices", reply.speech)
+        # The instruction itself is not part of what gets rewritten.
+        self.assertNotIn("put that in plain english", reply.speech.lower())
+
+    def test_rephrase_detection(self):
+        for asked in ["simplify this", "say that in plain english",
+                      "can you translate that", "rephrase that for me"]:
+            self.assertTrue(voice.wants_rephrase(asked), asked)
+        for asked in ["what is inflation?", "explain the yield curve",
+                      "the Fed raised rates"]:
+            self.assertFalse(voice.wants_rephrase(asked), asked)
+
+    # -- prose quality ----------------------------------------------------
 
     def test_no_doubled_punctuation(self):
-        for asked in ["Explain inflation", "What is GDP?", "Inflation rose!"]:
-            said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
+        for asked in ["Explain inflation", "What is GDP?", "Inflation rose!",
+                      "simplify: inflation rose"]:
+            said = self.tutor.reply_to(asked).speech
             for bad in ("?.", "!.", "..", " .", ";."):
                 self.assertNotIn(bad, said, f"{bad!r} in {said!r}")
+
+    def test_spoken_sentences_start_capitalised(self):
+        said = self.tutor.reply_to("Tell me about the federal reserve").speech
+        self.assertTrue(said[0].isupper(), said[:40])
 
     def test_looks_like_question(self):
         for q in ["what is inflation", "Explain GDP", "How does the Fed work?",
                   "define elasticity", "Tell me about tariffs", "is this a question?"]:
-            self.assertTrue(speech.looks_like_question(q), q)
+            self.assertTrue(voice.looks_like_question(q), q)
         for s_ in ["The Fed raised rates.", "Inflation rose 3%.", ""]:
-            self.assertFalse(speech.looks_like_question(s_), s_)
+            self.assertFalse(voice.looks_like_question(s_), s_)
 
     def test_fatal_flag(self):
         self.assertFalse(speech.SpeechError("try again").fatal)

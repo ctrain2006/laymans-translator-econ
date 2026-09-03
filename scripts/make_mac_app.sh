@@ -29,7 +29,7 @@ rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 
 # The app's own copy of the program.
-for f in app.py engine.py glossary.py glossary_textbook.py speech.py; do
+for f in app.py engine.py glossary.py glossary_textbook.py speech.py voice.py; do
   cp "$SRC/$f" "$APP/Contents/Resources/$f"
 done
 
