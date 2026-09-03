@@ -132,6 +132,39 @@ class SpeechHelperTests(unittest.TestCase):
         self.assertEqual(speech.spoken_summary(None, "plain"), "")
         self.assertEqual(speech.spoken_summary(self.e.to_plain(""), "plain"), "")
 
+    def test_question_gets_a_definition_not_a_substitution(self):
+        asked = "What does opportunity cost mean?"
+        r = self.e.to_plain(asked)
+        said = speech.spoken_answer(r, "plain", asked=asked)
+        self.assertTrue(said.startswith("Opportunity cost means"))
+        self.assertIn("For example,", said)
+        # It must NOT read the clumsy substituted question back.
+        self.assertNotIn("What does what you give up", said)
+
+    def test_statement_gets_the_translation(self):
+        asked = "The Fed raised rates to curb inflation."
+        said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
+        self.assertTrue(said.startswith("In plain English: "))
+        self.assertIn("rising prices", said)
+
+    def test_unknown_question_says_so(self):
+        asked = "What is a widget dingus?"
+        said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
+        self.assertIn("couldn't find that one", said)
+
+    def test_no_doubled_punctuation(self):
+        for asked in ["Explain inflation", "What is GDP?", "Inflation rose!"]:
+            said = speech.spoken_answer(self.e.to_plain(asked), "plain", asked=asked)
+            for bad in ("?.", "!.", "..", " .", ";."):
+                self.assertNotIn(bad, said, f"{bad!r} in {said!r}")
+
+    def test_looks_like_question(self):
+        for q in ["what is inflation", "Explain GDP", "How does the Fed work?",
+                  "define elasticity", "Tell me about tariffs", "is this a question?"]:
+            self.assertTrue(speech.looks_like_question(q), q)
+        for s_ in ["The Fed raised rates.", "Inflation rose 3%.", ""]:
+            self.assertFalse(speech.looks_like_question(s_), s_)
+
     def test_fatal_flag(self):
         self.assertFalse(speech.SpeechError("try again").fatal)
         self.assertTrue(speech.SpeechError("no mic", fatal=True).fatal)

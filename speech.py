@@ -18,6 +18,8 @@ from __future__ import annotations
 import io
 import json
 import os
+import re
+import ssl
 import shutil
 import subprocess
 import sys
@@ -38,6 +40,32 @@ TTS_MODEL = "gpt-4o-mini-tts"
 TTS_VOICE = "alloy"
 SAY_VOICE = ""          # "" uses the system default; e.g. "Samantha"
 SAY_RATE = 190          # words per minute
+
+
+def _ssl_context() -> ssl.SSLContext | None:
+    """
+    Root certificates for the API calls.
+
+    The python.org macOS build ships without a certificate store unless you run
+    its "Install Certificates.command", so a plain HTTPS request fails with
+    CERTIFICATE_VERIFY_FAILED. Fall back to certifi's bundle when the system
+    store has nothing in it, so speech mode works out of the box.
+    """
+    try:
+        ctx = ssl.create_default_context()
+        stats = ctx.cert_store_stats()
+        if stats.get("x509_ca", 0) > 0:
+            return ctx
+    except Exception:
+        pass
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except Exception:
+        return None
+
+
+_SSL = _ssl_context()
 
 
 class SpeechError(Exception):
@@ -231,11 +259,19 @@ def transcribe(wav_bytes: bytes, api_key: str, timeout=45) -> str:
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as res:
+        with urllib.request.urlopen(req, timeout=timeout, context=_SSL) as res:
             return (json.loads(res.read().decode()).get("text") or "").strip()
     except urllib.error.HTTPError as err:
         raise SpeechError(_http_message(err), fatal=err.code in (401, 403)) from err
     except urllib.error.URLError as err:
+        if "CERTIFICATE_VERIFY_FAILED" in str(err.reason):
+            raise SpeechError(
+                "This Python has no root certificates, so it cannot make a secure\n"
+                "connection. Fix it with either of these, then try again:\n"
+                "    python3 -m pip install --user certifi\n"
+                '    open "/Applications/Python 3.14/Install Certificates.command"',
+                fatal=True,
+            ) from err
         raise SpeechError(
             f"Could not reach OpenAI. Check your internet connection. ({err.reason})", fatal=True
         ) from err
@@ -318,7 +354,7 @@ class Speaker:
             method="POST",
         )
         try:
-            with urllib.request.urlopen(req, timeout=45) as res:
+            with urllib.request.urlopen(req, timeout=45, context=_SSL) as res:
                 audio = res.read()
         except urllib.error.HTTPError as err:
             raise SpeechError(_http_message(err)) from err
@@ -346,21 +382,72 @@ class Speaker:
 
 # ------------------------------------------------------- spoken summaries
 
-def spoken_summary(result, direction: str, max_terms=2) -> str:
+QUESTION_START = re.compile(
+    r"^\s*(?:what|what's|whats|who|who's|how|why|when|where|which|explain|define|"
+    r"describe|tell me|can you|could you|i don't (?:get|understand)|"
+    r"help me understand|meaning of|definition of)\b",
+    re.I,
+)
+
+
+def looks_like_question(text: str) -> bool:
+    """Did the person ask about a term, rather than hand over text to translate?"""
+    t = (text or "").strip()
+    if not t:
+        return False
+    return bool(QUESTION_START.match(t)) or t.endswith("?")
+
+
+def _end_sentence(text: str) -> str:
+    """Add a full stop unless the sentence already ends in punctuation."""
+    text = (text or "").strip()
+    if not text:
+        return ""
+    return text if text[-1] in ".?!:;" else text + "."
+
+
+def spoken_answer(result, direction: str, asked: str = "", max_terms=2) -> str:
     """
-    What the app reads aloud after a translation: the plain sentence, then a
-    couple of the terms behind it. Written for the ear, not the eye.
+    What the app reads aloud. Written for the ear, not the eye.
+
+    A question ("what does opportunity cost mean?") gets a definition, since
+    substituting the words into the question would just make it clumsy. Anything
+    else gets the translated sentence, then a couple of the terms behind it.
     """
     if not result or not result.translated:
         return ""
+
+    terms = result.terms[:max_terms]
+
+    if looks_like_question(asked):
+        if not terms:
+            return ("I couldn't find that one in the glossary. "
+                    + _end_sentence(result.translated))
+        parts = []
+        for term in terms:
+            if term.plain.lower() == term.term.lower():
+                parts.append(_end_sentence(term.term))
+            else:
+                parts.append(_end_sentence(f"{term.term} means {term.plain}"))
+            parts.append(_end_sentence(term.meaning))
+            parts.append(_end_sentence(f"For example, {term.example[0].lower() + term.example[1:]}"))
+        out = " ".join(parts)
+        return out[0].upper() + out[1:] if out else out
+
     lead = "In plain English: " if direction == "plain" else "In economics terms: "
-    parts = [lead + result.translated.rstrip(".") + "."]
-    for term in result.terms[:max_terms]:
+    parts = [lead + _end_sentence(result.translated)]
+    for term in terms:
         if term.plain.lower() == term.term.lower():
-            parts.append(f"{term.term}. {term.meaning}")
+            parts.append(_end_sentence(term.term))
         else:
-            parts.append(f"{term.term} means {term.plain}. {term.meaning}")
+            parts.append(_end_sentence(f"{term.term} means {term.plain}"))
+        parts.append(_end_sentence(term.meaning))
     return " ".join(parts)
+
+
+# Kept so older callers (and the tests) keep working.
+def spoken_summary(result, direction: str, max_terms=2) -> str:
+    return spoken_answer(result, direction, asked="", max_terms=max_terms)
 
 
 if __name__ == "__main__":

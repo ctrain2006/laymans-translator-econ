@@ -31,9 +31,15 @@ installer. No internet and no packages. Speech mode is the one online part.
 ## Speech mode
 
 Talk to the app instead of typing. Click **🎙 Speech mode** (or press ⌘L) and it
-listens, works out what you said, translates it, and reads the plain-English
-version back with a couple of the terms behind it. It keeps listening after each
-answer, so you can just keep asking.
+listens, works out what you said, and answers out loud. It keeps listening after
+each answer, so you can just keep asking.
+
+It responds to how you speak:
+
+- **Ask a question** ("what does quantitative easing mean?") and you get the
+  definition and an everyday example, not a clumsy word-swap of your question.
+- **Read out a sentence** from a slide or article and you get the plain-English
+  translation, then the terms behind it.
 
 Speech mode is the only part that goes online: your recording is sent to
 OpenAI's transcription API, so it needs an internet connection and an API key.
@@ -52,6 +58,10 @@ python3 -m pip install --user sounddevice numpy
 macOS will also ask for microphone permission the first time. If the app reports
 that the microphone is returning silence, grant it in System Settings under
 Privacy & Security → Microphone.
+
+If it reports missing root certificates, this Python has no certificate store.
+Either `python3 -m pip install --user certifi`, or run
+`Install Certificates.command` from your `/Applications/Python 3.x/` folder.
 
 **While it is on:** the bar under the output box shows what it is doing, from
 listening to speaking. **Speak output** re-reads the current translation without

@@ -374,7 +374,7 @@ class App(tk.Tk):
                     self.txt_in.delete("1.0", "end")
                     self.txt_in.insert("1.0", text)
                     result = self.translate()
-                    box["say"] = speech.spoken_summary(result, self.direction)
+                    box["say"] = speech.spoken_answer(result, self.direction, asked=text)
                     done.set()
 
                 elif kind == "error":
@@ -397,7 +397,7 @@ class App(tk.Tk):
             return
         result = (self.engine.to_plain(text) if self.direction == "plain"
                   else self.engine.to_econ(text))
-        line = speech.spoken_summary(result, self.direction)
+        line = speech.spoken_answer(result, self.direction, asked=text)
         if not line:
             return
         self.lbl_mic.configure(text="Speaking… (Esc to stop)")
