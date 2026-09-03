@@ -1,0 +1,5581 @@
+{
+ "version": 1,
+ "count": 418,
+ "terms": [
+  {
+   "term": "inflation",
+   "plain": "rising prices",
+   "meaning": "Prices of most things going up over time, so each dollar buys a little less than it used to.",
+   "example": "A coffee that cost $3 last year costs $3.20 this year.",
+   "aliases": [
+    "inflationary",
+    "price inflation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "deflation",
+   "plain": "falling prices",
+   "meaning": "Prices of most things going down over time. Sounds nice, but people delay buying and businesses earn less.",
+   "example": "A TV that cost $500 last year costs $450 now, so you wait to see if it drops more.",
+   "aliases": [
+    "deflationary"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "disinflation",
+   "plain": "prices rising more slowly",
+   "meaning": "Prices are still going up, just not as fast as before.",
+   "example": "Prices rose 8% last year but only 3% this year.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "stagflation",
+   "plain": "stalled growth with rising prices",
+   "meaning": "The worst of both worlds: prices keep going up while jobs and growth are stuck.",
+   "example": "Groceries get pricier every month while your employer freezes hiring.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "hyperinflation",
+   "plain": "runaway rising prices",
+   "meaning": "Prices rising so fast that money loses value week to week or even day to day.",
+   "example": "A loaf of bread costs twice as much on Friday as it did on Monday.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "consumer price index",
+   "plain": "the everyday-prices index",
+   "meaning": "A monthly measure of what a typical basket of household goods and services costs. It is the usual way inflation is tracked.",
+   "example": "If the index rises 3%, the same groceries, rent, and gas cost about 3% more than a year ago.",
+   "aliases": [
+    "cpi",
+    "core cpi",
+    "headline cpi"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "core inflation",
+   "plain": "rising prices excluding food and energy",
+   "meaning": "Inflation measured without food and fuel, because those prices swing around a lot and can hide the underlying trend.",
+   "example": "Gas spiked this month, but core inflation shows most other prices barely moved.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cost of living",
+   "plain": "what everyday life costs",
+   "meaning": "How much money it takes to cover basics like housing, food, and transport in a given place.",
+   "example": "The same salary stretches further in a small town than in a big city.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "purchasing power",
+   "plain": "how much your money actually buys",
+   "meaning": "The real value of money measured by what it can buy, not the number printed on it.",
+   "example": "$100 bought a full cart of groceries in 2010 and about half a cart now.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "real terms",
+   "plain": "after adjusting for rising prices",
+   "meaning": "A number that has been corrected for inflation so you can compare different years fairly.",
+   "example": "A 5% raise when prices rose 6% is a pay cut in real terms.",
+   "aliases": [
+    "in real terms",
+    "inflation-adjusted",
+    "inflation adjusted"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "nominal",
+   "plain": "before adjusting for rising prices",
+   "meaning": "The raw dollar number, not corrected for inflation.",
+   "example": "Your nominal pay went from $50k to $52k, but if prices rose 5%, you can actually buy less.",
+   "aliases": [
+    "in nominal terms",
+    "nominal terms"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price level",
+   "plain": "the general level of prices",
+   "meaning": "The average of all prices in the economy at a point in time.",
+   "example": "When the price level rises, nearly everything, from rent to haircuts, costs more.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price ceiling",
+   "plain": "a legal maximum price",
+   "meaning": "A cap set by the government on how much something can be sold for.",
+   "example": "Rent control that stops a landlord from charging more than $1,500 a month.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price floor",
+   "plain": "a legal minimum price",
+   "meaning": "A bottom limit set by the government on how cheaply something can be sold.",
+   "example": "The minimum wage is a price floor on what an hour of work can be paid.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "sticky prices",
+   "plain": "prices that are slow to change",
+   "meaning": "Prices and wages that do not adjust quickly even when conditions change.",
+   "example": "A restaurant keeps its menu prices the same for a year because reprinting menus is a hassle.",
+   "aliases": [
+    "price stickiness",
+    "sticky wages"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gross domestic product",
+   "plain": "the total value of everything a country produces",
+   "meaning": "The total value of all goods and services made in a country in a year. It is the standard scorecard for the size of an economy.",
+   "example": "Every car built, haircut given, and app sold in the US in a year, added up into one number.",
+   "aliases": [
+    "gdp",
+    "real gdp",
+    "nominal gdp"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gdp per capita",
+   "plain": "output per person",
+   "meaning": "The country's total output divided by its population. A rough guide to average living standards.",
+   "example": "Two countries can have the same GDP, but the one with fewer people is richer per person.",
+   "aliases": [
+    "per capita gdp",
+    "per capita income",
+    "per capita"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "economic growth",
+   "plain": "the economy getting bigger",
+   "meaning": "The economy producing more stuff than it did before, usually measured as a percentage change per year.",
+   "example": "The economy grew 2%, meaning the country made about 2% more goods and services than last year.",
+   "aliases": [
+    "growth rate",
+    "gdp growth"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "recession",
+   "plain": "a shrinking economy",
+   "meaning": "A period, usually a few months or more, when the economy shrinks: less is produced, businesses cut back, and people lose jobs.",
+   "example": "Stores close, hiring stops, and your neighbors get laid off.",
+   "aliases": [
+    "recessionary",
+    "economic downturn",
+    "downturn",
+    "contraction"
+   ],
+   "plural": "shrinking economies",
+   "keep": false
+  },
+  {
+   "term": "depression",
+   "plain": "a deep, long-lasting shrinking economy",
+   "meaning": "A very severe recession that lasts years rather than months.",
+   "example": "The 1930s, when a quarter of workers had no job.",
+   "aliases": [
+    "economic depression",
+    "great depression"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "recovery",
+   "plain": "bounce-back",
+   "meaning": "The period after a recession when output and jobs start growing again.",
+   "example": "Restaurants reopen and start hiring again after a bad year.",
+   "aliases": [
+    "economic recovery"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "expansion",
+   "plain": "growth period",
+   "meaning": "A stretch of time when the economy is getting bigger.",
+   "example": "Years when businesses keep opening and unemployment keeps falling.",
+   "aliases": [
+    "economic expansion"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "business cycle",
+   "plain": "the economy's ups and downs",
+   "meaning": "The natural pattern of the economy growing, then shrinking, then growing again over several years.",
+   "example": "Boom years followed by a slump followed by another boom.",
+   "aliases": [
+    "economic cycle"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "soft landing",
+   "plain": "slowing the economy without a crash",
+   "meaning": "When a central bank cools down an overheated economy just enough to tame inflation without causing a recession.",
+   "example": "Braking gently to slow a car rather than slamming the brakes.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "hard landing",
+   "plain": "slowing the economy so much it crashes",
+   "meaning": "When efforts to cool inflation push the economy into a recession.",
+   "example": "Hitting the brakes so hard the car skids.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "productivity",
+   "plain": "output per hour of work",
+   "meaning": "How much gets made for each hour worked. Higher productivity means more stuff from the same effort.",
+   "example": "A worker with a power drill builds more furniture per day than one with a screwdriver.",
+   "aliases": [
+    "labor productivity",
+    "labour productivity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "output",
+   "plain": "production",
+   "meaning": "The total goods and services made.",
+   "example": "A factory's output is the number of cars it builds.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "output gap",
+   "plain": "the gap between what the economy makes and what it could make",
+   "meaning": "The difference between actual production and what the economy could produce if everyone and everything were fully used.",
+   "example": "A factory running at 70% capacity has a 30% gap.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "potential output",
+   "plain": "what the economy could make at full stretch",
+   "meaning": "The most the economy could produce without pushing prices up too fast.",
+   "example": "The top speed a car can safely go for a long trip.",
+   "aliases": [
+    "potential gdp"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "aggregate demand",
+   "plain": "total spending in the economy",
+   "meaning": "All the spending by households, businesses, government, and foreigners on a country's goods and services, added together.",
+   "example": "Everyone's shopping, every company's investment, and government projects, all combined.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "aggregate supply",
+   "plain": "total production in the economy",
+   "meaning": "Everything businesses in a country are willing and able to make at a given price level.",
+   "example": "All the factories, farms, and shops together deciding how much to produce.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "consumption",
+   "plain": "household spending",
+   "meaning": "Money that people spend on goods and services for themselves.",
+   "example": "Groceries, rent, Netflix, and new shoes.",
+   "aliases": [
+    "consumer spending",
+    "personal consumption"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "investment",
+   "plain": "spending on buildings and machines",
+   "meaning": "In economics, money spent on buildings, machines, and tools that help make more things later. Not the same as buying stocks.",
+   "example": "A bakery buying a new oven.",
+   "aliases": [
+    "capital investment",
+    "business investment",
+    "gross fixed capital formation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "capital",
+   "plain": "tools, buildings, and machines",
+   "meaning": "The physical stuff, and sometimes the money, a business uses to produce goods and services.",
+   "example": "A carpenter's workshop and tools.",
+   "aliases": [
+    "capital goods",
+    "physical capital",
+    "capital stock"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "human capital",
+   "plain": "people's skills and knowledge",
+   "meaning": "The education, training, and experience that make workers more valuable.",
+   "example": "A nurse's years of training.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "labor",
+   "plain": "workers",
+   "meaning": "The people and the work they do to produce things.",
+   "example": "Every employee from cashier to CEO.",
+   "aliases": [
+    "labour",
+    "labor force",
+    "labour force",
+    "workforce"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "factors of production",
+   "plain": "the basic ingredients for making things",
+   "meaning": "Land, workers, tools, and know-how: the inputs every business needs.",
+   "example": "For a farm: the field, the farmers, the tractor, and the owner's judgment.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "unemployment",
+   "plain": "the number of people who can't find work",
+   "meaning": "The share of people who are looking for work but do not have a job.",
+   "example": "Out of 100 people who want a job, 5 cannot find one, so unemployment is 5%.",
+   "aliases": [
+    "unemployment rate",
+    "joblessness",
+    "jobless rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "full employment",
+   "plain": "nearly everyone who wants a job has one",
+   "meaning": "The point where unemployment is as low as it can realistically go, with only people between jobs still looking.",
+   "example": "Every restaurant in town has a 'now hiring' sign.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "underemployment",
+   "plain": "having less work than you want",
+   "meaning": "Working part time when you want full time, or in a job below your skill level.",
+   "example": "An engineer driving a taxi while looking for engineering work.",
+   "aliases": [
+    "underemployed"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "structural unemployment",
+   "plain": "joblessness because skills no longer match the jobs",
+   "meaning": "People out of work because the jobs they know how to do have disappeared or moved.",
+   "example": "Coal miners in a town where the mine closed.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cyclical unemployment",
+   "plain": "joblessness caused by a weak economy",
+   "meaning": "People losing jobs because the economy is in a slump, not because of their skills.",
+   "example": "A construction worker laid off during a housing bust.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "frictional unemployment",
+   "plain": "joblessness from being between jobs",
+   "meaning": "Short spells of unemployment as people move between jobs or enter the workforce.",
+   "example": "A new graduate spending two months job hunting.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "labor force participation rate",
+   "plain": "the share of adults working or looking for work",
+   "meaning": "The percentage of working-age people who either have a job or are actively looking for one.",
+   "example": "Retirees and stay-at-home parents are not counted as participating.",
+   "aliases": [
+    "labour force participation rate",
+    "participation rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "nonfarm payrolls",
+   "plain": "the monthly jobs count",
+   "meaning": "The US government's monthly count of how many jobs were added or lost, excluding farm work.",
+   "example": "Headlines like 'the economy added 200,000 jobs last month'.",
+   "aliases": [
+    "non-farm payrolls",
+    "payrolls",
+    "jobs report"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "minimum wage",
+   "plain": "the lowest legal pay",
+   "meaning": "The least an employer is legally allowed to pay per hour.",
+   "example": "A cashier must be paid at least $15 an hour in some states.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "wage growth",
+   "plain": "pay rising",
+   "meaning": "How fast workers' pay is going up over time.",
+   "example": "Average hourly pay rose 4% over the year.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "real wages",
+   "plain": "pay after adjusting for rising prices",
+   "meaning": "What your paycheck can actually buy, once inflation is accounted for.",
+   "example": "A 3% raise when prices rose 3% means your real wage did not change.",
+   "aliases": [
+    "real wage",
+    "real income"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "disposable income",
+   "plain": "take-home pay",
+   "meaning": "The money you have left after taxes to spend or save.",
+   "example": "Your paycheck after taxes come out.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "discretionary income",
+   "plain": "spending money",
+   "meaning": "What is left after taxes and essentials like rent and food.",
+   "example": "The money you can spend on a concert or a vacation.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "monetary policy",
+   "plain": "the central bank's control of interest rates and money",
+   "meaning": "The tools a central bank uses, mainly interest rates, to keep prices stable and the economy steady.",
+   "example": "The Fed raising rates to cool inflation.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "fiscal policy",
+   "plain": "the government's taxing and spending",
+   "meaning": "How the government uses taxes and spending to influence the economy.",
+   "example": "Sending stimulus checks or cutting taxes during a slump.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "central bank",
+   "plain": "the country's main bank",
+   "meaning": "The institution that controls a country's money supply and interest rates.",
+   "example": "The Federal Reserve in the US or the Bank of England in the UK.",
+   "aliases": [
+    "federal reserve",
+    "the fed",
+    "ecb",
+    "european central bank",
+    "bank of england",
+    "boe",
+    "bank of japan",
+    "boj"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "federal reserve",
+   "plain": "the Fed",
+   "meaning": "America's central bank. It sets the key interest rate, and its decisions ripple out to mortgages, car loans, and credit cards.",
+   "example": "When the news says 'the Fed raised rates', your credit card interest will probably go up too.",
+   "aliases": [
+    "the fed",
+    "fed",
+    "the federal reserve",
+    "fomc"
+   ],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "interest rate",
+   "plain": "the cost of borrowing money",
+   "meaning": "The percentage you pay to borrow money, or earn for lending it.",
+   "example": "Borrow $1,000 at 5% and you owe $50 extra a year.",
+   "aliases": [
+    "interest rates",
+    "policy rate"
+   ],
+   "plural": "borrowing costs",
+   "keep": false
+  },
+  {
+   "term": "federal funds rate",
+   "plain": "the Fed's key interest rate",
+   "meaning": "The rate banks charge each other for overnight loans, set by the Federal Reserve. Most other interest rates follow it.",
+   "example": "When this goes up, mortgage and credit card rates soon go up too.",
+   "aliases": [
+    "fed funds rate",
+    "funds rate",
+    "benchmark rate",
+    "base rate",
+    "bank rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "rate hike",
+   "plain": "an interest rate increase",
+   "meaning": "The central bank raising its main interest rate to make borrowing more expensive.",
+   "example": "After a rate hike, a new car loan costs more per month.",
+   "aliases": [
+    "rate hikes",
+    "hiking rates",
+    "monetary tightening"
+   ],
+   "plural": "interest rate increases",
+   "keep": false
+  },
+  {
+   "term": "rate cut",
+   "plain": "an interest rate decrease",
+   "meaning": "The central bank lowering its main interest rate to make borrowing cheaper.",
+   "example": "After a rate cut, mortgages get cheaper and more people buy homes.",
+   "aliases": [
+    "rate cuts",
+    "cutting rates",
+    "monetary easing"
+   ],
+   "plural": "interest rate cuts",
+   "keep": false
+  },
+  {
+   "term": "quantitative easing",
+   "plain": "the central bank creating money to buy bonds",
+   "meaning": "A central bank buying large amounts of bonds with newly created money to push interest rates down and encourage lending.",
+   "example": "Like the Fed flooding the system with cash to keep borrowing cheap.",
+   "aliases": [
+    "qe"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "quantitative tightening",
+   "plain": "the central bank shrinking the money it created",
+   "meaning": "The reverse of quantitative easing: the central bank lets its bond holdings shrink, pulling money out of the system.",
+   "example": "The Fed slowly draining the extra cash it pumped in earlier.",
+   "aliases": [
+    "qt"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "money supply",
+   "plain": "the total amount of money in the economy",
+   "meaning": "All the cash and bank deposits available in the economy.",
+   "example": "Every dollar in wallets and checking accounts added together.",
+   "aliases": [
+    "m1",
+    "m2",
+    "money stock"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "liquidity",
+   "plain": "how easily something turns into cash",
+   "meaning": "How quickly and cheaply you can convert something into spendable money. Also used for how much ready cash is sloshing around.",
+   "example": "Cash is very liquid; a house is not, because selling it takes months.",
+   "aliases": [
+    "liquid"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "illiquid",
+   "plain": "hard to turn into cash",
+   "meaning": "Something that cannot be sold quickly without losing value.",
+   "example": "A rare painting or a house.",
+   "aliases": [
+    "illiquidity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "reserve requirement",
+   "plain": "the cash banks must keep on hand",
+   "meaning": "The minimum share of deposits a bank must hold rather than lend out.",
+   "example": "If you deposit $100 and the requirement is 10%, the bank keeps $10 and can lend $90.",
+   "aliases": [
+    "reserve ratio",
+    "bank reserves"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "fractional reserve banking",
+   "plain": "banks lending out most of what you deposit",
+   "meaning": "The system where banks keep only a fraction of deposits in reserve and lend the rest.",
+   "example": "Your $1,000 deposit becomes someone else's $900 car loan.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bank run",
+   "plain": "everyone rushing to pull their money out of a bank",
+   "meaning": "When many customers withdraw at once because they fear the bank will fail, which can actually cause it to fail.",
+   "example": "Lines around the block at a bank in 1930, or a viral tweet emptying accounts overnight.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "lender of last resort",
+   "plain": "the emergency lender to banks",
+   "meaning": "A central bank's role of lending to banks that cannot borrow anywhere else, to stop a panic.",
+   "example": "The Fed lending to a bank so it can pay depositors during a scare.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "credit",
+   "plain": "borrowed money",
+   "meaning": "Money lent to a person or business that must be paid back, usually with interest.",
+   "example": "A credit card, a mortgage, or a business loan.",
+   "aliases": [
+    "credit conditions"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "credit crunch",
+   "plain": "a sudden shortage of loans",
+   "meaning": "When banks abruptly stop lending or make loans much harder to get.",
+   "example": "Businesses with good records suddenly cannot get a loan to make payroll.",
+   "aliases": [
+    "credit squeeze"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "leverage",
+   "plain": "borrowed money",
+   "meaning": "Using debt to make a bigger bet or purchase than you could with your own money alone. It magnifies both gains and losses.",
+   "example": "Buying a $500k house with $50k down: a 10% price rise doubles your money, a 10% fall wipes it out.",
+   "aliases": [
+    "leveraging"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "leveraged",
+   "plain": "debt-funded",
+   "meaning": "Done with a lot of borrowed money, which magnifies both gains and losses.",
+   "example": "A leveraged buyout is a company purchase paid for mostly with loans.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "deleveraging",
+   "plain": "paying down debt",
+   "meaning": "Reducing how much borrowed money is being used.",
+   "example": "A family cutting spending to pay off credit cards.",
+   "aliases": [
+    "deleverage"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "solvency",
+   "plain": "being able to pay all your debts",
+   "meaning": "Having more assets than debts, so you could pay everything you owe if you had to.",
+   "example": "A business that owns $1M of stuff and owes $600k is solvent.",
+   "aliases": [
+    "solvent"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "insolvency",
+   "plain": "owing more than you have",
+   "meaning": "When debts exceed assets and bills cannot be paid.",
+   "example": "A company that owes $1M but only has $600k in total.",
+   "aliases": [
+    "insolvent"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "default",
+   "plain": "failing to pay back a loan",
+   "meaning": "Not making the required payments on a debt.",
+   "example": "Missing your mortgage payments for months.",
+   "aliases": [
+    "defaulting",
+    "defaulted"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "moral hazard",
+   "plain": "taking risks because someone else will cover the losses",
+   "meaning": "When people behave more recklessly because they know they will be protected from the consequences.",
+   "example": "Driving less carefully because you have full insurance.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bailout",
+   "plain": "a rescue with public money",
+   "meaning": "The government stepping in with money to save a failing company or bank.",
+   "example": "Taxpayers propping up a bank so it does not collapse.",
+   "aliases": [
+    "bail out",
+    "bailouts"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "budget deficit",
+   "plain": "the government spending more than it collects",
+   "meaning": "When the government spends more in a year than it takes in through taxes, and borrows to cover the difference.",
+   "example": "Earning $50k but spending $55k, and putting the extra on a credit card.",
+   "aliases": [
+    "deficit",
+    "fiscal deficit",
+    "deficit spending"
+   ],
+   "plural": "years of the government spending more than it collects",
+   "keep": false
+  },
+  {
+   "term": "budget surplus",
+   "plain": "the government collecting more than it spends",
+   "meaning": "When the government takes in more tax than it spends in a year.",
+   "example": "Earning $50k and spending only $45k.",
+   "aliases": [
+    "surplus",
+    "fiscal surplus"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "national debt",
+   "plain": "everything the government owes",
+   "meaning": "The total amount the government has borrowed over the years and not yet paid back.",
+   "example": "The country's running credit card balance.",
+   "aliases": [
+    "public debt",
+    "government debt",
+    "sovereign debt"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "debt-to-gdp ratio",
+   "plain": "government debt compared to the size of the economy",
+   "meaning": "How big the national debt is relative to what the country produces in a year. A way to judge whether debt is manageable.",
+   "example": "Owing $100k on a $100k salary versus a $30k salary.",
+   "aliases": [
+    "debt to gdp",
+    "debt to gdp ratio"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "austerity",
+   "plain": "government spending cuts and tax hikes",
+   "meaning": "Policies that cut public spending or raise taxes to reduce government borrowing.",
+   "example": "Closing libraries and raising sales tax to balance the budget.",
+   "aliases": [
+    "austerity measures",
+    "fiscal consolidation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "stimulus",
+   "plain": "government spending to boost the economy",
+   "meaning": "Extra government spending or tax cuts meant to get a weak economy moving.",
+   "example": "Stimulus checks mailed to households during a downturn.",
+   "aliases": [
+    "fiscal stimulus",
+    "economic stimulus",
+    "stimulus package"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "subsidy",
+   "plain": "government money that lowers a price",
+   "meaning": "A payment from the government to make something cheaper to produce or buy.",
+   "example": "Tax credits that knock $7,500 off an electric car.",
+   "aliases": [
+    "subsidies",
+    "subsidized",
+    "subsidised"
+   ],
+   "plural": "government payments that lower prices",
+   "keep": false
+  },
+  {
+   "term": "tariff",
+   "plain": "a tax on imports",
+   "meaning": "A tax charged on goods brought in from another country, which makes them more expensive.",
+   "example": "A 25% tariff on foreign steel makes imported steel cost 25% more.",
+   "aliases": [
+    "tariffs",
+    "import duty",
+    "import duties",
+    "customs duty"
+   ],
+   "plural": "taxes on imports",
+   "keep": false
+  },
+  {
+   "term": "progressive tax",
+   "plain": "a tax that takes a bigger share from higher earners",
+   "meaning": "A tax where the rate goes up as income goes up.",
+   "example": "Someone earning $500k pays a higher percentage than someone earning $40k.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "regressive tax",
+   "plain": "a tax that hits lower earners harder",
+   "meaning": "A tax that takes a bigger share of income from people who earn less.",
+   "example": "Sales tax: a $10 tax is a bigger chunk of a $300 weekly paycheck than a $3,000 one.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal tax rate",
+   "plain": "the tax on your next dollar",
+   "meaning": "The rate you pay on the last, or next, dollar you earn, not on all your income.",
+   "example": "Being in the 24% bracket does not mean 24% of everything; only income above a threshold is taxed at 24%.",
+   "aliases": [
+    "tax bracket"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "transfer payments",
+   "plain": "government money given to people",
+   "meaning": "Payments from the government to individuals without anything in return, like benefits.",
+   "example": "Social Security, unemployment benefits, food stamps.",
+   "aliases": [
+    "social transfers"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "entitlements",
+   "plain": "government benefit programs people qualify for by law",
+   "meaning": "Programs that pay benefits to anyone who meets the rules.",
+   "example": "Social Security and Medicare.",
+   "aliases": [
+    "entitlement programs",
+    "entitlement spending"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "automatic stabilizers",
+   "plain": "built-in cushions in the budget",
+   "meaning": "Parts of the tax and benefit system that automatically soften a downturn without new laws.",
+   "example": "When people lose jobs, unemployment benefits kick in and their tax bills fall.",
+   "aliases": [
+    "automatic stabilisers"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "crowding out",
+   "plain": "government borrowing squeezing out private borrowing",
+   "meaning": "When heavy government borrowing pushes up interest rates and makes it harder for businesses to borrow.",
+   "example": "A big government bond sale soaks up money that would have funded a startup.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "public goods",
+   "plain": "things everyone can use and no one can be excluded from",
+   "meaning": "Goods like streetlights or national defense that benefit everyone and cannot easily be sold person by person.",
+   "example": "A lighthouse helps every ship, whether or not they paid for it.",
+   "aliases": [
+    "public good"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "externality",
+   "plain": "a side effect on people not involved",
+   "meaning": "A cost or benefit that lands on someone who was not part of the deal.",
+   "example": "A factory's pollution making a neighbor sick, or a neighbor's garden making your street nicer.",
+   "aliases": [
+    "externalities",
+    "negative externality",
+    "positive externality",
+    "spillover"
+   ],
+   "plural": "side effects on people not involved",
+   "keep": false
+  },
+  {
+   "term": "market failure",
+   "plain": "the market getting it wrong on its own",
+   "meaning": "A situation where buying and selling freely leads to a bad outcome for society, so rules may be needed.",
+   "example": "Nobody pays for clean air, so factories pollute too much.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "regulation",
+   "plain": "government rules for businesses",
+   "meaning": "Laws that limit or direct what businesses can do.",
+   "example": "Food safety inspections and limits on bank risk-taking.",
+   "aliases": [
+    "regulatory",
+    "regulations"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "deregulation",
+   "plain": "removing government rules",
+   "meaning": "Loosening or scrapping rules on businesses.",
+   "example": "Letting airlines set their own fares and routes.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "nationalization",
+   "plain": "the government taking over a business",
+   "meaning": "The government taking ownership of a company or industry.",
+   "example": "The state taking over a failing railroad.",
+   "aliases": [
+    "nationalisation",
+    "nationalize",
+    "nationalise"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "privatization",
+   "plain": "selling a government business to private owners",
+   "meaning": "Transferring a state-owned company or service into private hands.",
+   "example": "A city selling its water utility to a company.",
+   "aliases": [
+    "privatisation",
+    "privatize",
+    "privatise"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "supply and demand",
+   "plain": "how much is available versus how much people want",
+   "meaning": "The two forces that set prices: how much sellers offer and how much buyers want. Scarce and popular things cost more.",
+   "example": "Concert tickets cost more when there are few seats and many fans.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "supply",
+   "plain": "how much is available to sell",
+   "meaning": "The amount of something that sellers are willing to offer at a given price.",
+   "example": "Farmers bring more tomatoes to market when tomato prices are high.",
+   "aliases": [],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "demand",
+   "plain": "how much people want to buy",
+   "meaning": "The amount of something that buyers want and can pay for at a given price.",
+   "example": "More people want ice cream on a hot day.",
+   "aliases": [],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "equilibrium",
+   "plain": "the balance point where supply matches demand",
+   "meaning": "The price where the amount people want to buy equals the amount sellers want to sell.",
+   "example": "The ticket price where the venue sells out exactly, with no empty seats and no one turned away.",
+   "aliases": [
+    "market equilibrium",
+    "equilibrium price"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "shortage",
+   "plain": "not enough to go around",
+   "meaning": "When people want to buy more of something than is available at the current price.",
+   "example": "Empty shelves where the toilet paper used to be.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "glut",
+   "plain": "too much to sell",
+   "meaning": "When there is more of something than people want to buy at the current price.",
+   "example": "A warehouse full of unsold TVs after the holidays.",
+   "aliases": [
+    "oversupply",
+    "excess supply"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "elasticity",
+   "plain": "how much buying changes when the price changes",
+   "meaning": "A measure of how sensitive people are to price. Elastic means a small price change causes a big change in buying. Inelastic means people keep buying regardless.",
+   "example": "Raise the price of one brand of soda and people switch (elastic). Raise the price of insulin and people still buy (inelastic).",
+   "aliases": [
+    "price elasticity",
+    "price elasticity of demand"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "elastic",
+   "plain": "price-sensitive",
+   "meaning": "Describes something people buy a lot less of when its price rises, usually because there are easy alternatives.",
+   "example": "Raise the price of one brand of soda and people just switch brands.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "inelastic",
+   "plain": "not price-sensitive",
+   "meaning": "Describes something people keep buying about the same amount of even when the price rises, because they need it or have no alternative.",
+   "example": "Raise the price of insulin or gas and people still buy nearly as much.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "opportunity cost",
+   "plain": "what you give up by choosing one thing over another",
+   "meaning": "The value of the next best option you did not take.",
+   "example": "Spending Saturday at work means giving up the day at the beach.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "scarcity",
+   "plain": "not enough for everyone who wants it",
+   "meaning": "The basic problem that wants are unlimited but resources are not.",
+   "example": "There is only so much land, time, and money to go around.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal",
+   "plain": "the effect of one more",
+   "meaning": "Relating to a small additional amount: the extra cost or benefit of one more unit.",
+   "example": "The marginal cost of one more pizza is just the extra dough and cheese.",
+   "aliases": [
+    "marginal cost",
+    "marginal benefit",
+    "marginal utility",
+    "marginal revenue",
+    "at the margin"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "diminishing returns",
+   "plain": "each extra bit helps less than the last",
+   "meaning": "The point where adding more of something gives smaller and smaller gains.",
+   "example": "The first slice of pizza is great; the fifth, not so much.",
+   "aliases": [
+    "diminishing marginal returns",
+    "diminishing marginal utility",
+    "law of diminishing returns"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "economies of scale",
+   "plain": "getting cheaper per unit as you make more",
+   "meaning": "Big producers can make each item more cheaply because fixed costs get spread over more units.",
+   "example": "A bakery making 1,000 loaves pays less per loaf than one making 10.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "comparative advantage",
+   "plain": "being relatively better at one thing",
+   "meaning": "The idea that everyone gains when each person or country focuses on what they do best relative to other tasks, then trades.",
+   "example": "A lawyer who types fast still hires a typist, because the lawyer's time is worth more in court.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "competitive advantage",
+   "plain": "an edge over rivals",
+   "meaning": "Something that lets a business beat its competitors, like lower costs or a better product.",
+   "example": "A cafe on the only corner with parking.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "monopoly",
+   "plain": "one seller controlling the market",
+   "meaning": "A market with a single seller and no real competition, which usually means higher prices.",
+   "example": "The only internet provider in town.",
+   "aliases": [
+    "monopolist",
+    "monopolistic",
+    "monopolies"
+   ],
+   "plural": "markets controlled by a single seller",
+   "keep": false
+  },
+  {
+   "term": "oligopoly",
+   "plain": "a few big sellers controlling the market",
+   "meaning": "A market dominated by a handful of large companies.",
+   "example": "The few big airlines or phone carriers.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "monopsony",
+   "plain": "one buyer controlling the market",
+   "meaning": "A market with a single dominant buyer, which can push prices or wages down.",
+   "example": "A town where one factory is the only employer.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cartel",
+   "plain": "rivals secretly agreeing to fix prices",
+   "meaning": "A group of competitors who agree to limit supply or set prices instead of competing.",
+   "example": "OPEC countries agreeing to pump less oil to keep prices high.",
+   "aliases": [
+    "collusion",
+    "price fixing",
+    "price-fixing"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "perfect competition",
+   "plain": "many small sellers with identical products",
+   "meaning": "A textbook market where no single seller can influence the price.",
+   "example": "Hundreds of farmers all selling the same wheat.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "barriers to entry",
+   "plain": "obstacles that keep new competitors out",
+   "meaning": "Things that make it hard for a new business to enter a market.",
+   "example": "The huge cost of building a chip factory.",
+   "aliases": [
+    "barrier to entry",
+    "entry barriers"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "antitrust",
+   "plain": "laws against unfair market dominance",
+   "meaning": "Rules that stop companies from crushing competition or fixing prices.",
+   "example": "Regulators blocking a merger that would leave one grocery chain in a region.",
+   "aliases": [
+    "anti-trust",
+    "competition law"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "free market",
+   "plain": "buying and selling without government interference",
+   "meaning": "An economy where prices are set by buyers and sellers, not by the government.",
+   "example": "A farmers' market where each stall sets its own prices.",
+   "aliases": [
+    "free markets",
+    "laissez-faire",
+    "laissez faire",
+    "market economy"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "invisible hand",
+   "plain": "self-interest accidentally helping everyone",
+   "meaning": "Adam Smith's idea that people pursuing their own gain in a market end up benefiting society.",
+   "example": "The baker bakes bread to make money, and you get to eat.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "rent-seeking",
+   "plain": "profiting by gaming the rules rather than creating value",
+   "meaning": "Trying to get richer by lobbying, monopoly, or special treatment instead of making something useful.",
+   "example": "A company lobbying for a rule that bans its competitors.",
+   "aliases": [
+    "rent seeking"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "economic rent",
+   "plain": "extra profit beyond what is needed",
+   "meaning": "Payment above what would be necessary to keep a resource in use, often from owning something scarce.",
+   "example": "A landlord charging far more simply because the location is unique.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "arbitrage",
+   "plain": "buying cheap in one place and selling dear in another",
+   "meaning": "Profiting from a price difference for the same thing in two markets.",
+   "example": "Buying a sneaker for $100 at one store and selling it for $150 online.",
+   "aliases": [
+    "arbitrageur"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "speculation",
+   "plain": "betting on price moves",
+   "meaning": "Buying something not to use it but hoping to sell it later for more.",
+   "example": "Buying a condo to flip, not to live in.",
+   "aliases": [
+    "speculative",
+    "speculator",
+    "speculators"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bubble",
+   "plain": "prices soaring far above what something is worth",
+   "meaning": "When prices rise way beyond any sensible value because everyone expects them to keep rising, until they crash.",
+   "example": "Tulip bulbs selling for the price of a house in 1637.",
+   "aliases": [
+    "asset bubble",
+    "housing bubble",
+    "speculative bubble"
+   ],
+   "plural": "prices soaring far above what things are worth",
+   "keep": false
+  },
+  {
+   "term": "commodity",
+   "plain": "a basic raw good",
+   "meaning": "A standard product that is the same no matter who makes it, like oil or wheat.",
+   "example": "A barrel of oil is a barrel of oil, whoever pumped it.",
+   "aliases": [
+    "commodities"
+   ],
+   "plural": "basic raw goods",
+   "keep": false
+  },
+  {
+   "term": "consumer",
+   "plain": "a shopper",
+   "meaning": "Anyone who buys goods or services for their own use.",
+   "example": "You, at the grocery store.",
+   "aliases": [],
+   "plural": "shoppers",
+   "keep": false
+  },
+  {
+   "term": "household",
+   "plain": "a family",
+   "meaning": "Economists' word for the people who live together and share money: a family, a couple, or one person living alone.",
+   "example": "Two roommates splitting rent count as one household.",
+   "aliases": [
+    "households"
+   ],
+   "plural": "families",
+   "keep": false
+  },
+  {
+   "term": "producer",
+   "plain": "a business that makes things",
+   "meaning": "Anyone who creates goods or services to sell.",
+   "example": "A farmer, a factory, or a freelance designer.",
+   "aliases": [
+    "producers"
+   ],
+   "plural": "businesses that make things",
+   "keep": false
+  },
+  {
+   "term": "goods and services",
+   "plain": "things you can buy",
+   "meaning": "Goods are physical things; services are work done for you.",
+   "example": "A phone is a good; a haircut is a service.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "utility",
+   "plain": "satisfaction",
+   "meaning": "The economist's word for the benefit or happiness you get from something.",
+   "example": "The enjoyment of a good meal.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "welfare",
+   "plain": "overall well-being",
+   "meaning": "In economics, how well off people are in total, not just the benefit program.",
+   "example": "Whether a policy leaves people better or worse off overall.",
+   "aliases": [
+    "economic welfare",
+    "social welfare"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "incentive",
+   "plain": "a reason to act a certain way",
+   "meaning": "Something that motivates a person or business to make a choice.",
+   "example": "A bonus for hitting a sales target.",
+   "aliases": [
+    "incentives",
+    "incentivize",
+    "incentivise"
+   ],
+   "plural": "reasons to act a certain way",
+   "keep": false
+  },
+  {
+   "term": "rational actor",
+   "plain": "someone who weighs costs and benefits",
+   "meaning": "The textbook assumption that people make decisions to get the most benefit for themselves.",
+   "example": "Choosing the cheaper of two identical products.",
+   "aliases": [
+    "rational agent",
+    "homo economicus"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "behavioral economics",
+   "plain": "how people really decide, quirks and all",
+   "meaning": "The study of how real people make economic choices, including habits, biases, and mistakes.",
+   "example": "People buying more when a price ends in .99.",
+   "aliases": [
+    "behavioural economics"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "zero-sum",
+   "plain": "one person's gain is another's loss",
+   "meaning": "A situation where the total is fixed, so whatever one side wins the other loses.",
+   "example": "Splitting a single pie.",
+   "aliases": [
+    "zero sum",
+    "zero-sum game"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "tragedy of the commons",
+   "plain": "everyone overusing a shared resource",
+   "meaning": "When individuals each take a bit more of a shared resource, it gets used up for everyone.",
+   "example": "Overfishing a lake until there are no fish left.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "asymmetric information",
+   "plain": "one side knowing more than the other",
+   "meaning": "When one party in a deal has information the other lacks.",
+   "example": "A used-car seller knowing the car has problems the buyer cannot see.",
+   "aliases": [
+    "information asymmetry"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "adverse selection",
+   "plain": "the wrong customers signing up",
+   "meaning": "When the people most likely to cost you are the ones most eager to buy.",
+   "example": "Only sick people buying health insurance, driving premiums up.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "trade deficit",
+   "plain": "the gap from buying more abroad than we sell",
+   "meaning": "When a country imports more than it exports.",
+   "example": "The US buying $100 of goods from abroad while selling $70 to other countries.",
+   "aliases": [
+    "trade gap",
+    "current account deficit"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "trade surplus",
+   "plain": "the surplus from selling more abroad than we buy",
+   "meaning": "When a country exports more than it imports.",
+   "example": "Germany selling more cars abroad than it buys in foreign goods.",
+   "aliases": [
+    "current account surplus"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "balance of trade",
+   "plain": "the gap between exports and imports",
+   "meaning": "The difference between what a country sells abroad and what it buys from abroad.",
+   "example": "Sell $80 abroad, buy $100 from abroad: a $20 shortfall.",
+   "aliases": [
+    "trade balance",
+    "balance of payments",
+    "current account"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "exports",
+   "plain": "goods sold to other countries",
+   "meaning": "Things made at home and sold abroad.",
+   "example": "American soybeans shipped to China.",
+   "aliases": [
+    "export"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "imports",
+   "plain": "goods bought from other countries",
+   "meaning": "Things made abroad and bought at home.",
+   "example": "A phone assembled in Vietnam sold in Ohio.",
+   "aliases": [
+    "import"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "protectionism",
+   "plain": "shielding local businesses from foreign competition",
+   "meaning": "Using tariffs, quotas, or rules to make imports harder so local companies face less competition.",
+   "example": "Taxing foreign cars so people buy domestic ones.",
+   "aliases": [
+    "protectionist"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "free trade",
+   "plain": "buying and selling across borders without barriers",
+   "meaning": "Trade between countries without tariffs or quotas.",
+   "example": "Goods flowing between US states without any border tax.",
+   "aliases": [
+    "free trade agreement",
+    "trade liberalization",
+    "trade liberalisation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "quota",
+   "plain": "a limit on how much can be imported",
+   "meaning": "A cap on the quantity of a product allowed into a country.",
+   "example": "Only 1 million foreign cars allowed in per year.",
+   "aliases": [
+    "import quota",
+    "quotas"
+   ],
+   "plural": "limits on how much can be imported",
+   "keep": false
+  },
+  {
+   "term": "exchange rate",
+   "plain": "what one currency is worth in another",
+   "meaning": "The price of one country's money in terms of another's.",
+   "example": "One dollar buys 0.90 euros today.",
+   "aliases": [
+    "fx rate",
+    "currency rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "devaluation",
+   "plain": "making a currency worth less on purpose",
+   "meaning": "A government deliberately lowering the value of its currency against others.",
+   "example": "China letting the yuan weaken so its exports get cheaper.",
+   "aliases": [
+    "devalue",
+    "devalued"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "depreciation",
+   "plain": "losing value over time",
+   "meaning": "A currency or asset becoming worth less. For currencies, it means one unit buys less foreign money.",
+   "example": "The pound falling from $1.40 to $1.20, or a car losing value each year.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "appreciation",
+   "plain": "gaining value over time",
+   "meaning": "A currency or asset becoming worth more.",
+   "example": "The dollar rising so your vacation in Europe gets cheaper.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "strong dollar",
+   "plain": "a dollar that buys a lot of foreign currency",
+   "meaning": "When the dollar is worth more against other currencies, making imports and foreign travel cheaper but exports harder to sell.",
+   "example": "Your trip to Paris costs less, but US farmers sell less abroad.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "weak dollar",
+   "plain": "a dollar that buys less foreign currency",
+   "meaning": "When the dollar is worth less against other currencies, making imports pricier but exports easier to sell.",
+   "example": "Foreign goods cost more, but foreign buyers snap up US products.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "globalization",
+   "plain": "countries becoming more economically connected",
+   "meaning": "The growing flow of goods, money, people, and ideas across borders.",
+   "example": "A phone designed in California, built in China, sold in Brazil.",
+   "aliases": [
+    "globalisation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "offshoring",
+   "plain": "moving work to another country",
+   "meaning": "Relocating production or jobs abroad, usually to cut costs.",
+   "example": "A call center moving from Ohio to the Philippines.",
+   "aliases": [
+    "offshore",
+    "outsourcing"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "emerging markets",
+   "plain": "fast-growing poorer countries",
+   "meaning": "Developing countries whose economies are growing quickly but are still catching up.",
+   "example": "India, Brazil, Indonesia.",
+   "aliases": [
+    "emerging economies",
+    "developing countries",
+    "developing economies"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "sanctions",
+   "plain": "penalties on a country's trade or finances",
+   "meaning": "Restrictions one country places on another's trade or banking to punish or pressure it.",
+   "example": "Banning imports of Russian oil.",
+   "aliases": [
+    "economic sanctions",
+    "sanction"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "foreign direct investment",
+   "plain": "foreign companies building or buying businesses here",
+   "meaning": "Money from abroad used to start or buy businesses in a country.",
+   "example": "A Japanese carmaker building a plant in Tennessee.",
+   "aliases": [
+    "fdi"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "capital flight",
+   "plain": "money rushing out of a country",
+   "meaning": "Investors quickly moving their money abroad, usually out of fear.",
+   "example": "Wealthy people wiring savings overseas when a crisis hits.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "supply chain",
+   "plain": "the chain of steps that gets a product to you",
+   "meaning": "All the companies and steps involved in making and delivering a product.",
+   "example": "Cotton farm to fabric mill to factory to store to your closet.",
+   "aliases": [
+    "supply chains",
+    "supply chain disruption"
+   ],
+   "plural": "the chains of steps that get products to you",
+   "keep": false
+  },
+  {
+   "term": "bond",
+   "plain": "an IOU that pays interest",
+   "meaning": "A loan you make to a government or company. They pay you interest and return the money at a set date.",
+   "example": "Lend the government $1,000 for 10 years and collect $40 a year.",
+   "aliases": [
+    "bonds",
+    "treasury bonds",
+    "treasuries",
+    "treasury",
+    "gilts",
+    "government bonds",
+    "corporate bonds",
+    "fixed income"
+   ],
+   "plural": "IOUs that pay interest",
+   "keep": false
+  },
+  {
+   "term": "yield",
+   "plain": "the interest return",
+   "meaning": "The yearly income from a bond or investment as a percentage of its price.",
+   "example": "A $1,000 bond paying $50 a year has a 5% yield.",
+   "aliases": [
+    "bond yield",
+    "bond yields",
+    "yields",
+    "treasury yield",
+    "10-year yield"
+   ],
+   "plural": "interest returns",
+   "keep": false
+  },
+  {
+   "term": "yield curve",
+   "plain": "the line of interest rates from short to long loans",
+   "meaning": "A chart showing interest rates for loans of different lengths. Normally longer loans pay more.",
+   "example": "A 1-year bond at 4% and a 10-year bond at 5% make an upward-sloping curve.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "inverted yield curve",
+   "plain": "short-term loans paying more than long-term ones",
+   "meaning": "When short-term interest rates are higher than long-term ones, an unusual situation that often comes before a recession.",
+   "example": "A 2-year bond paying more than a 10-year bond.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "equity",
+   "plain": "ownership in a company",
+   "meaning": "A share of ownership, or the value of what you own minus what you owe on it.",
+   "example": "Owning shares in Apple, or the part of your house you have actually paid off.",
+   "aliases": [
+    "equities",
+    "stocks",
+    "shares"
+   ],
+   "plural": "shares of ownership in companies",
+   "keep": false
+  },
+  {
+   "term": "dividend",
+   "plain": "a company's cash payout to shareholders",
+   "meaning": "A slice of profits a company pays to the people who own its shares.",
+   "example": "Getting $2 per share every quarter.",
+   "aliases": [
+    "dividends"
+   ],
+   "plural": "cash payouts to a company's owners",
+   "keep": false
+  },
+  {
+   "term": "asset",
+   "plain": "something you own that has value",
+   "meaning": "Anything of value that can be owned, like cash, a house, or shares.",
+   "example": "Your car, savings account, and retirement fund.",
+   "aliases": [
+    "assets",
+    "asset prices",
+    "financial assets"
+   ],
+   "plural": "things you own that have value",
+   "keep": false
+  },
+  {
+   "term": "liability",
+   "plain": "something you owe",
+   "meaning": "A debt or obligation to pay.",
+   "example": "Your mortgage and credit card balance.",
+   "aliases": [
+    "liabilities"
+   ],
+   "plural": "things you owe",
+   "keep": false
+  },
+  {
+   "term": "portfolio",
+   "plain": "the collection of investments someone owns",
+   "meaning": "All of an investor's holdings, taken together.",
+   "example": "Your mix of stocks, bonds, and savings.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "diversification",
+   "plain": "not putting all your eggs in one basket",
+   "meaning": "Spreading investments across different things so one bad bet cannot sink you.",
+   "example": "Owning 50 different stocks instead of one.",
+   "aliases": [
+    "diversify",
+    "diversified"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "volatility",
+   "plain": "how wildly prices swing",
+   "meaning": "How much and how fast a price moves up and down.",
+   "example": "A stock that jumps 10% one day and drops 8% the next.",
+   "aliases": [
+    "volatile"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bull market",
+   "plain": "a period of rising prices",
+   "meaning": "A stretch when stock or asset prices keep going up and investors are optimistic.",
+   "example": "Stocks climbing steadily for years.",
+   "aliases": [
+    "bullish"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bear market",
+   "plain": "a period of falling prices",
+   "meaning": "A stretch when prices drop 20% or more from their high and investors are gloomy.",
+   "example": "Stocks sliding for months in 2008.",
+   "aliases": [
+    "bearish"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "correction",
+   "plain": "a modest price drop after a run-up",
+   "meaning": "A fall of roughly 10% from a recent high, less severe than a bear market.",
+   "example": "Stocks slipping 10% after a big rally.",
+   "aliases": [
+    "market correction"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "crash",
+   "plain": "a sudden, steep price collapse",
+   "meaning": "A very fast, very large drop in prices.",
+   "example": "Stocks losing 20% in a single day in 1987.",
+   "aliases": [
+    "market crash",
+    "stock market crash"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "rally",
+   "plain": "a quick rise in prices",
+   "meaning": "A period of rapidly rising prices.",
+   "example": "Stocks jumping 5% in a week after good news.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "hedge",
+   "plain": "protection against a loss",
+   "meaning": "An investment made to offset the risk of another one.",
+   "example": "Buying insurance on your house.",
+   "aliases": [
+    "hedging",
+    "hedged"
+   ],
+   "plural": "protections against losses",
+   "keep": false
+  },
+  {
+   "term": "derivative",
+   "plain": "a bet whose value depends on something else",
+   "meaning": "A financial contract whose value comes from an underlying asset like a stock, a currency, or oil.",
+   "example": "A contract that pays out if oil goes above $90 a barrel.",
+   "aliases": [
+    "derivatives"
+   ],
+   "plural": "bets whose value depends on something else",
+   "keep": false
+  },
+  {
+   "term": "securities",
+   "plain": "tradeable financial products",
+   "meaning": "Things like stocks and bonds that can be bought and sold.",
+   "example": "Anything you might see in a brokerage account.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "mortgage-backed securities",
+   "plain": "bundles of home loans sold to investors",
+   "meaning": "Home loans packaged together and sold as an investment. Investors get the monthly payments.",
+   "example": "Thousands of mortgages bundled into one product, famous from 2008.",
+   "aliases": [
+    "mbs",
+    "mortgage backed securities"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "securitization",
+   "plain": "bundling loans to sell as investments",
+   "meaning": "Turning a pool of loans into tradeable securities.",
+   "example": "A bank packaging 5,000 car loans and selling them to investors.",
+   "aliases": [
+    "securitisation",
+    "securitized",
+    "securitised"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "credit rating",
+   "plain": "a grade for how safe a borrower is",
+   "meaning": "A score showing how likely a borrower is to pay back its debts.",
+   "example": "AAA is very safe; junk means risky.",
+   "aliases": [
+    "credit ratings",
+    "credit score",
+    "rating agency",
+    "rating agencies"
+   ],
+   "plural": "grades for how safe borrowers are",
+   "keep": false
+  },
+  {
+   "term": "risk premium",
+   "plain": "extra return for taking extra risk",
+   "meaning": "The additional return investors demand for holding something riskier than a safe bet.",
+   "example": "A shaky company must pay 9% on its bonds while the government pays 4%.",
+   "aliases": [
+    "risk premia"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "capital gains",
+   "plain": "profit from selling something for more than you paid",
+   "meaning": "The gain when you sell an asset at a higher price than you bought it.",
+   "example": "Buying shares at $50 and selling at $80.",
+   "aliases": [
+    "capital gain",
+    "capital gains tax"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "return on investment",
+   "plain": "what you got back compared to what you put in",
+   "meaning": "The profit from an investment as a percentage of its cost.",
+   "example": "Invest $100, end up with $110: a 10% return.",
+   "aliases": [
+    "roi"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "compound interest",
+   "plain": "interest earning interest",
+   "meaning": "When the interest you earn is added to your balance, so the next round of interest is bigger.",
+   "example": "$1,000 at 10% becomes $1,100, then $1,210, then $1,331.",
+   "aliases": [
+    "compounding"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "principal",
+   "plain": "the original amount borrowed or invested",
+   "meaning": "The base sum of a loan or investment, not counting interest.",
+   "example": "On a $200k mortgage, $200k is the principal.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "amortization",
+   "plain": "paying off a loan bit by bit",
+   "meaning": "Spreading loan repayment over regular installments that cover both interest and the amount borrowed.",
+   "example": "A 30-year mortgage paid in 360 monthly chunks.",
+   "aliases": [
+    "amortisation",
+    "amortized",
+    "amortised"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "collateral",
+   "plain": "something you pledge to lose if you do not repay",
+   "meaning": "An asset the lender can take if you fail to pay back a loan.",
+   "example": "Your house on a mortgage, your car on a car loan.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "net worth",
+   "plain": "what you own minus what you owe",
+   "meaning": "Total assets minus total debts.",
+   "example": "A $300k house and $50k savings minus a $200k mortgage is $150k net worth.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cash flow",
+   "plain": "money coming in versus going out",
+   "meaning": "The movement of money into and out of a business or household over time.",
+   "example": "A shop taking in $10k a month and paying out $8k has positive cash flow.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "revenue",
+   "plain": "total money taken in",
+   "meaning": "All the money a business receives from sales before any costs are subtracted.",
+   "example": "A lemonade stand selling 100 cups at $1 has $100 revenue.",
+   "aliases": [
+    "revenues",
+    "turnover",
+    "top line"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "profit",
+   "plain": "money left after costs",
+   "meaning": "What is left from revenue after paying all expenses.",
+   "example": "$100 in lemonade sales minus $30 for lemons and sugar is $70 profit.",
+   "aliases": [
+    "profits",
+    "net income",
+    "earnings",
+    "bottom line",
+    "profit margin",
+    "margins"
+   ],
+   "plural": "money left after costs",
+   "keep": false
+  },
+  {
+   "term": "overhead",
+   "plain": "ongoing costs of running a business",
+   "meaning": "Costs that must be paid regardless of how much is sold.",
+   "example": "Rent, insurance, and electricity for a store.",
+   "aliases": [
+    "overheads"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "variable costs",
+   "plain": "costs that rise as you make more",
+   "meaning": "Expenses that go up with each extra unit produced.",
+   "example": "Flour and eggs for each extra cake.",
+   "aliases": [
+    "variable cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "depreciation expense",
+   "plain": "the cost of things wearing out",
+   "meaning": "Spreading the cost of a machine or building over the years it is used.",
+   "example": "A $10k van written off at $2k a year for five years.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "market capitalization",
+   "plain": "what a whole company is worth on the stock market",
+   "meaning": "The total value of all a company's shares.",
+   "example": "10 million shares at $50 each means a $500 million company.",
+   "aliases": [
+    "market cap"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "ipo",
+   "plain": "a company selling shares to the public for the first time",
+   "meaning": "An initial public offering: the first time a company's shares are sold on a stock exchange.",
+   "example": "A startup listing on the Nasdaq.",
+   "aliases": [
+    "initial public offering"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "venture capital",
+   "plain": "money invested in risky young companies",
+   "meaning": "Funding given to startups in exchange for ownership, in hope of a big payoff.",
+   "example": "A fund putting $5M into an app in exchange for 20% of it.",
+   "aliases": [
+    "vc"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "private equity",
+   "plain": "investors buying whole companies",
+   "meaning": "Funds that buy companies outright, often with borrowed money, to improve and resell them.",
+   "example": "A fund buying a chain of dental clinics.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "hedge fund",
+   "plain": "a lightly regulated investment fund for the wealthy",
+   "meaning": "An investment pool that uses aggressive strategies and is open only to rich or institutional investors.",
+   "example": "A fund betting that a company's stock will fall.",
+   "aliases": [
+    "hedge funds"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "index fund",
+   "plain": "a fund that simply owns the whole market",
+   "meaning": "A low-cost fund that holds every stock in an index like the S&P 500 rather than picking winners.",
+   "example": "One purchase that gives you a sliver of 500 big companies.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "s&p 500",
+   "plain": "the 500 biggest US companies' stock index",
+   "meaning": "An index tracking 500 large US companies, used as shorthand for 'the stock market'.",
+   "example": "When the news says 'stocks rose', it usually means this.",
+   "aliases": [
+    "s&p",
+    "dow jones",
+    "the dow",
+    "nasdaq",
+    "stock index",
+    "stock market index"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "basis points",
+   "plain": "hundredths of a percent",
+   "meaning": "One basis point is 0.01 percentage points. 100 basis points equals 1 percentage point.",
+   "example": "A rate going from 5.00% to 5.25% rose 25 basis points.",
+   "aliases": [
+    "basis point",
+    "bps"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "mortgage",
+   "plain": "a home loan",
+   "meaning": "A loan used to buy a house, with the house as security.",
+   "example": "Borrowing $300k to buy a home and paying it back over 30 years.",
+   "aliases": [
+    "mortgages",
+    "mortgage rates",
+    "mortgage rate"
+   ],
+   "plural": "home loans",
+   "keep": false
+  },
+  {
+   "term": "foreclosure",
+   "plain": "the bank taking your house for missed payments",
+   "meaning": "When a lender seizes a home because the owner stopped paying the mortgage.",
+   "example": "A family losing their house after a year of missed payments.",
+   "aliases": [
+    "foreclosures",
+    "foreclose"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "negative equity",
+   "plain": "owing more on your home than it is worth",
+   "meaning": "When your mortgage balance is bigger than your home's market value.",
+   "example": "Owing $300k on a house now worth $250k.",
+   "aliases": [
+    "underwater mortgage",
+    "underwater"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "household debt",
+   "plain": "what families owe",
+   "meaning": "All the debt held by households: mortgages, car loans, credit cards, student loans.",
+   "example": "A family's combined mortgage, car payment, and credit card balance.",
+   "aliases": [
+    "consumer debt"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "savings rate",
+   "plain": "the share of income people save",
+   "meaning": "The percentage of take-home pay that households put away instead of spending.",
+   "example": "Earning $4,000 a month and saving $400 is a 10% savings rate.",
+   "aliases": [
+    "personal savings rate",
+    "household savings"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "consumer confidence",
+   "plain": "how optimistic people feel about money",
+   "meaning": "A survey measure of how people feel about the economy and their own finances, which predicts spending.",
+   "example": "People planning vacations and big purchases when they feel secure.",
+   "aliases": [
+    "consumer sentiment"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "wealth effect",
+   "plain": "spending more because you feel richer",
+   "meaning": "When rising home or stock values make people spend more, even if their income has not changed.",
+   "example": "Buying a boat because your house 'went up' $100k on paper.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "wealth inequality",
+   "plain": "the gap between what the rich and poor own",
+   "meaning": "How unevenly wealth is spread across a population.",
+   "example": "The top 1% owning a third of everything.",
+   "aliases": [
+    "income inequality",
+    "inequality",
+    "wealth gap",
+    "income gap"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gini coefficient",
+   "plain": "a 0-to-1 score for inequality",
+   "meaning": "A number measuring how unequal incomes are: 0 means everyone earns the same, 1 means one person has everything.",
+   "example": "A score of 0.25 is fairly equal; 0.50 is very unequal.",
+   "aliases": [
+    "gini index",
+    "gini"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "poverty line",
+   "plain": "the income level below which you count as poor",
+   "meaning": "The minimum income the government says a household needs to cover basics.",
+   "example": "About $31,000 for a family of four in the US.",
+   "aliases": [
+    "poverty threshold",
+    "poverty rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "median income",
+   "plain": "the middle income",
+   "meaning": "The income level where half of people earn more and half earn less. Less skewed by billionaires than the average.",
+   "example": "If five people earn $20k, $30k, $40k, $50k, and $5M, the median is $40k.",
+   "aliases": [
+    "median household income",
+    "median wage"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "standard of living",
+   "plain": "how comfortably people live",
+   "meaning": "The level of wealth, comfort, and goods available to people.",
+   "example": "Whether a typical family can afford a car, healthcare, and a vacation.",
+   "aliases": [
+    "living standards"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "universal basic income",
+   "plain": "a regular cash payment to everyone",
+   "meaning": "A policy of giving every citizen a set amount of money regularly, no strings attached.",
+   "example": "Every adult receiving $1,000 a month from the government.",
+   "aliases": [
+    "ubi",
+    "basic income"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "keynesian",
+   "plain": "favoring government spending to steady the economy",
+   "meaning": "An approach, from economist John Maynard Keynes, that says governments should spend more in slumps to keep demand up.",
+   "example": "Building roads during a recession to keep people employed.",
+   "aliases": [
+    "keynesianism",
+    "keynesian economics"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "monetarism",
+   "plain": "focusing on the money supply to control prices",
+   "meaning": "The view that inflation mainly comes from how much money is in circulation, so controlling the money supply is key.",
+   "example": "Milton Friedman's line: inflation is always and everywhere a monetary phenomenon.",
+   "aliases": [
+    "monetarist"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "supply-side economics",
+   "plain": "boosting the economy by cutting taxes and rules",
+   "meaning": "The idea that lower taxes and fewer regulations encourage businesses to produce more, which grows the economy.",
+   "example": "Cutting corporate taxes so companies invest more.",
+   "aliases": [
+    "supply side economics",
+    "supply-side",
+    "trickle-down",
+    "trickle down economics",
+    "reaganomics"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "austrian economics",
+   "plain": "a school that distrusts central planning and central banks",
+   "meaning": "A school of thought that emphasizes free markets and sees government and central-bank meddling as the source of booms and busts.",
+   "example": "Blaming low interest rates for a housing bubble.",
+   "aliases": [
+    "austrian school"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "neoliberalism",
+   "plain": "free markets, free trade, and a smaller government",
+   "meaning": "A broad label for policies favoring open markets, privatization, and less government involvement in the economy.",
+   "example": "Selling off state industries and cutting trade barriers in the 1980s and 90s.",
+   "aliases": [
+    "neoliberal"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "macroeconomics",
+   "plain": "the study of the whole economy",
+   "meaning": "The big-picture branch of economics: growth, inflation, unemployment, and government policy.",
+   "example": "Asking why the whole country is in a recession.",
+   "aliases": [
+    "macroeconomic"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "microeconomics",
+   "plain": "the study of individual choices and markets",
+   "meaning": "The small-picture branch: how people, households, and businesses make decisions and how single markets work.",
+   "example": "Asking why coffee costs $5 at this cafe.",
+   "aliases": [
+    "microeconomic"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "ceteris paribus",
+   "plain": "all else being equal",
+   "meaning": "A Latin phrase meaning 'holding everything else the same', used to isolate one cause.",
+   "example": "If the price of apples rises, ceteris paribus, people buy fewer apples.",
+   "aliases": [
+    "all other things being equal",
+    "other things equal"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "phillips curve",
+   "plain": "the trade-off between joblessness and rising prices",
+   "meaning": "The observation that when unemployment is low, inflation tends to be high, and vice versa.",
+   "example": "A hot job market pushing wages, and then prices, up.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "natural rate of unemployment",
+   "plain": "the lowest unemployment can go without pushing prices up",
+   "meaning": "The level of unemployment that exists even in a healthy economy, from people moving between jobs.",
+   "example": "Around 4% in the US.",
+   "aliases": [
+    "nairu"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "multiplier effect",
+   "plain": "knock-on effect",
+   "meaning": "When new spending gets re-spent again and again, boosting the economy by more than the original amount.",
+   "example": "A $1,000 stimulus check pays a plumber, who pays a grocer, who pays a farmer.",
+   "aliases": [
+    "fiscal multiplier"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "velocity of money",
+   "plain": "how fast money changes hands",
+   "meaning": "How many times a dollar is spent in a year.",
+   "example": "The same $20 bill paying for lunch, then a haircut, then groceries in one week.",
+   "aliases": [
+    "money velocity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "liquidity trap",
+   "plain": "situation where cheap money stops working",
+   "meaning": "A situation where interest rates are near zero but people still will not borrow or spend, so cuts have no effect.",
+   "example": "Japan in the 1990s: free money, no takers.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "zero lower bound",
+   "plain": "interest rates cannot go below zero",
+   "meaning": "The problem that a central bank cannot cut rates much below zero, limiting its options in a deep slump.",
+   "example": "Rates at 0% with nowhere left to cut.",
+   "aliases": [
+    "zlb"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "inflation targeting",
+   "plain": "aiming for a set rate of price increases",
+   "meaning": "A central bank publicly aiming for a specific inflation rate, usually 2%.",
+   "example": "The Fed trying to keep prices rising about 2% a year.",
+   "aliases": [
+    "inflation target",
+    "2% target"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "forward guidance",
+   "plain": "the central bank hinting at its future moves",
+   "meaning": "A central bank telling the public what it plans to do with interest rates so people can plan.",
+   "example": "The Fed saying it expects to hold rates steady through next year.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "inflation expectations",
+   "plain": "what people think prices will do",
+   "meaning": "How much people expect prices to rise, which shapes their wage demands and spending.",
+   "example": "Workers asking for bigger raises because they expect prices to jump.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "wage-price spiral",
+   "plain": "wages and prices chasing each other upward",
+   "meaning": "When rising prices lead to higher wage demands, which raise costs and prices further.",
+   "example": "Workers get 8% raises, shops raise prices 8%, workers ask for another raise.",
+   "aliases": [
+    "wage price spiral"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "demand-pull inflation",
+   "plain": "prices rising because people want to buy more than is available",
+   "meaning": "Inflation caused by too much spending chasing too few goods.",
+   "example": "Everyone gets a bonus and rushes to buy the same limited stock of cars.",
+   "aliases": [
+    "demand pull inflation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cost-push inflation",
+   "plain": "prices rising because making things got more expensive",
+   "meaning": "Inflation caused by higher costs, like wages or raw materials, being passed on to customers.",
+   "example": "Oil prices spike, so shipping and then groceries cost more.",
+   "aliases": [
+    "cost push inflation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "creative destruction",
+   "plain": "new industries wiping out old ones",
+   "meaning": "The process where innovation destroys old businesses but creates better ones.",
+   "example": "Streaming killing video rental stores.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "nudge",
+   "plain": "a gentle push toward a better choice",
+   "meaning": "Designing choices so people are steered toward a good option without forcing them.",
+   "example": "Making retirement saving the default so people have to opt out.",
+   "aliases": [
+    "nudges",
+    "choice architecture"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "sunk cost",
+   "plain": "money already spent that you cannot get back",
+   "meaning": "A past cost that should not affect a decision, because it is gone either way.",
+   "example": "Finishing a bad movie because you paid for the ticket.",
+   "aliases": [
+    "sunk costs",
+    "sunk cost fallacy"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "game theory",
+   "plain": "the study of strategic decisions",
+   "meaning": "The study of how people make choices when the outcome depends on what others do.",
+   "example": "Deciding whether to cut prices knowing your rival might too.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "prisoner's dilemma",
+   "plain": "a situation where selfish choices leave everyone worse off",
+   "meaning": "A classic game where two people each do better by betraying the other, yet both lose if both betray.",
+   "example": "Two rival stores both slashing prices and both losing money.",
+   "aliases": [
+    "prisoners dilemma"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "pareto efficiency",
+   "plain": "no one can be made better off without hurting someone else",
+   "meaning": "A situation where resources are allocated so that improving one person's lot means worsening another's.",
+   "example": "A pie fully divided: giving anyone more means taking from someone.",
+   "aliases": [
+    "pareto efficient",
+    "pareto optimal",
+    "pareto optimality"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "dead weight loss",
+   "plain": "value lost when a market is distorted",
+   "meaning": "The benefit that disappears when a tax, price control, or monopoly stops trades that would have helped both sides.",
+   "example": "A tax so high that some people stop buying and the seller stops selling, so no one gets that value.",
+   "aliases": [
+    "deadweight loss"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "consumer surplus",
+   "plain": "the deal you got below what you would have paid",
+   "meaning": "The gap between what you were willing to pay and what you actually paid.",
+   "example": "Willing to pay $50 for a jacket, finding it for $30: $20 of surplus.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "producer surplus",
+   "plain": "the extra a seller gets above their minimum price",
+   "meaning": "The gap between the lowest price a seller would accept and the price they actually got.",
+   "example": "Willing to sell for $20, selling for $30: $10 of surplus.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "indicator",
+   "plain": "a measurement that signals how the economy is doing",
+   "meaning": "Any statistic used to judge the health of the economy.",
+   "example": "Unemployment, inflation, and GDP growth.",
+   "aliases": [
+    "economic indicator",
+    "economic indicators",
+    "leading indicator",
+    "lagging indicator",
+    "indicators"
+   ],
+   "plural": "measurements that signal how the economy is doing",
+   "keep": false
+  },
+  {
+   "term": "headwinds",
+   "plain": "things slowing the economy down",
+   "meaning": "Obstacles that make growth harder.",
+   "example": "High interest rates and expensive fuel.",
+   "aliases": [
+    "headwind"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "tailwinds",
+   "plain": "things helping the economy along",
+   "meaning": "Favorable conditions that make growth easier.",
+   "example": "Cheap energy and strong consumer spending.",
+   "aliases": [
+    "tailwind"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "overheating",
+   "plain": "the economy growing too fast to be healthy",
+   "meaning": "When demand is so strong that prices start rising too quickly.",
+   "example": "A job market so hot that employers cannot find workers and keep raising wages.",
+   "aliases": [
+    "overheated",
+    "overheat"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "shock",
+   "plain": "a sudden unexpected event that hits the economy",
+   "meaning": "An unforeseen jolt, like a war or pandemic, that disrupts normal activity.",
+   "example": "Oil prices doubling overnight after a conflict.",
+   "aliases": [
+    "economic shock",
+    "supply shock",
+    "demand shock",
+    "external shock"
+   ],
+   "plural": "sudden unexpected events that hit the economy",
+   "keep": false
+  },
+  {
+   "term": "bottleneck",
+   "plain": "a choke point slowing everything down",
+   "meaning": "One stage in a process that cannot keep up, holding up everything behind it.",
+   "example": "A single clogged port delaying goods across the country.",
+   "aliases": [
+    "bottlenecks"
+   ],
+   "plural": "choke points slowing everything down",
+   "keep": false
+  },
+  {
+   "term": "dovish",
+   "plain": "rate-cut-leaning",
+   "meaning": "Describes a central banker who favors keeping rates low to support jobs, even if prices rise a bit.",
+   "example": "A Fed official saying growth matters more than inflation right now.",
+   "aliases": [
+    "dove",
+    "doves"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "hawkish",
+   "plain": "rate-hike-leaning",
+   "meaning": "Describes a central banker who favors raising rates to fight inflation, even if it slows growth.",
+   "example": "A Fed official pushing for another rate hike.",
+   "aliases": [
+    "hawk",
+    "hawks"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "tightening",
+   "plain": "making borrowing harder or costlier",
+   "meaning": "Raising interest rates or reducing the money supply to slow the economy.",
+   "example": "The Fed raising rates three times in a year.",
+   "aliases": [
+    "tighten",
+    "tighter"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "loosening",
+   "plain": "making borrowing easier or cheaper",
+   "meaning": "Cutting interest rates or adding money to speed up the economy.",
+   "example": "The Fed cutting rates to help a weak job market.",
+   "aliases": [
+    "loosen",
+    "looser",
+    "accommodative"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "stagnation",
+   "plain": "an economy stuck with no growth",
+   "meaning": "A long stretch with little or no economic growth.",
+   "example": "Years of the economy barely budging.",
+   "aliases": [
+    "stagnant",
+    "secular stagnation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "boom",
+   "plain": "a period of very fast growth",
+   "meaning": "A time of rapid expansion, high spending, and low unemployment.",
+   "example": "The late 1990s tech boom.",
+   "aliases": [
+    "booming"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "bust",
+   "plain": "a sharp collapse after a boom",
+   "meaning": "A sudden downturn that follows a boom.",
+   "example": "The dot-com bust of 2000.",
+   "aliases": [
+    "boom and bust",
+    "boom-bust"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "stakeholder",
+   "plain": "anyone affected by a decision",
+   "meaning": "A person or group with an interest in how something turns out.",
+   "example": "A company's workers, customers, and neighbors, not just its owners.",
+   "aliases": [
+    "stakeholders"
+   ],
+   "plural": "everyone affected by a decision",
+   "keep": false
+  },
+  {
+   "term": "shareholder",
+   "plain": "someone who owns part of a company",
+   "meaning": "A person or fund that owns shares in a company.",
+   "example": "Anyone with Apple stock in their retirement account.",
+   "aliases": [
+    "shareholders",
+    "stockholders",
+    "stockholder"
+   ],
+   "plural": "people who own part of a company",
+   "keep": false
+  },
+  {
+   "term": "monetize",
+   "plain": "turn into money",
+   "meaning": "To find a way to make money from something.",
+   "example": "A YouTuber running ads on their videos.",
+   "aliases": [
+    "monetise",
+    "monetization",
+    "monetisation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "capital expenditure",
+   "plain": "spending on big long-term items",
+   "meaning": "Money a business spends on buildings, equipment, and other things it will use for years.",
+   "example": "A trucking company buying ten new trucks.",
+   "aliases": [
+    "capex"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "operating expenses",
+   "plain": "day-to-day running costs",
+   "meaning": "The regular costs of keeping a business going.",
+   "example": "Salaries, rent, and utilities.",
+   "aliases": [
+    "opex"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gross margin",
+   "plain": "the share of sales left after making the product",
+   "meaning": "Revenue minus the direct cost of making what was sold, as a percentage of revenue.",
+   "example": "Sell a shirt for $20 that cost $8 to make: 60% gross margin.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "merger",
+   "plain": "two companies combining into one",
+   "meaning": "When two businesses join together.",
+   "example": "Two regional banks becoming one.",
+   "aliases": [
+    "mergers",
+    "acquisition",
+    "acquisitions",
+    "m&a",
+    "takeover"
+   ],
+   "plural": "companies combining",
+   "keep": false
+  },
+  {
+   "term": "cryptocurrency",
+   "plain": "digital money not run by any government",
+   "meaning": "Money that exists only online and is tracked by a shared ledger rather than a bank.",
+   "example": "Bitcoin or Ethereum.",
+   "aliases": [
+    "crypto",
+    "bitcoin",
+    "digital currency"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "fiat money",
+   "plain": "money that is valuable because the government says so",
+   "meaning": "Currency with no gold or other backing, whose value rests on trust in the government issuing it.",
+   "example": "The US dollar since 1971.",
+   "aliases": [
+    "fiat currency",
+    "fiat"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gold standard",
+   "plain": "money backed by gold",
+   "meaning": "A system where currency can be exchanged for a fixed amount of gold.",
+   "example": "Trading a $20 bill for an ounce of gold at the bank, as in the 1800s.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "gig economy",
+   "plain": "short-term freelance work through apps",
+   "meaning": "An economy where many people work temporary jobs, often via apps, rather than as employees.",
+   "example": "Driving for Uber or delivering for DoorDash.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "circular economy",
+   "plain": "reusing and recycling instead of throwing away",
+   "meaning": "An economic model that keeps materials in use rather than making, using, and discarding.",
+   "example": "A company taking back old phones to recover the metals.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "black market",
+   "plain": "illegal buying and selling",
+   "meaning": "Trade that happens outside the law, often to avoid taxes or bans.",
+   "example": "Selling cigarettes without paying tax.",
+   "aliases": [
+    "informal economy",
+    "shadow economy",
+    "underground economy",
+    "grey market",
+    "gray market"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "remittances",
+   "plain": "money migrants send home",
+   "meaning": "Money that workers abroad send back to family in their home country.",
+   "example": "A nurse in London wiring money to her parents in Manila.",
+   "aliases": [
+    "remittance"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "brain drain",
+   "plain": "skilled people leaving a country",
+   "meaning": "When educated workers emigrate, taking their skills elsewhere.",
+   "example": "Doctors trained in one country moving abroad for better pay.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "seasonally adjusted",
+   "plain": "smoothed to remove predictable seasonal swings",
+   "meaning": "A statistic corrected for regular yearly patterns, like holiday hiring, so months can be compared fairly.",
+   "example": "Retail sales look flat once the December shopping bump is stripped out.",
+   "aliases": [
+    "seasonal adjustment"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "annualized",
+   "plain": "scaled up to a full-year rate",
+   "meaning": "A short-period number stretched out to show what it would be over a whole year.",
+   "example": "Growth of 0.5% in one quarter is about 2% annualized.",
+   "aliases": [
+    "annualised",
+    "annualized rate"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "year-over-year",
+   "plain": "compared to the same time last year",
+   "meaning": "A change measured against the same month or quarter a year earlier.",
+   "example": "Prices in March versus prices last March.",
+   "aliases": [
+    "year on year",
+    "yoy",
+    "y/y"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "quarter-over-quarter",
+   "plain": "compared to the previous three months",
+   "meaning": "A change measured against the previous quarter.",
+   "example": "Sales this spring versus this winter.",
+   "aliases": [
+    "quarter on quarter",
+    "qoq",
+    "q/q"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "quarter",
+   "plain": "a three-month period",
+   "meaning": "One quarter of a year, the standard unit for reporting economic and business results.",
+   "example": "January through March is the first quarter.",
+   "aliases": [
+    "quarterly",
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "fiscal year",
+   "plain": "a company's or government's 12-month accounting year",
+   "meaning": "A 12-month period used for budgeting, which may not match the calendar year.",
+   "example": "The US government's year runs October through September.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "percentage point",
+   "plain": "a difference of one whole percent",
+   "meaning": "The simple difference between two percentages, as opposed to a percentage change.",
+   "example": "Going from 2% to 3% is a rise of 1 percentage point, but a 50% increase.",
+   "aliases": [
+    "percentage points"
+   ],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "economics",
+   "plain": "economics",
+   "meaning": "The study of how people, businesses, and countries decide what to do with limited time, money, and stuff.",
+   "example": "Why a student picks a job over a nap, or why a country builds roads instead of tanks.",
+   "aliases": [],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "trade-off",
+   "plain": "a give-and-take choice",
+   "meaning": "Getting more of one thing means getting less of something else.",
+   "example": "An extra hour at work is an hour less with friends.",
+   "aliases": [
+    "trade-offs",
+    "tradeoff",
+    "tradeoffs",
+    "trade off",
+    "trade offs"
+   ],
+   "plural": "give-and-take choices",
+   "keep": false
+  },
+  {
+   "term": "no free lunch",
+   "plain": "nothing is truly free",
+   "meaning": "Every choice costs something, even if no money changes hands, because you gave up the alternative.",
+   "example": "A 'free' concert still costs you the evening you could have spent elsewhere.",
+   "aliases": [
+    "there is no free lunch",
+    "there's no free lunch",
+    "there is no such thing as a free lunch"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "efficiency",
+   "plain": "getting the most out of what you have",
+   "meaning": "Squeezing the most value out of limited resources, with nothing wasted. The 'size of the pie'.",
+   "example": "A kitchen where every burner is in use and no food is thrown away.",
+   "aliases": [
+    "economic efficiency",
+    "allocative efficiency"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "inefficiency",
+   "plain": "wasting what you have",
+   "meaning": "Producing less than you could from your resources, or using them on the wrong things.",
+   "example": "A factory with half its machines idle.",
+   "aliases": [
+    "inefficiencies"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "equality",
+   "plain": "how evenly wealth is shared",
+   "meaning": "How evenly the economy's benefits are spread across people. The 'slicing of the pie'.",
+   "example": "Two roommates splitting groceries 50/50 rather than one eating most of it.",
+   "aliases": [
+    "economic equality"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "rational people",
+   "plain": "people who weigh costs and benefits",
+   "meaning": "The textbook assumption that people do the best they can for themselves given their options, comparing what they gain against what they give up.",
+   "example": "Someone who checks whether the drive to a cheaper store is worth the gas.",
+   "aliases": [
+    "rational person",
+    "rational decision makers",
+    "rational decision-makers",
+    "rationally"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal change",
+   "plain": "a small extra step",
+   "meaning": "A small tweak to what you are already doing: one more, or one less.",
+   "example": "Deciding whether to study one more hour, not whether to study at all.",
+   "aliases": [
+    "marginal changes",
+    "marginal adjustment",
+    "marginal adjustments",
+    "incremental change"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "think at the margin",
+   "plain": "compare the next small step's costs and benefits",
+   "meaning": "Making decisions by asking whether one more unit is worth its extra cost, rather than all-or-nothing.",
+   "example": "An airline sells a last-minute seat for $50 because the extra passenger costs it almost nothing.",
+   "aliases": [
+    "thinking at the margin",
+    "thinks at the margin",
+    "marginal thinking",
+    "marginal analysis",
+    "marginal decision making"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal benefit",
+   "plain": "the extra benefit from one more",
+   "meaning": "What you gain from a small additional amount of something.",
+   "example": "The enjoyment from a third slice of pizza.",
+   "aliases": [
+    "marginal benefits"
+   ],
+   "plural": "extra benefits from one more",
+   "keep": false
+  },
+  {
+   "term": "marginal cost",
+   "plain": "the extra cost of one more",
+   "meaning": "What it costs to produce or get one additional unit.",
+   "example": "The dough and cheese for one more pizza, not the oven.",
+   "aliases": [
+    "marginal costs"
+   ],
+   "plural": "extra costs of one more",
+   "keep": false
+  },
+  {
+   "term": "market economy",
+   "plain": "an economy run by millions of buyers and sellers",
+   "meaning": "An economy where businesses and households decide what to make, buy, and sell, instead of a central government planner.",
+   "example": "Restaurants open where people want to eat, not where an official assigns them.",
+   "aliases": [
+    "market economies"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "centrally planned economy",
+   "plain": "an economy run by government planners",
+   "meaning": "An economy where a central authority decides what gets made, how much, and who gets it.",
+   "example": "The Soviet Union deciding how many shoes each factory would produce.",
+   "aliases": [
+    "central planning",
+    "command economy",
+    "planned economy"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "central planner",
+   "plain": "a government official deciding what gets made",
+   "meaning": "Someone in government who decides what the economy should produce and who gets it, instead of leaving it to buyers and sellers.",
+   "example": "An official in Moscow in 1970 setting the number of tractors each factory must build.",
+   "aliases": [
+    "central planners"
+   ],
+   "plural": "government officials deciding what gets made",
+   "keep": false
+  },
+  {
+   "term": "property rights",
+   "plain": "the legal right to own and control things",
+   "meaning": "The rules that let people own things and decide how they are used, backed by courts.",
+   "example": "A farmer will only plant if they know no one can legally take the harvest.",
+   "aliases": [
+    "property right",
+    "enforce property rights"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "market power",
+   "plain": "the ability to push prices around",
+   "meaning": "When a single buyer or seller is big enough to influence the market price instead of just accepting it.",
+   "example": "The only gas station for 50 miles charging what it likes.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "scientific method",
+   "plain": "test ideas against evidence",
+   "meaning": "Coming up with a theory, then checking it against real-world data.",
+   "example": "Guessing that higher prices cut sales, then looking at sales figures to see.",
+   "aliases": [
+    "the scientific method"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "economic model",
+   "plain": "a simplified picture of how part of the economy works",
+   "meaning": "A diagram or equation that leaves out details to make one relationship easier to see.",
+   "example": "A subway map: not to scale, but it shows how to get around.",
+   "aliases": [
+    "economic models"
+   ],
+   "plural": "simplified pictures of how the economy works",
+   "keep": false
+  },
+  {
+   "term": "assumption",
+   "plain": "a simplification taken as given",
+   "meaning": "Something assumed to be true to make a problem easier to think about.",
+   "example": "Pretending there are only two countries in the world to explain trade.",
+   "aliases": [
+    "assumptions"
+   ],
+   "plural": "simplifications taken as given",
+   "keep": false
+  },
+  {
+   "term": "circular-flow diagram",
+   "plain": "the money-goes-round map",
+   "meaning": "A simple picture showing money flowing from households to businesses when they buy things, and back to households as wages and profit.",
+   "example": "You pay a cafe for coffee; the cafe pays its barista, who buys coffee somewhere else.",
+   "aliases": [
+    "circular flow diagram",
+    "circular flow",
+    "circular-flow"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "production possibilities frontier",
+   "plain": "the most-you-can-make curve",
+   "meaning": "A graph showing every combination of two things an economy could produce if it used everything it has. Points inside the curve are wasteful; points outside are impossible.",
+   "example": "A bakery with one oven can make 100 loaves, or 200 muffins, or some mix, but not both maxed out.",
+   "aliases": [
+    "production possibilities frontiers",
+    "production possibility frontier",
+    "production possibilities curve",
+    "ppf",
+    "the ppf"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "positive statement",
+   "plain": "a claim about how things are",
+   "meaning": "A statement about facts that could in principle be checked against evidence.",
+   "example": "'Raising the minimum wage reduces teen employment' is testable, whether or not it turns out true.",
+   "aliases": [
+    "positive statements",
+    "positive analysis",
+    "positive economics"
+   ],
+   "plural": "claims about how things are",
+   "keep": false
+  },
+  {
+   "term": "normative statement",
+   "plain": "a claim about how things should be",
+   "meaning": "A statement of opinion or values that cannot be settled by evidence alone.",
+   "example": "'The government should raise the minimum wage.'",
+   "aliases": [
+    "normative statements",
+    "normative analysis",
+    "normative economics"
+   ],
+   "plural": "claims about how things should be",
+   "keep": false
+  },
+  {
+   "term": "absolute advantage",
+   "plain": "being able to make more with the same resources",
+   "meaning": "Being flat-out better at producing something, using fewer inputs than someone else.",
+   "example": "A chef who can chop twice as many onions per hour as a trainee.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "competitive market",
+   "plain": "a market with many buyers and many sellers",
+   "meaning": "A market where there are so many buyers and sellers that no single one can affect the price.",
+   "example": "Wheat farmers: there are thousands, so no one farmer can raise the price.",
+   "aliases": [
+    "competitive markets",
+    "perfectly competitive market"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price taker",
+   "plain": "someone who has to accept the going price",
+   "meaning": "A buyer or seller too small to influence the price, so they take it as given.",
+   "example": "A corn farmer selling at whatever the market pays that day.",
+   "aliases": [
+    "price takers"
+   ],
+   "plural": "people who have to accept the going price",
+   "keep": false
+  },
+  {
+   "term": "quantity demanded",
+   "plain": "the amount people will buy at a given price",
+   "meaning": "How much of something buyers are willing and able to buy at one specific price.",
+   "example": "At $2 a scoop, the town buys 500 ice creams a day.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "quantity supplied",
+   "plain": "the amount sellers will offer at a given price",
+   "meaning": "How much of something sellers are willing and able to sell at one specific price.",
+   "example": "At $2 a scoop, the shops are willing to sell 300 ice creams a day.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "law of demand",
+   "plain": "people buy less when the price goes up",
+   "meaning": "All else equal, a higher price means people buy less, and a lower price means they buy more.",
+   "example": "Sales of strawberries jump when they go on special.",
+   "aliases": [
+    "the law of demand"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "law of supply",
+   "plain": "sellers offer more when the price goes up",
+   "meaning": "All else equal, a higher price means sellers are willing to produce and sell more.",
+   "example": "More people pick up ride-share shifts when surge pricing is on.",
+   "aliases": [
+    "the law of supply"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "law of supply and demand",
+   "plain": "prices settle where buying matches selling",
+   "meaning": "The price of anything moves to the level where the amount people want to buy equals the amount sellers want to sell.",
+   "example": "Concert tickets get pricier until exactly enough fans are willing to pay.",
+   "aliases": [
+    "the law of supply and demand"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "demand schedule",
+   "plain": "a table of prices and how much people would buy",
+   "meaning": "A list showing, for each price, how much buyers would purchase.",
+   "example": "$1: 800 scoops, $2: 500 scoops, $3: 200 scoops.",
+   "aliases": [
+    "demand schedules"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "demand curve",
+   "plain": "the line showing how much people buy at each price",
+   "meaning": "A graph of the demand schedule. It slopes down because people buy less as the price rises.",
+   "example": "Plot price against ice creams bought and you get a downhill line.",
+   "aliases": [
+    "demand curves"
+   ],
+   "plural": "lines showing how much people buy at each price",
+   "keep": false
+  },
+  {
+   "term": "supply schedule",
+   "plain": "a table of prices and how much sellers would offer",
+   "meaning": "A list showing, for each price, how much sellers would sell.",
+   "example": "$1: 100 scoops, $2: 300 scoops, $3: 600 scoops.",
+   "aliases": [
+    "supply schedules"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "supply curve",
+   "plain": "the line showing how much sellers offer at each price",
+   "meaning": "A graph of the supply schedule. It slopes up because sellers offer more as the price rises.",
+   "example": "Plot price against ice creams offered and you get an uphill line.",
+   "aliases": [
+    "supply curves"
+   ],
+   "plural": "lines showing how much sellers offer at each price",
+   "keep": false
+  },
+  {
+   "term": "equilibrium quantity",
+   "plain": "the amount bought and sold at the balance price",
+   "meaning": "How much changes hands when supply and demand are balanced.",
+   "example": "At $2, buyers want 400 and sellers offer 400, so 400 scoops are sold.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "normal good",
+   "plain": "something you buy more of when you earn more",
+   "meaning": "A product people buy more of as their income rises.",
+   "example": "Restaurant meals, new clothes, vacations.",
+   "aliases": [
+    "normal goods"
+   ],
+   "plural": "things you buy more of when you earn more",
+   "keep": false
+  },
+  {
+   "term": "inferior good",
+   "plain": "something you buy less of when you earn more",
+   "meaning": "A product people buy less of as their income rises, because they can now afford something better.",
+   "example": "Instant noodles and bus tickets, once you can afford steak and a car.",
+   "aliases": [
+    "inferior goods"
+   ],
+   "plural": "things you buy less of when you earn more",
+   "keep": false
+  },
+  {
+   "term": "substitutes",
+   "plain": "things you could buy instead of each other",
+   "meaning": "Two products where a price rise in one makes people buy more of the other.",
+   "example": "Coke and Pepsi, butter and margarine, movie tickets and streaming.",
+   "aliases": [
+    "substitute goods",
+    "substitute good",
+    "close substitutes",
+    "a substitute"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "complements",
+   "plain": "things you buy together",
+   "meaning": "Two products where a price rise in one makes people buy less of the other, because they go together.",
+   "example": "Hot dogs and buns, printers and ink, cars and gas.",
+   "aliases": [
+    "complementary goods",
+    "complementary good",
+    "a complement"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "perfect substitutes",
+   "plain": "things you swap one-for-one without caring",
+   "meaning": "Two products a buyer treats as completely interchangeable.",
+   "example": "A $10 bill and two $5 bills.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "perfect complements",
+   "plain": "things only useful together in fixed amounts",
+   "meaning": "Two products that must be used together in a set ratio.",
+   "example": "Left shoes and right shoes.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price elasticity of supply",
+   "plain": "how much sellers change output when the price changes",
+   "meaning": "A measure of how strongly the amount sellers offer responds to a price change.",
+   "example": "Beachfront land: the price doubles but there is no more of it to sell.",
+   "aliases": [
+    "elasticity of supply",
+    "supply elasticity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "income elasticity of demand",
+   "plain": "how much buying changes when income changes",
+   "meaning": "A measure of how strongly purchases respond to a change in people's income.",
+   "example": "A 10% raise and you eat out 20% more: eating out is very income-sensitive.",
+   "aliases": [
+    "income elasticity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cross-price elasticity of demand",
+   "plain": "how much buying of one thing changes when another's price changes",
+   "meaning": "A measure of how the purchases of one product respond to a price change in a different product.",
+   "example": "Coffee gets pricier, so tea sales rise.",
+   "aliases": [
+    "cross-price elasticity",
+    "cross price elasticity"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "tax incidence",
+   "plain": "who really ends up paying a tax",
+   "meaning": "The question of who bears the cost of a tax, which is often not the person who hands the money over.",
+   "example": "A tax on landlords ends up in higher rents, so tenants pay part of it.",
+   "aliases": [
+    "incidence of a tax",
+    "incidence of the tax"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "welfare economics",
+   "plain": "the study of how well off policies leave people",
+   "meaning": "The branch of economics that asks whether an arrangement makes people better or worse off overall.",
+   "example": "Working out whether a new bridge is worth its cost to everyone affected.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "willingness to pay",
+   "plain": "the most someone would pay",
+   "meaning": "The top price a buyer would hand over for something.",
+   "example": "You'd pay up to $40 for the concert, so at $25 you feel like you got a deal.",
+   "aliases": [
+    "willing to pay",
+    "reservation price"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "internalizing the externality",
+   "plain": "making people feel the side effects of their actions",
+   "meaning": "Changing incentives so that people take into account the costs or benefits they impose on others.",
+   "example": "A carbon tax makes a polluter pay for the harm it causes.",
+   "aliases": [
+    "internalize the externality",
+    "internalise the externality",
+    "internalizing an externality",
+    "internalizing externalities"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "corrective tax",
+   "plain": "a tax that makes polluters pay for the harm they cause",
+   "meaning": "A tax designed to make a business or person face the cost they impose on others.",
+   "example": "A tax on cigarettes or carbon emissions.",
+   "aliases": [
+    "corrective taxes",
+    "pigouvian tax",
+    "pigovian tax",
+    "pigouvian taxes"
+   ],
+   "plural": "taxes that make polluters pay for the harm they cause",
+   "keep": false
+  },
+  {
+   "term": "coase theorem",
+   "plain": "people can fix side effects by bargaining if bargaining is cheap",
+   "meaning": "The idea that if the people involved can negotiate easily, they will sort out an externality themselves without government help.",
+   "example": "A neighbor pays the other to keep the dog quiet, or vice versa, whoever values it more.",
+   "aliases": [
+    "the coase theorem"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "transaction costs",
+   "plain": "the hassle and expense of making a deal",
+   "meaning": "The time, money, and effort it takes to reach and enforce an agreement.",
+   "example": "Lawyer fees, haggling, and paperwork when selling a house.",
+   "aliases": [
+    "transaction cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "excludability",
+   "plain": "being able to stop people who don't pay",
+   "meaning": "Whether a seller can keep non-payers from using something.",
+   "example": "A cinema can stop you at the door; a fireworks show cannot.",
+   "aliases": [
+    "excludable",
+    "non-excludable",
+    "nonexcludable"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "rivalry in consumption",
+   "plain": "one person's use leaves less for others",
+   "meaning": "Whether one person using something reduces what is left for everyone else.",
+   "example": "A slice of pizza is rival; a radio broadcast is not.",
+   "aliases": [
+    "rival in consumption",
+    "rivalrous",
+    "non-rival",
+    "nonrival"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "private goods",
+   "plain": "things you can be charged for and that get used up",
+   "meaning": "Goods that a seller can withhold from non-payers and that one person's use leaves less for others. Most things in shops.",
+   "example": "A sandwich.",
+   "aliases": [
+    "private good"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "club goods",
+   "plain": "things you can be charged for but that don't run out",
+   "meaning": "Goods that non-payers can be excluded from, but that many people can use at once without using them up.",
+   "example": "Netflix or a private golf course.",
+   "aliases": [
+    "club good"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "common resources",
+   "plain": "shared things anyone can use but that run out",
+   "meaning": "Goods that nobody can be stopped from using, but that get depleted as people use them.",
+   "example": "Fish in the ocean, a public parking lot.",
+   "aliases": [
+    "common resource"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "free rider",
+   "plain": "someone who benefits without paying",
+   "meaning": "A person who enjoys something others paid for while contributing nothing.",
+   "example": "Watching the town fireworks without chipping in.",
+   "aliases": [
+    "free riders",
+    "free-rider",
+    "free-riders",
+    "free rider problem",
+    "free-rider problem"
+   ],
+   "plural": "people who benefit without paying",
+   "keep": false
+  },
+  {
+   "term": "cost-benefit analysis",
+   "plain": "weighing what something costs against what it's worth",
+   "meaning": "Adding up all the costs and all the benefits of a project to see if it is worth doing.",
+   "example": "Is a $2 million bridge worth it if it saves each commuter 20 minutes a day?",
+   "aliases": [
+    "cost–benefit analysis",
+    "cost benefit analysis"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "average tax rate",
+   "plain": "the share of your total income paid in tax",
+   "meaning": "Total taxes divided by total income.",
+   "example": "Earn $50k, pay $8k tax: a 16% average rate.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "lump-sum tax",
+   "plain": "a tax that is the same amount for everyone",
+   "meaning": "A fixed tax that does not change with income or spending.",
+   "example": "Every adult pays $1,000, whether they earn $20k or $2M.",
+   "aliases": [
+    "lump sum tax",
+    "lump-sum taxes",
+    "poll tax"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "benefits principle",
+   "plain": "you pay for what you use",
+   "meaning": "The idea that taxes should be based on how much a person benefits from government services.",
+   "example": "Gas taxes paying for roads: drivers pay, drivers benefit.",
+   "aliases": [
+    "the benefits principle"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "ability-to-pay principle",
+   "plain": "those who can afford more should pay more",
+   "meaning": "The idea that taxes should be based on how easily a person can bear them.",
+   "example": "A millionaire paying a higher share than a cashier.",
+   "aliases": [
+    "ability to pay principle",
+    "ability to pay"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "vertical equity",
+   "plain": "richer people paying more",
+   "meaning": "The idea that people with more ability to pay should pay more tax.",
+   "example": "A higher tax bracket for higher earners.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "horizontal equity",
+   "plain": "similar people paying similar tax",
+   "meaning": "The idea that people in the same financial position should pay the same tax.",
+   "example": "Two families earning $60k paying the same, regardless of how they earned it.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "proportional tax",
+   "plain": "a flat-rate tax",
+   "meaning": "A tax that takes the same percentage from everyone regardless of income.",
+   "example": "Everyone pays 15%, whether they earn $30k or $300k.",
+   "aliases": [
+    "proportional taxes",
+    "flat tax"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "total revenue",
+   "plain": "all the money a business takes in",
+   "meaning": "Price times quantity sold, before any costs are subtracted.",
+   "example": "100 lemonades at $2 each: $200.",
+   "aliases": [
+    "total revenues"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "total cost",
+   "plain": "everything a business spends to produce",
+   "meaning": "The full amount a business pays for all its inputs.",
+   "example": "Lemons, sugar, cups, and the stand: $60.",
+   "aliases": [
+    "total costs"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "explicit costs",
+   "plain": "costs paid out in cash",
+   "meaning": "Expenses that involve actually handing over money.",
+   "example": "Rent, wages, ingredients.",
+   "aliases": [
+    "explicit cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "implicit costs",
+   "plain": "costs of what you gave up, with no cash paid",
+   "meaning": "Costs that do not involve a payment, like the salary you could have earned elsewhere.",
+   "example": "Quitting a $60k job to open a cafe costs you $60k a year, even though you never write a check.",
+   "aliases": [
+    "implicit cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "accounting profit",
+   "plain": "revenue minus cash expenses",
+   "meaning": "What is left after subtracting only the costs actually paid out.",
+   "example": "Cafe takes in $150k and pays $100k in bills: $50k accounting profit.",
+   "aliases": [
+    "accounting profits"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "economic profit",
+   "plain": "revenue minus all costs, including what you gave up",
+   "meaning": "Profit after subtracting both the bills paid and the value of the alternatives you sacrificed.",
+   "example": "That $50k accounting profit is really a $10k loss if you gave up a $60k job for it.",
+   "aliases": [
+    "economic profits",
+    "economic loss"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "production function",
+   "plain": "how much output you get from a given amount of input",
+   "meaning": "The relationship between the inputs a business uses and how much it produces.",
+   "example": "One baker makes 50 loaves, two make 90, three make 120.",
+   "aliases": [
+    "production functions"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal product",
+   "plain": "the extra output from one more unit of input",
+   "meaning": "How much more gets produced when one more worker or machine is added.",
+   "example": "Adding a second baker raises output from 50 to 90 loaves, so their marginal product is 40.",
+   "aliases": [
+    "marginal products"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "marginal product of labor",
+   "plain": "the extra output from one more worker",
+   "meaning": "How much more a business produces when it hires one additional worker.",
+   "example": "The third baker adds 30 loaves a day.",
+   "aliases": [
+    "marginal product of labour"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "diminishing marginal product",
+   "plain": "each extra worker adds less than the last",
+   "meaning": "The pattern where adding more of one input, with everything else fixed, yields smaller and smaller gains.",
+   "example": "The tenth cook in a tiny kitchen mostly gets in the way.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "fixed costs",
+   "plain": "costs you pay no matter how much you make",
+   "meaning": "Expenses that stay the same regardless of output.",
+   "example": "Rent on the shop is due whether you sell 10 pies or 1,000.",
+   "aliases": [
+    "fixed cost",
+    "total fixed cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "average total cost",
+   "plain": "the cost per unit",
+   "meaning": "Total cost divided by the number of units made.",
+   "example": "$1,000 of costs for 500 pies: $2 per pie.",
+   "aliases": [
+    "average cost",
+    "atc",
+    "unit cost"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "average fixed cost",
+   "plain": "the fixed cost spread per unit",
+   "meaning": "Fixed costs divided by the number of units made. It falls as you make more.",
+   "example": "$500 rent over 500 pies is $1 each; over 1,000 pies it is 50 cents.",
+   "aliases": [
+    "afc"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "average variable cost",
+   "plain": "the variable cost per unit",
+   "meaning": "Variable costs divided by the number of units made.",
+   "example": "$500 of ingredients for 500 pies: $1 per pie.",
+   "aliases": [
+    "avc"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "average revenue",
+   "plain": "the money taken in per unit",
+   "meaning": "Total revenue divided by the number of units sold. For most sellers it equals the price.",
+   "example": "$1,000 from 500 pies: $2 each.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "efficient scale",
+   "plain": "the output level with the lowest cost per unit",
+   "meaning": "The amount of production at which the cost per unit is as low as it gets.",
+   "example": "The bakery is cheapest per loaf when it bakes about 800 a day.",
+   "aliases": [
+    "minimum efficient scale"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "constant returns to scale",
+   "plain": "cost per unit stays the same as you grow",
+   "meaning": "When doubling all inputs doubles output, so the cost per unit does not change.",
+   "example": "Two identical food trucks cost twice as much and make twice the tacos.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "diseconomies of scale",
+   "plain": "getting more expensive per unit as you grow",
+   "meaning": "When a business gets so large that each extra unit costs more, usually because it becomes hard to manage.",
+   "example": "A chain so big that head office cannot keep track of its stores.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "natural monopoly",
+   "plain": "a market where one big supplier is cheapest",
+   "meaning": "A situation where one company can serve the whole market more cheaply than two or more could, usually because of huge setup costs.",
+   "example": "Water pipes: it makes no sense to lay two sets of pipes down every street.",
+   "aliases": [
+    "natural monopolies"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "price discrimination",
+   "plain": "charging different people different prices for the same thing",
+   "meaning": "Selling the same product at different prices to different customers based on what they are willing to pay.",
+   "example": "Student discounts, senior fares, and cheaper matinee tickets.",
+   "aliases": [
+    "price discriminate",
+    "price discriminating"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "monopolistic competition",
+   "plain": "many sellers with slightly different products",
+   "meaning": "A market with many competitors whose products are similar but not identical, so each has a little pricing power.",
+   "example": "Restaurants, hair salons, coffee shops.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "nash equilibrium",
+   "plain": "a standoff where no one gains by changing alone",
+   "meaning": "A situation where each person is doing the best they can given what everyone else is doing, so nobody wants to change.",
+   "example": "Two gas stations across the street both charging $3.50: neither gains by moving first.",
+   "aliases": [
+    "nash equilibria"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "dominant strategy",
+   "plain": "the best move no matter what others do",
+   "meaning": "A choice that works out best for you regardless of what the other players choose.",
+   "example": "Confessing in the prisoners' dilemma is best whether or not your partner confesses.",
+   "aliases": [
+    "dominant strategies"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "value of the marginal product",
+   "plain": "what one more worker's output is worth",
+   "meaning": "The extra output from one more worker, multiplied by the price it sells for. It tells a business the most it should pay that worker.",
+   "example": "A barista who brings in $25 an hour of extra coffee sales is worth up to $25 an hour.",
+   "aliases": [
+    "value of marginal product",
+    "vmp"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "compensating differential",
+   "plain": "extra pay for an unpleasant or risky job",
+   "meaning": "A wage difference that makes up for a job being dirtier, more dangerous, or less pleasant.",
+   "example": "Night-shift workers and offshore oil riggers earning more for the same skill level.",
+   "aliases": [
+    "compensating differentials",
+    "compensating wage differential"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "efficiency wages",
+   "plain": "paying above the going rate to get better work",
+   "meaning": "Wages deliberately set higher than necessary so workers try harder and stay longer.",
+   "example": "Henry Ford doubling wages to $5 a day to cut turnover.",
+   "aliases": [
+    "efficiency wage"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "signaling",
+   "plain": "doing something visible to prove your quality",
+   "meaning": "Taking an action, like getting a degree, mainly to show others something they cannot see directly.",
+   "example": "A college diploma telling employers you can finish hard things.",
+   "aliases": [
+    "signalling"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "screening",
+   "plain": "testing people to sort out the good ones",
+   "meaning": "Actions an uninformed party takes to learn what the other side knows.",
+   "example": "An insurer requiring a medical exam before selling life insurance.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "discrimination",
+   "plain": "discrimination",
+   "meaning": "In economics, paying or treating people differently based on race, sex, age, or similar traits rather than their productivity.",
+   "example": "Two equally skilled applicants, one offered less because of their gender.",
+   "aliases": [],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "statistical discrimination",
+   "plain": "judging a person by their group's average",
+   "meaning": "Treating an individual based on averages about their group, rather than facts about them.",
+   "example": "Charging young drivers more for insurance because young drivers crash more on average.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "union",
+   "plain": "union",
+   "meaning": "A group of workers who bargain together with their employer over pay and conditions.",
+   "example": "Teachers negotiating a contract as one block instead of one by one.",
+   "aliases": [
+    "labor union",
+    "labour union",
+    "trade union",
+    "unions"
+   ],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "strike",
+   "plain": "strike",
+   "meaning": "Workers refusing to work, as a group, to pressure the employer into a better deal.",
+   "example": "Auto workers walking out until they get a raise.",
+   "aliases": [
+    "strikes"
+   ],
+   "plural": "",
+   "keep": true
+  },
+  {
+   "term": "in-kind transfers",
+   "plain": "help given as goods or services instead of cash",
+   "meaning": "Government aid that comes as actual stuff, not money.",
+   "example": "Food stamps, housing vouchers, free school lunches.",
+   "aliases": [
+    "in-kind transfer",
+    "in kind transfers"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "negative income tax",
+   "plain": "the government paying money to low earners",
+   "meaning": "A system where people below a certain income receive a payment instead of paying tax.",
+   "example": "Earn $10k and get a $3k check from the government.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "social insurance",
+   "plain": "government programs that protect against bad luck",
+   "meaning": "Programs everyone pays into that pay out when someone is hit by unemployment, illness, or old age.",
+   "example": "Unemployment benefits and Social Security.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "permanent income",
+   "plain": "your normal long-run income",
+   "meaning": "What a person expects to earn on average over their life, ignoring temporary ups and downs.",
+   "example": "A commission salesperson who spends based on their typical year, not a bumper month.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "life cycle",
+   "plain": "the pattern of earning and spending over a lifetime",
+   "meaning": "The regular pattern of low income when young, high income mid-career, and low income in retirement.",
+   "example": "Borrowing as a student, saving in your forties, spending savings at seventy.",
+   "aliases": [
+    "life-cycle",
+    "lifecycle"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "utilitarianism",
+   "plain": "aim for the greatest total happiness",
+   "meaning": "The view that policy should maximize the total well-being of everyone in society added together.",
+   "example": "Taking $1 from a millionaire to give a hungry person a meal, because it raises total happiness.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "liberal contractarianism",
+   "plain": "design society as if you didn't know who you'd be",
+   "meaning": "The view, from philosopher John Rawls, that fair rules are the ones you would choose without knowing whether you would end up rich or poor.",
+   "example": "Picking the rules of a game before you know which team you will play for.",
+   "aliases": [
+    "rawlsian"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "maximin criterion",
+   "plain": "make the worst-off person as well off as possible",
+   "meaning": "The idea that a society should judge itself by how its poorest member is doing.",
+   "example": "Judging a school by how its weakest student does, not its star pupil.",
+   "aliases": [
+    "maximin"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "libertarianism",
+   "plain": "let people keep what they earn",
+   "meaning": "The view that the government should protect property rights and enforce contracts but not redistribute income.",
+   "example": "Arguing that taxing one person to help another is unjust however good the cause.",
+   "aliases": [
+    "libertarian"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "budget constraint",
+   "plain": "what you can afford",
+   "meaning": "The limit on the combinations of things a person can buy with their income.",
+   "example": "With $20 you can get four coffees, or two coffees and a sandwich, but not both maxed.",
+   "aliases": [
+    "budget constraints",
+    "budget line"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "indifference curve",
+   "plain": "the line of combinations you like equally",
+   "meaning": "A curve showing all the mixes of two things that give a person the same satisfaction.",
+   "example": "Three pizzas and one movie feels just as good to you as one pizza and three movies.",
+   "aliases": [
+    "indifference curves"
+   ],
+   "plural": "lines of combinations you like equally",
+   "keep": false
+  },
+  {
+   "term": "marginal rate of substitution",
+   "plain": "how much of one thing you'd trade for one more of another",
+   "meaning": "The rate at which a person is willing to swap one good for another while staying equally happy.",
+   "example": "Giving up two sodas for one extra slice of pizza.",
+   "aliases": [
+    "mrs"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "income effect",
+   "plain": "buying more because you feel richer",
+   "meaning": "The change in what you buy that happens because a price change leaves you with more or less spending power.",
+   "example": "Gas gets cheaper, so you feel richer and eat out more.",
+   "aliases": [
+    "income effects"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "substitution effect",
+   "plain": "switching to what got relatively cheaper",
+   "meaning": "The change in what you buy that happens because one thing is now a better deal compared to another.",
+   "example": "Beef gets pricier, so you buy chicken instead.",
+   "aliases": [
+    "substitution effects"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "giffen good",
+   "plain": "a rare thing people buy more of when its price rises",
+   "meaning": "An unusual product where a price increase actually raises the amount bought, because poor buyers can no longer afford anything else.",
+   "example": "Rice for a very poor family: pricier rice leaves no money for meat, so they eat even more rice.",
+   "aliases": [
+    "giffen goods"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "risk aversion",
+   "plain": "disliking uncertainty",
+   "meaning": "Preferring a sure thing over a gamble with the same average payoff.",
+   "example": "Taking $50 for certain rather than a coin flip for $100 or nothing.",
+   "aliases": [
+    "risk averse",
+    "risk-averse"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "principal-agent problem",
+   "plain": "someone acting for you not fully sharing your goals",
+   "meaning": "The tension when one person (the agent) makes decisions on behalf of another (the principal) but has different interests.",
+   "example": "A real estate agent nudging you to accept a quick sale because their commission is nearly the same either way.",
+   "aliases": [
+    "principal–agent problem",
+    "agency problem",
+    "principal-agent",
+    "principal and agent"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "political economy",
+   "plain": "how politics shapes economic decisions",
+   "meaning": "The study of how governments actually make economic choices, given voters, politicians, and their incentives.",
+   "example": "Why a subsidy survives long after economists say it should go.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "condorcet paradox",
+   "plain": "majority votes can go round in circles",
+   "meaning": "The finding that majority voting can rank A over B, B over C, and yet C over A, so there is no clear winner.",
+   "example": "Three friends voting on pizza, tacos, or sushi and never settling it.",
+   "aliases": [
+    "condorcet's paradox"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "arrow's impossibility theorem",
+   "plain": "no voting system is perfectly fair",
+   "meaning": "A proof that no method of combining people's rankings into a group ranking can satisfy every reasonable fairness rule at once.",
+   "example": "Every election system has some situation where it gives an odd result.",
+   "aliases": [
+    "arrow's theorem",
+    "impossibility theorem"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "median voter theorem",
+   "plain": "politicians chase the voter in the middle",
+   "meaning": "The idea that in a majority vote, the outcome ends up being what the middle-of-the-road voter wants.",
+   "example": "Both parties drifting toward the center before an election.",
+   "aliases": [
+    "median voter"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "econometrics",
+   "plain": "using statistics on economic data",
+   "meaning": "The toolkit economists use to test theories with real-world numbers.",
+   "example": "Estimating how much a 10% price cut boosts sales by crunching past sales data.",
+   "aliases": [
+    "econometric"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "randomized controlled trial",
+   "plain": "an experiment with a coin-flip control group",
+   "meaning": "A study where people are randomly assigned to get a treatment or not, so the two groups can be fairly compared.",
+   "example": "Randomly giving half the villages cash grants and comparing them to the other half.",
+   "aliases": [
+    "randomized controlled trials",
+    "rct",
+    "rcts",
+    "randomised controlled trial"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "experimental data",
+   "plain": "numbers from a controlled experiment",
+   "meaning": "Data collected by deliberately changing one thing and watching what happens.",
+   "example": "Sales figures from stores where you randomly changed the price.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "observational data",
+   "plain": "numbers from watching the real world",
+   "meaning": "Data collected by observing what happens naturally, without controlling anything.",
+   "example": "Past sales figures and past prices, just as they happened.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "natural experiment",
+   "plain": "a real-world event that acts like an experiment",
+   "meaning": "A situation where something outside anyone's control splits people into groups that can be compared.",
+   "example": "Comparing two neighboring states after one raises its minimum wage.",
+   "aliases": [
+    "natural experiments"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "confounding variable",
+   "plain": "a hidden factor that muddles the result",
+   "meaning": "Something left out of the analysis that affects both the cause and the effect you are studying, making them look linked.",
+   "example": "Ice cream sales and drowning both rise in summer; hot weather is the hidden factor.",
+   "aliases": [
+    "confounding variables",
+    "confounder",
+    "confounders",
+    "omitted variable"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "reverse causality",
+   "plain": "the effect actually causing the cause",
+   "meaning": "Mistaking which way the influence runs between two things.",
+   "example": "Do police cause crime because high-crime cities have more police? No, crime causes more police.",
+   "aliases": [
+    "reverse causation"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "cross-sectional data",
+   "plain": "a snapshot of many people at one time",
+   "meaning": "Data on many different people, firms, or places measured at a single point in time.",
+   "example": "The incomes of 1,000 households this year.",
+   "aliases": [
+    "cross-section data",
+    "cross sectional data"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "time-series data",
+   "plain": "one thing tracked over time",
+   "meaning": "Data on a single person, firm, or place measured repeatedly over many periods.",
+   "example": "US unemployment every month since 1950.",
+   "aliases": [
+    "time series data",
+    "time series"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "panel data",
+   "plain": "many people tracked over time",
+   "meaning": "Data that follows the same group of people, firms, or places across several periods.",
+   "example": "The same 1,000 households surveyed every year for a decade.",
+   "aliases": [
+    "longitudinal data"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "linear regression",
+   "plain": "fitting a straight line through the data",
+   "meaning": "A statistical method that finds the straight line best describing how one thing changes with another.",
+   "example": "Drawing the best line through a scatter of price and sales points to see how much sales drop per dollar.",
+   "aliases": [
+    "regression",
+    "regressions",
+    "regression analysis"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "multiple regression",
+   "plain": "fitting a line with several factors at once",
+   "meaning": "A regression that accounts for more than one influence at the same time.",
+   "example": "Estimating how price, advertising, and weather together affect sales.",
+   "aliases": [],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "ordinary least squares",
+   "plain": "the standard way to fit the line",
+   "meaning": "The usual method for fitting a regression: choose the line that keeps the total squared gaps to the data smallest.",
+   "example": "The line that comes closest to all the dots at once.",
+   "aliases": [
+    "ols"
+   ],
+   "plural": "",
+   "keep": false
+  },
+  {
+   "term": "standard error",
+   "plain": "how uncertain an estimate is",
+   "meaning": "A measure of how much an estimated number would bounce around if you repeated the study with new data.",
+   "example": "An effect of 5 with a standard error of 1 is solid; with a standard error of 6 it could easily be zero.",
+   "aliases": [
+    "standard errors"
+   ],
+   "plural": "",
+   "keep": false
+  }
+ ],
+ "simplifications": {
+  "in order to": "to",
+  "with regard to": "about",
+  "with respect to": "about",
+  "in the event that": "if",
+  "in light of": "because of",
+  "in excess of": "more than",
+  "prior to": "before",
+  "subsequent to": "after",
+  "in the absence of": "without",
+  "for the purpose of": "to",
+  "at this point in time": "now",
+  "a significant proportion of": "many",
+  "the majority of": "most",
+  "a number of": "some",
+  "notwithstanding": "despite",
+  "utilize": "use",
+  "utilise": "use",
+  "utilization": "use",
+  "approximately": "about",
+  "individuals": "people",
+  "purchase": "buy",
+  "purchasing": "buying",
+  "purchased": "bought",
+  "commence": "start",
+  "sufficient": "enough",
+  "insufficient": "not enough",
+  "facilitate": "help",
+  "exacerbate": "make worse",
+  "mitigate": "reduce",
+  "ameliorate": "improve",
+  "attenuate": "weaken",
+  "curtail": "cut back",
+  "constrain": "limit",
+  "endeavor": "try",
+  "endeavour": "try",
+  "implement": "carry out",
+  "initiate": "start",
+  "terminate": "end",
+  "additional": "extra",
+  "numerous": "many",
+  "subsequently": "later",
+  "consequently": "so",
+  "therefore": "so",
+  "nevertheless": "still",
+  "furthermore": "also",
+  "moreover": "also",
+  "however": "but",
+  "remuneration": "pay",
+  "compensation": "pay",
+  "expenditure": "spending",
+  "expenditures": "spending",
+  "revenue-generating": "money-making",
+  "ascertain": "find out",
+  "demonstrate": "show",
+  "indicate": "show",
+  "trajectory": "path",
+  "robust": "strong",
+  "resilient": "able to withstand hard times",
+  "attributable to": "caused by",
+  "in conjunction with": "with",
+  "on a monthly basis": "every month",
+  "on an annual basis": "every year",
+  "adversely affect": "hurt",
+  "adversely impact": "hurt",
+  "negatively impact": "hurt",
+  "optimal": "best",
+  "suboptimal": "not the best",
+  "heterogeneous": "varied",
+  "homogeneous": "all the same",
+  "exogenous": "from outside",
+  "endogenous": "from inside",
+  "empirical": "based on real data",
+  "counterfactual": "what would have happened otherwise",
+  "ex ante": "beforehand",
+  "ex post": "afterwards",
+  "de facto": "in practice",
+  "de jure": "by law",
+  "vis-a-vis": "compared with",
+  "vis-à-vis": "compared with",
+  "per annum": "per year",
+  "allocate": "divide up",
+  "allocates": "divides up",
+  "allocated": "divided up",
+  "allocating": "dividing up",
+  "allocation of resources": "how resources get divided up",
+  "resource allocation": "how resources get divided up",
+  "allocation": "division",
+  "phenomena": "things that happen",
+  "phenomenon": "thing that happens",
+  "fluctuations": "ups and downs",
+  "fluctuation": "up-and-down swing",
+  "fluctuate": "go up and down",
+  "feasible": "possible",
+  "infeasible": "impossible",
+  "prescriptive": "opinion-based",
+  "descriptive": "fact-based",
+  "induces": "pushes",
+  "induce": "push",
+  "unduly": "unfairly",
+  "incremental": "step-by-step",
+  "systematically": "consistently",
+  "purposefully": "on purpose",
+  "refute": "disprove",
+  "refuted": "disproved",
+  "verify": "confirm",
+  "devise": "come up with",
+  "policymakers": "the people who set government policy",
+  "policy makers": "the people who set government policy",
+  "bystander": "someone not involved",
+  "bystanders": "people not involved",
+  "prosperity": "wealth",
+  "uniformly": "evenly",
+  "obtain": "get",
+  "attain": "reach",
+  "quantity": "amount",
+  "quantities": "amounts",
+  "excessive": "too much",
+  "stimulates": "boosts",
+  "stimulate": "boost",
+  "interact": "deal with one another",
+  "interaction": "dealings",
+  "unintended consequences": "side effects nobody planned",
+  "well-being": "quality of life",
+  "specialize": "focus on what they do best",
+  "specialise": "focus on what they do best",
+  "specialization": "each focusing on what they do best",
+  "specialisation": "each focusing on what they do best",
+  "society's resources": "everything a country has to work with",
+  "scarce resources": "limited resources",
+  "inputs": "ingredients and tools",
+  "outputs": "what gets made",
+  "the long run": "the long term",
+  "the short run": "the short term",
+  "long-run": "long-term",
+  "short-run": "short-term",
+  "economic activity": "buying, selling, and working",
+  "economic outcomes": "how things turn out for people's money",
+  "economic prosperity": "wealth",
+  "goods and services": "products",
+  "hypothesis": "an idea to test",
+  "empirically": "using real data",
+  "in aggregate": "added up",
+  "aggregate": "total",
+  "optimize": "get the best result",
+  "optimizing": "getting the best result",
+  "maximize": "get the most",
+  "maximizes": "gets the most",
+  "minimize": "keep as low as possible",
+  "minimizes": "keeps as low as possible"
+ },
+ "reversePhrases": {
+  "prices going up": "inflation",
+  "prices are going up": "inflation",
+  "prices keep going up": "inflation",
+  "prices rising": "inflation",
+  "prices are rising": "inflation",
+  "everything is getting more expensive": "inflation",
+  "things getting more expensive": "inflation",
+  "the cost of everything going up": "inflation",
+  "money buys less": "inflation",
+  "prices going down": "deflation",
+  "prices are falling": "deflation",
+  "prices dropping": "deflation",
+  "the economy is shrinking": "recession",
+  "the economy shrinks": "recession",
+  "the economy is slowing down": "slowdown",
+  "a bad economy": "recession",
+  "the economy is growing": "economic growth",
+  "the economy is getting bigger": "economic growth",
+  "the economy grows": "economic growth",
+  "the economy is doing well": "economic expansion",
+  "the economy is booming": "economic boom",
+  "everything the country makes": "gross domestic product",
+  "everything a country produces": "gross domestic product",
+  "the size of the economy": "gross domestic product",
+  "people who can't find work": "the unemployed",
+  "people who cannot find work": "the unemployed",
+  "people can't find jobs": "unemployment is high",
+  "people cannot find jobs": "unemployment is high",
+  "can't find a job": "is unemployed",
+  "cannot find a job": "is unemployed",
+  "out of work": "unemployed",
+  "lost their jobs": "became unemployed",
+  "losing their jobs": "becoming unemployed",
+  "nobody can find workers": "the labor market is tight",
+  "companies can't find workers": "the labor market is tight",
+  "the cost of borrowing": "the interest rate",
+  "cost of borrowing money": "interest rate",
+  "how much it costs to borrow": "the interest rate",
+  "borrowing gets more expensive": "interest rates rise",
+  "borrowing gets cheaper": "interest rates fall",
+  "made borrowing more expensive": "raised interest rates",
+  "made borrowing cheaper": "cut interest rates",
+  "raised rates": "raised interest rates",
+  "cut rates": "cut interest rates",
+  "the fed raised rates": "the Federal Reserve tightened monetary policy",
+  "the fed cut rates": "the Federal Reserve eased monetary policy",
+  "printing money": "expanding the money supply",
+  "print money": "expand the money supply",
+  "printed money": "expanded the money supply",
+  "the government spends more than it takes in": "the government runs a budget deficit",
+  "the government spends more than it collects": "the government runs a budget deficit",
+  "spending more than it takes in": "running a deficit",
+  "spending more than it collects": "running a deficit",
+  "spending more than it earns": "running a deficit",
+  "the government takes in more than it spends": "the government runs a budget surplus",
+  "what the government owes": "the national debt",
+  "everything the government owes": "the national debt",
+  "the government's credit card balance": "the national debt",
+  "government spending cuts": "austerity",
+  "cutting government spending": "fiscal consolidation",
+  "government handouts": "transfer payments",
+  "government checks": "fiscal stimulus",
+  "the government sending people money": "fiscal stimulus",
+  "government help for the economy": "fiscal stimulus",
+  "a tax on imports": "a tariff",
+  "tax on imports": "tariff",
+  "taxes on imports": "tariffs",
+  "taxes on foreign goods": "tariffs",
+  "tax on foreign goods": "tariff",
+  "stuff we buy from other countries": "imports",
+  "things we buy from abroad": "imports",
+  "stuff we sell to other countries": "exports",
+  "things we sell abroad": "exports",
+  "buying more from abroad than we sell": "running a trade deficit",
+  "we buy more than we sell abroad": "we run a trade deficit",
+  "a home loan": "a mortgage",
+  "home loan": "mortgage",
+  "home loans": "mortgages",
+  "house loan": "mortgage",
+  "the bank took their house": "the home was foreclosed",
+  "losing their house to the bank": "foreclosure",
+  "owe more than the house is worth": "are in negative equity",
+  "owe more than their house is worth": "are in negative equity",
+  "using borrowed money": "using leverage",
+  "borrowed money": "credit",
+  "borrowing money": "taking on debt",
+  "couldn't pay back the loan": "defaulted on the loan",
+  "could not pay back the loan": "defaulted on the loan",
+  "didn't pay back": "defaulted on",
+  "can't pay their debts": "are insolvent",
+  "cannot pay their debts": "are insolvent",
+  "owes more than it has": "is insolvent",
+  "everyone rushing to take their money out of the bank": "a bank run",
+  "everyone pulling their money out of the bank": "a bank run",
+  "the government rescued the bank": "the bank was bailed out",
+  "rescued with taxpayer money": "bailed out",
+  "an iou that pays interest": "a bond",
+  "a loan to the government": "a government bond",
+  "lending money to the government": "buying government bonds",
+  "what you earn on an investment": "the yield",
+  "what you get back": "the return",
+  "not putting all your eggs in one basket": "diversification",
+  "spreading your money around": "diversifying",
+  "prices swinging wildly": "high volatility",
+  "prices swing a lot": "prices are volatile",
+  "stocks going up for a long time": "a bull market",
+  "stocks going down for a long time": "a bear market",
+  "stocks are up": "equities are rallying",
+  "stocks are down": "equities are falling",
+  "the stock market crashed": "equity markets crashed",
+  "prices way higher than things are worth": "a bubble",
+  "prices are way too high": "the market is overvalued",
+  "the price is too high for what it is": "it is overvalued",
+  "a piece of a company": "equity",
+  "a share of a company": "a share of equity",
+  "own part of a company": "hold equity",
+  "the company's payout to owners": "the dividend",
+  "what you give up": "the opportunity cost",
+  "what you gave up": "the opportunity cost",
+  "what you miss out on": "the opportunity cost",
+  "the next best thing you could have done": "the opportunity cost",
+  "not enough to go around": "scarcity",
+  "there isn't enough": "there is a shortage",
+  "there is not enough": "there is a shortage",
+  "too much of it": "a glut",
+  "way more than people want": "oversupply",
+  "each extra one helps less": "diminishing returns",
+  "each extra bit helps less": "diminishing returns",
+  "cheaper to make when you make a lot": "economies of scale",
+  "cheaper per unit as you make more": "economies of scale",
+  "getting cheaper the more you make": "economies of scale",
+  "one company controls everything": "a monopoly",
+  "only one seller": "a monopoly",
+  "only one company sells it": "it is a monopoly",
+  "a few big companies control it": "an oligopoly",
+  "only one buyer": "a monopsony",
+  "only one employer in town": "a monopsony",
+  "companies secretly agreeing on prices": "a cartel",
+  "companies fixing prices together": "collusion",
+  "rigging prices": "price fixing",
+  "no government interference": "laissez-faire",
+  "the government stays out of it": "a free market",
+  "the government sets the price": "price controls",
+  "a cap on prices": "a price ceiling",
+  "the highest price allowed": "a price ceiling",
+  "the lowest price allowed": "a price floor",
+  "the lowest legal pay": "the minimum wage",
+  "the least you can legally be paid": "the minimum wage",
+  "how much stuff people want to buy": "demand",
+  "how much people want to buy": "demand",
+  "how much people want it": "demand",
+  "how much is available to buy": "supply",
+  "how much is for sale": "supply",
+  "how much there is": "supply",
+  "when people want more than there is": "excess demand",
+  "when there's more than people want": "excess supply",
+  "the price where buyers and sellers agree": "the equilibrium price",
+  "the price settles": "the market reaches equilibrium",
+  "people keep buying it no matter the price": "demand is inelastic",
+  "people buy it no matter what it costs": "demand is inelastic",
+  "people stop buying when the price goes up": "demand is elastic",
+  "people buy less when the price goes up": "demand is elastic",
+  "side effects on other people": "externalities",
+  "a side effect on other people": "an externality",
+  "side effect on people not involved": "externality",
+  "pollution that hurts the neighbors": "a negative externality",
+  "things everyone can use for free": "public goods",
+  "everyone uses it and no one pays": "it is a public good",
+  "taking risks because someone else pays": "moral hazard",
+  "taking risks because you're covered": "moral hazard",
+  "one side knows more than the other": "asymmetric information",
+  "the seller knows more than the buyer": "asymmetric information",
+  "buying cheap here and selling dear there": "arbitrage",
+  "buy low in one place and sell high in another": "arbitrage",
+  "betting prices will go up": "speculating",
+  "betting on prices": "speculation",
+  "getting rich by gaming the system": "rent-seeking",
+  "lobbying for special treatment": "rent-seeking",
+  "everyone overusing something shared": "the tragedy of the commons",
+  "the rich get richer and the poor get poorer": "inequality is widening",
+  "the gap between rich and poor": "inequality",
+  "rich and poor gap": "inequality",
+  "the middle income": "the median income",
+  "the typical income": "the median income",
+  "how much your money buys": "purchasing power",
+  "how much your money actually buys": "purchasing power",
+  "your money doesn't go as far": "purchasing power has fallen",
+  "your money does not go as far": "purchasing power has fallen",
+  "after taking out rising prices": "in real terms",
+  "after adjusting for rising prices": "in real terms",
+  "adjusted for rising prices": "in real terms",
+  "the raw number": "the nominal figure",
+  "take-home pay": "disposable income",
+  "take home pay": "disposable income",
+  "spending money": "discretionary income",
+  "pay going up": "wage growth",
+  "wages going up": "wage growth",
+  "a pay raise": "wage growth",
+  "pay rises": "wages increase",
+  "wages and prices chasing each other": "a wage-price spiral",
+  "workers and shops both raising prices": "a wage-price spiral",
+  "what people spend": "consumption",
+  "people spending money": "consumer spending",
+  "people are spending less": "consumption is falling",
+  "people are spending more": "consumption is rising",
+  "people feel good about the economy": "consumer confidence is high",
+  "people feel bad about the economy": "consumer confidence is low",
+  "people are worried about money": "consumer confidence is low",
+  "people feel richer": "the wealth effect",
+  "feel richer so spend more": "the wealth effect",
+  "buying machines and buildings": "capital investment",
+  "spending on machines and buildings": "capital investment",
+  "tools and machines and buildings": "capital",
+  "tools and machines": "capital",
+  "people's skills and training": "human capital",
+  "skills and education": "human capital",
+  "workers": "labor",
+  "how much gets done per hour": "productivity",
+  "output per hour": "productivity",
+  "getting more done per worker": "rising productivity",
+  "the total amount of money out there": "the money supply",
+  "how much money is in the economy": "the money supply",
+  "how easy it is to turn into cash": "liquidity",
+  "easy to turn into cash": "liquid",
+  "hard to turn into cash": "illiquid",
+  "hard to sell quickly": "illiquid",
+  "how much one currency is worth in another": "the exchange rate",
+  "what a dollar is worth abroad": "the exchange rate",
+  "the dollar is strong": "the dollar has appreciated",
+  "the dollar is weak": "the dollar has depreciated",
+  "the dollar got stronger": "the dollar appreciated",
+  "the dollar got weaker": "the dollar depreciated",
+  "the currency lost value": "the currency depreciated",
+  "the currency gained value": "the currency appreciated",
+  "moving jobs overseas": "offshoring",
+  "sending jobs abroad": "offshoring",
+  "moving work to another country": "offshoring",
+  "protecting local businesses from foreign competition": "protectionism",
+  "keeping foreign goods out": "protectionism",
+  "trading freely across borders": "free trade",
+  "no barriers to trade": "free trade",
+  "money migrants send home": "remittances",
+  "money sent home from abroad": "remittances",
+  "skilled people leaving the country": "brain drain",
+  "the economy's ups and downs": "the business cycle",
+  "boom and bust": "the business cycle",
+  "slowing the economy without a crash": "a soft landing",
+  "cooling the economy gently": "a soft landing",
+  "slowing the economy so much it crashes": "a hard landing",
+  "the economy is running too hot": "the economy is overheating",
+  "growing too fast": "overheating",
+  "stuck with no growth": "stagnation",
+  "the economy is stuck": "the economy is stagnating",
+  "not growing at all": "stagnant",
+  "rising prices with no growth": "stagflation",
+  "prices up but the economy stuck": "stagflation",
+  "the economy is bouncing back": "the economy is recovering",
+  "bouncing back": "recovering",
+  "a sudden surprise that hits the economy": "an economic shock",
+  "a surprise event that hits the economy": "an economic shock",
+  "one step slowing everything down": "a bottleneck",
+  "a choke point": "a bottleneck",
+  "the chain of steps to get a product to you": "the supply chain",
+  "how stuff gets from factory to store": "the supply chain",
+  "things slowing the economy down": "headwinds",
+  "things helping the economy": "tailwinds",
+  "wants lower rates": "is dovish",
+  "wants higher rates": "is hawkish",
+  "prefers lower interest rates": "is dovish",
+  "prefers higher interest rates": "is hawkish",
+  "the bank that controls the money": "the central bank",
+  "the country's main bank": "the central bank",
+  "america's central bank": "the Federal Reserve",
+  "the government's taxing and spending": "fiscal policy",
+  "how the government taxes and spends": "fiscal policy",
+  "what the central bank does with interest rates": "monetary policy",
+  "how the central bank controls money": "monetary policy",
+  "controlling interest rates": "monetary policy",
+  "the central bank creating money to buy bonds": "quantitative easing",
+  "the central bank buying up bonds": "quantitative easing",
+  "the central bank pumping money in": "quantitative easing",
+  "the central bank pulling money out": "quantitative tightening",
+  "the central bank hinting at what it will do": "forward guidance",
+  "what people think prices will do": "inflation expectations",
+  "people expect prices to rise": "inflation expectations are rising",
+  "aiming for two percent": "inflation targeting",
+  "aiming for 2% inflation": "inflation targeting",
+  "interest can't go below zero": "the zero lower bound",
+  "cheap money isn't working": "a liquidity trap",
+  "even free money isn't getting people to borrow": "a liquidity trap",
+  "money already spent that you can't get back": "a sunk cost",
+  "money already spent": "a sunk cost",
+  "money you can't get back": "a sunk cost",
+  "throwing good money after bad": "the sunk cost fallacy",
+  "all else being equal": "ceteris paribus",
+  "all other things being equal": "ceteris paribus",
+  "everything else the same": "ceteris paribus",
+  "holding everything else constant": "ceteris paribus",
+  "one person's gain is another's loss": "zero-sum",
+  "somebody has to lose for somebody to win": "zero-sum",
+  "the whole economy": "the macroeconomy",
+  "the big picture of the economy": "macroeconomics",
+  "how individual people and businesses decide": "microeconomics",
+  "a gentle push toward a better choice": "a nudge",
+  "making the good choice the default": "a nudge",
+  "how people actually make decisions": "behavioral economics",
+  "the economy is connected to the whole world": "globalization",
+  "the world getting more connected": "globalization",
+  "poorer countries growing fast": "emerging markets",
+  "fast-growing poorer countries": "emerging markets",
+  "fast growing poorer countries": "emerging markets",
+  "punishing a country by cutting off trade": "economic sanctions",
+  "cutting off trade with a country": "sanctions",
+  "foreign companies building factories here": "foreign direct investment",
+  "money fleeing the country": "capital flight",
+  "money rushing out of the country": "capital flight",
+  "the number of jobs added": "nonfarm payrolls",
+  "the jobs numbers": "the payrolls report",
+  "the share of adults who work or want to": "the labor force participation rate",
+  "people between jobs": "frictional unemployment",
+  "between jobs": "frictionally unemployed",
+  "jobs that disappeared because of new technology": "structural unemployment",
+  "skills that don't match the jobs": "structural unemployment",
+  "jobs lost because of a bad economy": "cyclical unemployment",
+  "working less than you want": "underemployment",
+  "working part time but wanting full time": "underemployment",
+  "almost everyone has a job": "full employment",
+  "everyone who wants a job has one": "full employment",
+  "the lowest unemployment can go without prices rising": "the natural rate of unemployment",
+  "the trade-off between jobs and prices": "the Phillips curve",
+  "one dollar spent creates more than a dollar": "the multiplier effect",
+  "spending that keeps getting re-spent": "the multiplier effect",
+  "how fast money changes hands": "the velocity of money",
+  "money moving quickly": "high money velocity",
+  "government borrowing crowds out businesses": "crowding out",
+  "the government borrowing so much that businesses can't": "crowding out",
+  "the government takes over a company": "nationalization",
+  "the government taking over": "nationalization",
+  "selling a government business to private owners": "privatization",
+  "selling off state companies": "privatization",
+  "removing government rules": "deregulation",
+  "cutting red tape": "deregulation",
+  "getting rid of regulations": "deregulation",
+  "rules for businesses": "regulation",
+  "government rules": "regulation",
+  "laws against companies getting too big": "antitrust law",
+  "breaking up big companies": "antitrust enforcement",
+  "stopping companies from getting too powerful": "antitrust",
+  "obstacles that keep new competitors out": "barriers to entry",
+  "hard for new companies to get in": "high barriers to entry",
+  "easy for new companies to get in": "low barriers to entry",
+  "being relatively better at one thing": "comparative advantage",
+  "what you're comparatively best at": "your comparative advantage",
+  "focus on what you're best at and trade": "comparative advantage",
+  "an edge over rivals": "a competitive advantage",
+  "an edge over competitors": "a competitive advantage",
+  "value lost when the market is distorted": "deadweight loss",
+  "value that just disappears": "deadweight loss",
+  "the good deal you got": "consumer surplus",
+  "paying less than you would have": "consumer surplus",
+  "the extra a seller gets above their minimum": "producer surplus",
+  "no one can be made better off without hurting someone": "Pareto efficiency",
+  "new businesses wiping out old ones": "creative destruction",
+  "innovation killing old industries": "creative destruction",
+  "two companies joining together": "a merger",
+  "two companies combining": "a merger",
+  "one company buying another": "an acquisition",
+  "buying another company": "an acquisition",
+  "a company selling shares to the public for the first time": "an IPO",
+  "going public": "an initial public offering",
+  "money for risky young companies": "venture capital",
+  "money invested in startups": "venture capital",
+  "investors buying whole companies": "private equity",
+  "a fund that just owns the whole market": "an index fund",
+  "a fund that buys every stock": "an index fund",
+  "spending on big long-term items": "capital expenditure",
+  "spending on big equipment": "capital expenditure",
+  "day-to-day running costs": "operating expenses",
+  "day to day running costs": "operating expenses",
+  "the money a business takes in": "revenue",
+  "total money taken in": "revenue",
+  "total sales": "revenue",
+  "money left after costs": "profit",
+  "money left over after paying everything": "net income",
+  "what the company made": "earnings",
+  "what a whole company is worth": "market capitalization",
+  "what the company is worth on the stock market": "market capitalization",
+  "the original amount borrowed": "the principal",
+  "the amount you originally borrowed": "the principal",
+  "interest earning interest": "compound interest",
+  "interest on interest": "compound interest",
+  "paying off a loan bit by bit": "amortization",
+  "paying off a loan in installments": "amortization",
+  "something you pledge to lose if you do not repay": "collateral",
+  "what the bank takes if you don't pay": "collateral",
+  "something the lender can take": "collateral",
+  "what you own minus what you owe": "net worth",
+  "money coming in versus money going out": "cash flow",
+  "money coming in and going out": "cash flow",
+  "something you own that has value": "an asset",
+  "things you own": "assets",
+  "something you owe": "a liability",
+  "things you owe": "liabilities",
+  "protection against a loss": "a hedge",
+  "insurance against losing money": "a hedge",
+  "a bet on something else's price": "a derivative",
+  "bundles of home loans sold to investors": "mortgage-backed securities",
+  "bundling loans to sell": "securitization",
+  "a grade for how safe a borrower is": "a credit rating",
+  "how likely someone is to pay you back": "creditworthiness",
+  "extra return for extra risk": "a risk premium",
+  "profit from selling something for more than you paid": "capital gains",
+  "the profit when you sell": "capital gains",
+  "profit from selling": "capital gains",
+  "hundredths of a percent": "basis points",
+  "digital money not run by any government": "cryptocurrency",
+  "internet money": "cryptocurrency",
+  "money backed by gold": "the gold standard",
+  "money that's only valuable because the government says so": "fiat money",
+  "money not backed by anything": "fiat money",
+  "working gigs through apps": "the gig economy",
+  "freelance work through apps": "the gig economy",
+  "reusing and recycling instead of throwing away": "the circular economy",
+  "buying and selling illegally": "the black market",
+  "under the table": "in the informal economy",
+  "off the books": "in the informal economy",
+  "compared to last year": "year-over-year",
+  "compared to the same time last year": "year-over-year",
+  "compared to last quarter": "quarter-over-quarter",
+  "compared to the previous three months": "quarter-over-quarter",
+  "a three-month period": "a quarter",
+  "smoothed for the time of year": "seasonally adjusted",
+  "ignoring the holiday bump": "seasonally adjusted",
+  "at a full-year pace": "annualized",
+  "scaled up to a year": "annualized",
+  "stretched out to a full year": "annualized",
+  "one whole percent": "one percentage point",
+  "a legal maximum price": "a price ceiling",
+  "a legal minimum price": "a price floor",
+  "prices that are slow to change": "sticky prices",
+  "prices that don't change fast": "sticky prices",
+  "the government controlling prices": "price controls",
+  "the basics people need to live": "the cost of living",
+  "what everyday life costs": "the cost of living",
+  "how much it costs to live": "the cost of living",
+  "how comfortably people live": "the standard of living",
+  "a regular cash payment to everyone": "universal basic income",
+  "free money for everyone": "universal basic income",
+  "government money that lowers a price": "a subsidy",
+  "the government paying part of the cost": "a subsidy",
+  "government money to make it cheaper": "a subsidy",
+  "the rich pay a higher rate": "a progressive tax",
+  "a tax that hits the poor harder": "a regressive tax",
+  "the tax on your next dollar": "the marginal tax rate",
+  "a limit on how much can be imported": "an import quota",
+  "a cap on imports": "an import quota",
+  "a country making its money worth less": "devaluation",
+  "making the currency worth less on purpose": "devaluation",
+  "shielding local businesses": "protectionism",
+  "rising prices": "inflation",
+  "falling prices": "deflation",
+  "runaway prices": "hyperinflation",
+  "a shrinking economy": "a recession",
+  "shrinking economy": "recession",
+  "a deep long-lasting slump": "a depression",
+  "prices rising more slowly": "disinflation",
+  "sudden shortage of loans": "a credit crunch",
+  "banks stopped lending": "a credit crunch",
+  "paying down debt": "deleveraging",
+  "paying off debts": "deleveraging",
+  "can pay all their debts": "are solvent",
+  "the government rescue of a company": "a bailout",
+  "a rescue with public money": "a bailout",
+  "the interest rate on long loans is lower than on short ones": "an inverted yield curve",
+  "short-term loans paying more than long-term ones": "an inverted yield curve",
+  "the return you earn on an investment": "the yield",
+  "ownership in a company": "equity",
+  "a company's payout to shareholders": "a dividend",
+  "how wildly prices swing": "volatility",
+  "a period of rising prices in the stock market": "a bull market",
+  "a period of falling prices in the stock market": "a bear market",
+  "a modest price drop after a run-up": "a correction",
+  "a sudden steep price collapse": "a crash",
+  "a quick rise in prices": "a rally",
+  "the collection of investments someone owns": "a portfolio",
+  "everything you've invested in": "your portfolio",
+  "tradeable financial products": "securities",
+  "stocks and bonds": "securities",
+  "the everyday-prices gauge": "the consumer price index",
+  "the measure of everyday prices": "the consumer price index",
+  "how much prices went up this month": "the consumer price index",
+  "total spending in the economy": "aggregate demand",
+  "total production in the economy": "aggregate supply",
+  "household spending": "consumption",
+  "output per person": "GDP per capita",
+  "what the economy could make at full stretch": "potential output",
+  "the gap between what the economy makes and what it could make": "the output gap",
+  "the basic ingredients for making things": "the factors of production",
+  "the effect of one more": "the marginal effect",
+  "government money given to people": "transfer payments",
+  "government benefit programs": "entitlements",
+  "built-in cushions in the budget": "automatic stabilizers",
+  "the market getting it wrong on its own": "market failure",
+  "many small sellers with identical products": "perfect competition",
+  "self-interest accidentally helping everyone": "the invisible hand",
+  "profiting by gaming the rules": "rent-seeking",
+  "a basic raw good": "a commodity",
+  "a person who buys things": "a consumer",
+  "people who buy things": "consumers",
+  "a business that makes things": "a producer",
+  "businesses that make things": "producers",
+  "someone who weighs costs and benefits": "a rational actor",
+  "the wrong customers signing up": "adverse selection",
+  "exports minus imports": "the balance of trade",
+  "one person's gain is another person's loss": "zero-sum",
+  "countries becoming more economically connected": "globalization",
+  "an IOU that pays interest": "a bond",
+  "the line of interest rates from short to long loans": "the yield curve",
+  "the study of the whole economy": "macroeconomics",
+  "the study of individual choices and markets": "microeconomics",
+  "the study of strategic decisions": "game theory",
+  "a situation where selfish choices leave everyone worse off": "a prisoner's dilemma",
+  "anyone affected by a decision": "a stakeholder",
+  "someone who owns part of a company": "a shareholder",
+  "turn into money": "monetize",
+  "make money from it": "monetize it",
+  "the share of sales left after making the product": "the gross margin",
+  "what families owe": "household debt",
+  "the share of income people save": "the savings rate",
+  "how optimistic people feel about money": "consumer confidence",
+  "spending more because you feel richer": "the wealth effect",
+  "the gap between what the rich and poor own": "wealth inequality",
+  "the income level below which you count as poor": "the poverty line",
+  "money that's worth less each year": "a depreciating asset"
+ },
+ "protected": [
+  "credit card",
+  "credit cards",
+  "credit score",
+  "real estate",
+  "real world",
+  "real life",
+  "in return",
+  "return to",
+  "returned",
+  "security guard",
+  "social security",
+  "by default",
+  "default setting",
+  "capital city",
+  "capital letter",
+  "capital hill",
+  "capitol hill",
+  "labor day",
+  "labour day",
+  "labor union",
+  "labour union",
+  "job market",
+  "on demand",
+  "demanding",
+  "supply closet",
+  "water supply",
+  "power supply",
+  "utility bill",
+  "utility company",
+  "utilities",
+  "shock absorber",
+  "shocked",
+  "shocking",
+  "a quarter past",
+  "quarter past",
+  "quarter to",
+  "quarter mile",
+  "correction officer",
+  "boom box",
+  "rally car",
+  "pep rally",
+  "hedge fund manager",
+  "bond with",
+  "james bond",
+  "bonding",
+  "principal of the school",
+  "school principal",
+  "asset to the team",
+  "an asset to",
+  "liability insurance",
+  "consumer reports",
+  "welfare check",
+  "welfare office",
+  "on welfare",
+  "welfare benefits",
+  "appreciate it",
+  "i appreciate",
+  "appreciate your",
+  "depression and anxiety",
+  "clinical depression",
+  "mental depression",
+  "recovery room",
+  "in recovery",
+  "recovering from",
+  "expansion pack",
+  "team expansion",
+  "yield to",
+  "yield sign",
+  "equity in the workplace",
+  "gender equity",
+  "racial equity",
+  "health equity",
+  "rate limit",
+  "heart rate",
+  "success rate",
+  "crime rate",
+  "birth rate",
+  "growth mindset",
+  "bottleneck effect",
+  "bubble tea",
+  "bubble wrap",
+  "speech bubble",
+  "market street",
+  "farmers market",
+  "farmer's market",
+  "supermarket",
+  "flea market",
+  "stock up",
+  "stock photo",
+  "in stock",
+  "out of stock",
+  "livestock",
+  "share with",
+  "share a",
+  "shared",
+  "sharing",
+  "cash flow statement",
+  "profit and loss statement"
+ ],
+ "extraForward": {
+  "tariffs on imports": {
+   "plain": "taxes on imports",
+   "term": "tariff"
+  },
+  "tariff on imports": {
+   "plain": "tax on imports",
+   "term": "tariff"
+  },
+  "import tariffs": {
+   "plain": "taxes on imports",
+   "term": "tariff"
+  },
+  "import tariff": {
+   "plain": "tax on imports",
+   "term": "tariff"
+  },
+  "demand for": {
+   "plain": "appetite for",
+   "term": "demand"
+  },
+  "supply of": {
+   "plain": "amount available of",
+   "term": "supply"
+  },
+  "in demand": {
+   "plain": "wanted",
+   "term": "demand"
+  },
+  "labor market": {
+   "plain": "job market",
+   "term": "labor"
+  },
+  "labour market": {
+   "plain": "job market",
+   "term": "labor"
+  },
+  "tight labor market": {
+   "plain": "job market where workers are scarce",
+   "term": "labor"
+  },
+  "tight labour market": {
+   "plain": "job market where workers are scarce",
+   "term": "labor"
+  },
+  "balance sheet": {
+   "plain": "list of what it owns and owes",
+   "term": "asset"
+  },
+  "fed funds": {
+   "plain": "the Fed's key interest rate",
+   "term": "federal funds rate"
+  },
+  "efficient": {
+   "plain": "waste-free",
+   "term": "efficiency"
+  },
+  "efficiently": {
+   "plain": "without waste",
+   "term": "efficiency"
+  },
+  "inefficient": {
+   "plain": "wasteful",
+   "term": "inefficiency"
+  },
+  "inefficiently": {
+   "plain": "wastefully",
+   "term": "inefficiency"
+  },
+  "labor input": {
+   "plain": "work put in",
+   "term": "labor"
+  },
+  "labour input": {
+   "plain": "work put in",
+   "term": "labor"
+  },
+  "unit of labor input": {
+   "plain": "hour of work",
+   "term": "labor"
+  },
+  "unit of labour input": {
+   "plain": "hour of work",
+   "term": "labor"
+  },
+  "unit of labor": {
+   "plain": "hour of work",
+   "term": "labor"
+  },
+  "unit of labour": {
+   "plain": "hour of work",
+   "term": "labor"
+  },
+  "the opportunity cost of": {
+   "plain": "what you give up to get",
+   "term": "opportunity cost"
+  },
+  "opportunity cost of": {
+   "plain": "what you give up to get",
+   "term": "opportunity cost"
+  },
+  "highly inelastic": {
+   "plain": "barely price-sensitive",
+   "term": "inelastic"
+  },
+  "relatively inelastic": {
+   "plain": "not very price-sensitive",
+   "term": "inelastic"
+  },
+  "highly elastic": {
+   "plain": "very price-sensitive",
+   "term": "elastic"
+  },
+  "relatively elastic": {
+   "plain": "fairly price-sensitive",
+   "term": "elastic"
+  }
+ }
+}

@@ -33,6 +33,19 @@ Needs only Python 3.10+ with Tkinter (included with the python.org installer). N
 | Example | drops in a sample sentence for the current direction |
 | Copy / Clear | copies the output to the clipboard / empties both boxes |
 
+## Real-time voice tutor
+
+`realtime/` is a web app that pairs this glossary with a live voice conversation:
+an economics tutor you can talk to, which must look every term up in this glossary
+before explaining it. Three areas — an input box that translates as you type, an
+output box, and a speech-mode toggle. See `realtime/README.md`.
+
+```bash
+cd realtime && npm install && npm run dev
+```
+
+Typing works with no API key. Speech mode needs an OpenAI key.
+
 ## Files
 
 | File | Role |
@@ -42,6 +55,8 @@ Needs only Python 3.10+ with Tkinter (included with the python.org installer). N
 | `glossary.py` | ~285 general economics terms, each with a drop-in plain phrase, a meaning, an example, aliases |
 | `glossary_textbook.py` | ~130 key concepts from Mankiw's *Principles of Economics* (10th ed.) and the chapter 1–2 slides, same format |
 | `test_engine.py` | regression tests: `python3 test_engine.py` |
+| `scripts/export_glossary.py` | exports the glossary to `realtime/lib/glossary.json` |
+| `realtime/` | the real-time voice tutor web app (Next.js) |
 
 ## Textbook coverage
 

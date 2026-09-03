@@ -1,0 +1,420 @@
+:root {
+  --bg: #0b0c10;
+  --bg-elev: #14161d;
+  --border: #242833;
+  --text: #e8eaf0;
+  --muted: #8b90a0;
+  --accent: #6c8cff;
+  --user: #2a3350;
+  --ai: #1c2230;
+  --green: #37d67a;
+  --amber: #f7b955;
+  --red: #ff5c6c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 600px at 50% -10%, #171a24 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 24px 40px;
+}
+
+/* Three stacked areas: input, output, speech toggle. */
+.app {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.app__header {
+  margin-bottom: 2px;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.app__sub {
+  margin: 5px 0 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+/* --- Shared box chrome (areas 1 and 2) --- */
+.box {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.box__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.box--out .box__label span:first-child {
+  color: var(--accent);
+}
+
+/* --- 1. Input --- */
+.box__text {
+  width: 100%;
+  min-height: 132px;
+  resize: vertical;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 16.5px;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.box__text::placeholder {
+  color: #545a6b;
+}
+
+.example {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12.5px;
+  padding: 5px 12px;
+}
+
+.example:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* --- 2. Output --- */
+.box--out {
+  min-height: 132px;
+}
+
+.box__plain {
+  margin: 0;
+  font-size: 16.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.box__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.terms {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.term {
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  animation: slideIn 0.22s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.term__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.term__name {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--accent);
+}
+
+.term__arrow {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.term__plain {
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.term__meaning {
+  margin: 0 0 3px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.term__example {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* --- Spoken conversation, inside the output area --- */
+.talk {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.talk__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.talk__scroll {
+  max-height: 34vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 88%;
+  padding: 9px 13px;
+  border-radius: 13px;
+  line-height: 1.45;
+  font-size: 14.5px;
+}
+
+.bubble--user {
+  align-self: flex-end;
+  background: var(--user);
+  border-bottom-right-radius: 4px;
+}
+
+.bubble--ai {
+  align-self: flex-start;
+  background: var(--ai);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble--live {
+  opacity: 0.85;
+}
+
+.bubble__who {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.bubble__text {
+  white-space: pre-wrap;
+}
+
+/* --- Live state pill --- */
+.state {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.state__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.state--listening {
+  color: var(--green);
+}
+.state--listening .state__dot {
+  background: var(--green);
+  animation: pulse 1.6s infinite;
+}
+
+.state--speaking {
+  color: var(--accent);
+}
+.state--speaking .state__dot {
+  background: var(--accent);
+  animation: pulse 0.9s infinite;
+}
+
+.state--thinking,
+.state--connecting {
+  color: var(--amber);
+}
+.state--thinking .state__dot,
+.state--connecting .state__dot {
+  background: var(--amber);
+  animation: pulse 1s infinite;
+}
+
+.state--error {
+  color: var(--red);
+}
+.state--error .state__dot {
+  background: var(--red);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+    opacity: 0.85;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 1;
+  }
+}
+
+/* --- 3. Speech toggle --- */
+.app__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.speech {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15.5px;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.speech:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.speech:active {
+  transform: translateY(1px);
+}
+
+.speech:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.speech--on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b0c10;
+}
+
+.speech--on:hover:not(:disabled) {
+  background: #85a0ff;
+}
+
+.speech__icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* --- Small text buttons --- */
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.link--big {
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 8px 4px;
+}
+
+.error {
+  margin: 0;
+  color: var(--red);
+  font-size: 13px;
+}
